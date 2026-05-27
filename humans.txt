@@ -4,7 +4,7 @@ Contact: via Etsy shop messages
 Etsy shop: https://www.etsy.com/shop/DNDAnimeFigures
 
 /* SITE */
-Last update: 2026-05-26
+Last update: 2026-05-27
 Standards: HTML5, CSS3, Schema.org structured data, OpenGraph, Twitter Cards
 Components: Inter + Cinzel (Google Fonts)
 Hosting: see deployment instructions in README.md
