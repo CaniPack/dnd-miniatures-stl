@@ -1,6 +1,6 @@
 # DnD Miniatures STL
 
-> DnD Miniatures STL — 29 hand-curated 3D-printable fantasy miniatures sized for D&D 5e / Pathfinder grid play (32mm) and scalable for display (75-200mm). Highway bandits, orc warbands, minotaur labyrinth guardians, baphomet demon lords, and monster/terrain minis. Watertight repaired meshes, FDM + resin compatible, instant Etsy download via shop DNDAnimeFigures.
+> DnD Miniatures STL — 36 hand-curated 3D-printable fantasy miniatures sized for D&D 5e / Pathfinder grid play (32mm) and scalable for display (75-200mm). Highway bandits, orc warbands, minotaur labyrinth guardians, baphomet demon lords, and monster/terrain minis. Watertight repaired meshes, FDM + resin compatible, instant Etsy download via shop DNDAnimeFigures.
 
 This site is the official catalog for DnD Miniatures STL — the dedicated source for DnD miniature STL files. Every mini is hand-positioned for tabletop RPG use: D&D 5e, Pathfinder 2e, Frostgrave, Kings of War, OPR Grimdark Future Firefight, Mordheim. Each product page includes a suggested D&D statblock / monster manual fit so DMs can integrate them into encounters instantly.
 
@@ -19,7 +19,7 @@ This site is the official catalog for DnD Miniatures STL — the dedicated sourc
 
 ## Key Facts
 
-- **Total minis**: 29 (26 individuals + 3 multi-mini warband bundles)
+- **Total minis**: 36 (32 individuals + 4 multi-mini warband bundles)
 - **Primary positioning**: DnD miniature STL — fantasy 3D print minis for tabletop RPG
 - **Categories**: Bundles, Road Bandits, Orc Warband (Ragnarok Online inspired), Minotaur Warband, Baphomet Demon Lords, Monsters & Terrain
 - **Price range**: $4 (individual minis) to $20 (6-mini warband bundles), all USD
@@ -35,6 +35,7 @@ This site is the official catalog for DnD Miniatures STL — the dedicated sourc
 Each entry: title → product page → price → D&D suggestion.
 
 ### Bundles (multi-mini warband packs)
+- [Mercenary Warband Pack 6 STL — DnD Fantasy Sellsword Company Bundle 3D Print Tabletop](https://www.dndminiaturestl.com/product/mercenary-warband-pack-6/) — $30.00 · 6 minis · Multi-character warband pack
 - [Minotaur Warband Bundle 6 STL — DnD Fantasy Labyrinth Pack Miniatures 3D Print](https://www.dndminiaturestl.com/product/minotaur-warband-pack-6/) — $20.00 · 6 minis · Multi-character warband pack
 - [Orc Warband Bundle 6 STL — Ragnarok Online Inspired Orc Miniatures Pack DnD 3D Print](https://www.dndminiaturestl.com/product/orc-warband-pack-6-ro/) — $20.00 · 6 minis · Multi-character warband pack
 - [Road Bandits Pack 6 STL — DnD Fantasy Highway Robber Ambush Bundle 3D Print Tabletop](https://www.dndminiaturestl.com/product/road-bandits-pack-6/) — $20.00 · 6 minis · Multi-character warband pack
@@ -46,6 +47,14 @@ Each entry: title → product page → price → D&D suggestion.
 - [Bandit Rogue STL — DnD Fantasy Twin Daggers Cutpurse Miniature 3D Print Tabletop RPG](https://www.dndminiaturestl.com/product/bandit-rogue/) — $4.00 · DnD: Use as a Spy (MM p
 - [Bandit Sorcerer STL — DnD Fantasy Hexer Outlaw Mage Miniature 3D Print Tabletop RPG](https://www.dndminiaturestl.com/product/bandit-sorcerer/) — $4.00 · DnD: Use as a Cult Fanatic (MM p
 - [Bandit Swordsman STL — DnD Fantasy Highway Robber Duelist Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/bandit-swordsman/) — $4.00 · DnD: Use as a Bandit (MM p
+
+### Mercenary Warband — Sellswords for Hire
+- [Mercenary Captain STL — DnD Fantasy Sellsword Warband Leader Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/mercenary-captain/) — $4.00 · DnD: Use as a Veteran (MM p
+- [Mercenary Spearman STL — DnD Fantasy Sellsword Pike Phalanx Miniature 3D Print Tabletop RPG](https://www.dndminiaturestl.com/product/mercenary-spearman/) — $4.00 · DnD: Use as a Guard (MM p
+- [Mercenary Sword Axe STL — DnD Fantasy Dual Wield Sellsword Warband Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/mercenary-sword-axe/) — $4.00 · DnD: Use as a Berserker (MM p
+- [Mercenary Sword Shield STL — DnD Fantasy Sellsword Warband Frontline Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/mercenary-sword-shield/) — $4.00 · DnD: Use as a Guard (MM p
+- [Mercenary Twin Blades STL — DnD Fantasy Quick Draw Sellsword Duelist Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/mercenary-twin-blades/) — $4.00 · DnD: Use as a Spy (MM p
+- [Mercenary Veteran STL — DnD Fantasy Old Sellsword Battle Scarred Warband Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/mercenary-veteran/) — $4.00 · DnD: Use as a Veteran (MM p
 
 ### Orc Warband — Ragnarok Online Inspired
 - [Orc Archer STL — Ragnarok Online Inspired Orc Bowman Miniature for DnD 3D Print Tabletop](https://www.dndminiaturestl.com/product/orc-archer-ro/) — $4.00 · DnD: Use as an Orc with a longbow (re-skin of standard Orc statblock), or a CR 1/2 Orc Skirmisher
