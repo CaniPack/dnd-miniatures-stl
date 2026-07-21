@@ -3,7 +3,7 @@ const CATALOG = {"bandit-brute":{"title":"Bandit Brute STL — DnD Fantasy Axe H
 
 const SITE_NAME = "DnD Miniatures STL";
 const CONTACT = "seba.fyd@gmail.com";
-const DEFAULT_FROM = SITE_NAME + ' <downloads@dndanimeminiatures.com>';
+const DEFAULT_FROM = SITE_NAME + ' <downloads@dndminiaturestl.com>';
 
 async function paypalToken(base, id, secret) {
   const r = await fetch(base + '/v1/oauth2/token', {
