@@ -129,6 +129,15 @@ img { display: block; max-width: 100%; height: auto; }
 .card__foot { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid var(--border); font-size: 12px; }
 .card__price { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); font-weight: 700; }
 .card__cta { color: var(--accent); font-weight: 700; }
+.pp-wrap { margin: 18px 0 6px; }
+.pp-divider { display: flex; align-items: center; gap: 12px; color: var(--text-dim); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 16px 0 12px; }
+.pp-divider::before, .pp-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+#paypal-button-container { max-width: 360px; }
+.pp-success { background: rgba(46, 125, 82, 0.12); border: 1px solid #2e7d52; border-radius: 12px; padding: 22px; margin-top: 16px; }
+.pp-success h3 { font-size: 17px; margin-bottom: 6px; color: #6fdc9c; }
+.pp-success p { font-size: 13px; color: var(--text-dim); margin-bottom: 14px; }
+.pp-dl { display: block; background: var(--bg-card); border: 1px solid #2e7d52; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; font-size: 14px; font-weight: 700; color: #6fdc9c; transition: transform .12s, filter .12s; }
+.pp-dl:hover { filter: brightness(1.2); transform: translateY(-1px); }
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=REPLACE_WITH_GA4_ID"></script>
@@ -174,6 +183,15 @@ img { display: block; max-width: 100%; height: auto; }
       <div class="info__price-label">USD<br>Instant Download</div>
     </div>
     <a class="cta-btn" href="https://www.etsy.com/listing/4510881584" target="_blank" rel="noopener" data-slug="minotaur-trident" data-title="Minotaur Trident STL — DnD Fantasy Bull Gladiator Miniature 3D Print Tabletop RPG" data-price="4.00" data-cat="Minotaur Warband — Labyrinth Guardians" data-listing-id="4510881584" data-list="product-page-hero">Buy on Etsy →</a>
+    <div class="pp-wrap" id="buy">
+      <div class="pp-divider">or pay directly — instant download</div>
+      <div id="paypal-button-container"></div>
+      <div id="pp-success" class="pp-success" hidden>
+        <h3 id="pp-title">✅ Payment received — thank you!</h3>
+        <p id="pp-note">Preparing your download link…</p>
+        <div id="pp-links"></div>
+      </div>
+    </div>
     
 <div class="specs">
   <h2>Specifications</h2>
@@ -347,6 +365,72 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
       });
     }
   }, { capture: true });
+})();
+</script>
+
+<script src="https://www.paypal.com/sdk/js?client-id=ARQlghbBNJ8PC7_91voWgXSPX-K7X2ZZ8ABK-oSAiKkdg3m7NAvl7RmAGKw0BHn4-30OyU0Wb3GbZg1Z&currency=USD&intent=capture"></script>
+<script>
+/* PayPal Checkout — capture on approval, then fetch verified download links from /api/deliver */
+(function(){
+  var ITEM = {"slug":"minotaur-trident","title":"Minotaur Trident STL — DnD Fantasy Bull Gladiator Miniature 3D Print Tabletop RPG","price":4,"cat":"Minotaur Warband — Labyrinth Guardians"};
+  var CONTACT = "seba.fyd@gmail.com";
+  function openBox(){
+    var btns = document.getElementById('paypal-button-container');
+    if (btns) btns.style.display = 'none';
+    var box = document.getElementById('pp-success');
+    box.hidden = false;
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function showLinks(res){
+    document.getElementById('pp-links').innerHTML = res.links.map(function(it){
+      return '<a class="pp-dl" href="' + it.url + '" target="_blank" rel="noopener">⬇ ' + it.name + ' (.STL)</a>';
+    }).join('');
+    var note = 'Save the file' + (res.links.length > 1 ? 's' : '') + ' now — this page won\'t remember your purchase if you close it.';
+    if (res.emailSent && res.buyerEmail) note = 'We also emailed the links to <b>' + res.buyerEmail + '</b>. ' + note;
+    document.getElementById('pp-note').innerHTML = note;
+  }
+  function showFallback(orderID){
+    document.getElementById('pp-note').innerHTML = 'Your payment went through, but we couldn\'t load the download links automatically. Email us at <a href="mailto:' + CONTACT + '" style="color:#6fdc9c">' + CONTACT + '</a> with your PayPal order ID <b>' + orderID + '</b> and we\'ll send your files right away.';
+  }
+  function trackPurchase(details){
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'purchase', {
+      transaction_id: (details && details.id) || '',
+      value: ITEM.price,
+      currency: 'USD',
+      affiliation: 'PayPal Direct',
+      items: [{ item_id: ITEM.slug, item_name: ITEM.title, price: ITEM.price, quantity: 1, item_category: ITEM.cat }]
+    });
+  }
+  if (typeof paypal === 'undefined' || !paypal.Buttons) return;
+  paypal.Buttons({
+    style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
+    createOrder: function(data, actions){
+      return actions.order.create({
+        purchase_units: [{
+          description: ITEM.title.slice(0, 127),
+          custom_id: ITEM.slug,
+          amount: { value: ITEM.price.toFixed(2), currency_code: 'USD' }
+        }]
+      });
+    },
+    onApprove: function(data, actions){
+      return actions.order.capture().then(function(details){
+        openBox();
+        trackPurchase(details);
+        return fetch('/api/deliver', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ orderID: data.orderID })
+        }).then(function(r){ return r.json(); }).then(function(res){
+          if (res && res.ok && res.links) showLinks(res); else showFallback(data.orderID);
+        }).catch(function(){ showFallback(data.orderID); });
+      });
+    },
+    onError: function(err){
+      console.error('PayPal error', err);
+    }
+  }).render('#paypal-button-container');
 })();
 </script>
 
