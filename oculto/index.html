@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Métricas · DnD Miniatures STL</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #12141a; color: #e8eaf0; margin: 0; padding: 24px; }
+  h1 { font-size: 22px; margin: 0 0 18px; }
+  h2 { font-size: 16px; margin: 28px 0 10px; color: #aab2c5; }
+  input { background: #1d2029; border: 1px solid #333a4d; color: #fff; padding: 10px 12px; border-radius: 8px; font-size: 15px; }
+  button { background: #2f6df6; color: #fff; border: 0; padding: 10px 16px; border-radius: 8px; font-size: 15px; cursor: pointer; margin-left: 8px; }
+  #logout { background: #333a4d; margin: 30px 0 0; }
+  .err { color: #ff7676; }
+  .cards { display: flex; flex-wrap: wrap; gap: 12px; }
+  .card { background: #1d2029; border: 1px solid #2a3040; border-radius: 12px; padding: 14px 18px; min-width: 150px; flex: 1; }
+  .card b { display: block; font-size: 26px; margin-top: 4px; }
+  .card span { font-size: 12px; color: #8b93a7; }
+  .chart { display: flex; align-items: flex-end; gap: 3px; height: 140px; background: #1d2029; border: 1px solid #2a3040; border-radius: 12px; padding: 12px; }
+  .bar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; min-width: 0; }
+  .bar__fill { background: #2f6df6; border-radius: 3px 3px 0 0; min-height: 2px; }
+  .bar__label { font-size: 9px; color: #8b93a7; text-align: center; margin-top: 4px; overflow: hidden; }
+  table { border-collapse: collapse; width: 100%; background: #1d2029; border: 1px solid #2a3040; border-radius: 12px; overflow: hidden; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #262c3a; }
+  th { color: #8b93a7; font-size: 12px; text-transform: uppercase; }
+  .note { color: #8b93a7; font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>📊 Métricas — DnD Miniatures STL</h1>
+
+<div id="login" hidden>
+  <p>Token de acceso:</p>
+  <input id="tok" type="password" autocomplete="off">
+  <button id="go">Entrar</button>
+  <p id="loginerr" class="err" hidden>Token incorrecto.</p>
+</div>
+
+<div id="dash" hidden>
+  <div class="cards">
+    <div class="card"><span>Visitas totales</span><b id="c-total">—</b></div>
+    <div class="card"><span>Visitas hoy</span><b id="c-today">—</b></div>
+    <div class="card"><span>Ventas registradas</span><b id="c-sales">—</b></div>
+    <div class="card"><span>Ingresos (log)</span><b id="c-rev">—</b></div>
+  </div>
+
+  <h2>Visitas — últimos 30 días</h2>
+  <div id="chart" class="chart"></div>
+
+  <h2>Páginas / productos más visitados</h2>
+  <table id="pages"></table>
+
+  <h2>Ventas registradas por el sitio</h2>
+  <table id="sales"></table>
+
+  <h2>Ventas según PayPal (últimos 30 días)</h2>
+  <div id="pp"></div>
+
+  <p class="note" id="note"></p>
+  <button id="logout">Salir</button>
+</div>
+
+<script>
+(function () {
+  var LS = 'oculto_token';
+  function $(id) { return document.getElementById(id); }
+  function fmt(n) { return (n || 0).toLocaleString('es'); }
+  function money(n) { return '$' + (Math.round((n || 0) * 100) / 100).toFixed(2); }
+  function cell(tr, txt, isTh) {
+    var td = document.createElement(isTh ? 'th' : 'td');
+    td.textContent = txt;
+    tr.appendChild(td);
+  }
+  function headerRow(tbl, cols) {
+    tbl.innerHTML = '';
+    var tr = document.createElement('tr');
+    cols.forEach(function (c) { cell(tr, c, true); });
+    tbl.appendChild(tr);
+  }
+  function load(tok) {
+    fetch('/api/stats?token=' + encodeURIComponent(tok)).then(function (r) {
+      if (r.status === 401) {
+        localStorage.removeItem(LS);
+        $('dash').hidden = true; $('login').hidden = false; $('loginerr').hidden = false;
+        return null;
+      }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (!d) return;
+      localStorage.setItem(LS, tok);
+      $('login').hidden = true; $('dash').hidden = false;
+      render(d);
+    }).catch(function (e) { alert('Error cargando métricas: ' + e.message); });
+  }
+  function render(d) {
+    var v = d.visits;
+    var today = new Date().toISOString().slice(0, 10);
+    $('c-total').textContent = v ? fmt(v.total) : '—';
+    var t = 0;
+    if (v) v.byDay.forEach(function (x) { if (x.date === today) t = x.views; });
+    $('c-today').textContent = v ? fmt(t) : '—';
+    var sales = d.sales || [];
+    var rev = 0;
+    sales.forEach(function (s) { rev += s.paid || 0; });
+    $('c-sales').textContent = fmt(sales.length);
+    $('c-rev').textContent = money(rev);
+
+    var ch = $('chart');
+    ch.innerHTML = '';
+    if (v) {
+      var max = 1;
+      v.byDay.forEach(function (x) { if (x.views > max) max = x.views; });
+      v.byDay.forEach(function (x) {
+        var col = document.createElement('div'); col.className = 'bar';
+        var fill = document.createElement('div'); fill.className = 'bar__fill';
+        fill.style.height = Math.round(x.views / max * 100) + '%';
+        fill.title = x.date + ': ' + x.views;
+        var lb = document.createElement('div'); lb.className = 'bar__label';
+        lb.textContent = x.date.slice(8);
+        col.appendChild(fill); col.appendChild(lb);
+        ch.appendChild(col);
+      });
+    } else {
+      ch.textContent = 'Sin datos de visitas todavía.';
+    }
+
+    var pt = $('pages');
+    headerRow(pt, ['Página', 'Visitas']);
+    if (v) {
+      v.byPage.slice(0, 30).forEach(function (x) {
+        var tr = document.createElement('tr');
+        cell(tr, x.page); cell(tr, fmt(x.views));
+        pt.appendChild(tr);
+      });
+    }
+
+    var st = $('sales');
+    headerRow(st, ['Fecha', 'Producto', 'Monto', 'Comprador']);
+    sales.forEach(function (s) {
+      var tr = document.createElement('tr');
+      cell(tr, s.t ? new Date(s.t).toLocaleString('es') : '—');
+      cell(tr, s.title || s.slug || '—');
+      cell(tr, money(s.paid));
+      cell(tr, s.buyer || '—');
+      st.appendChild(tr);
+    });
+
+    var pp = $('pp');
+    pp.innerHTML = '';
+    if (!d.paypal) {
+      pp.textContent = 'Sin datos de PayPal.';
+    } else if (!d.paypal.ok) {
+      pp.textContent = 'No disponible (HTTP ' + (d.paypal.status || '?') + '). Si es 403, hay que habilitar "Transaction Search" para la app en developer.paypal.com.';
+      pp.className = 'note';
+    } else {
+      var tbl = document.createElement('table');
+      headerRow(tbl, ['Fecha', 'Producto (slug)', 'Monto', 'Comprador']);
+      var total = 0;
+      d.paypal.transactions.forEach(function (x) {
+        total += x.amount;
+        var tr = document.createElement('tr');
+        cell(tr, x.date ? new Date(x.date).toLocaleString('es') : '—');
+        cell(tr, x.slug || '—');
+        cell(tr, money(x.amount) + ' ' + x.currency);
+        cell(tr, x.email || '—');
+        tbl.appendChild(tr);
+      });
+      pp.appendChild(tbl);
+      var tot = document.createElement('p');
+      tot.textContent = 'Total PayPal 30 días: ' + money(total) + ' (' + d.paypal.transactions.length + ' transacciones)';
+      pp.appendChild(tot);
+    }
+
+    $('note').textContent = v ? '' : 'Para contar visitas falta conectar Upstash Redis (gratis): Vercel → proyecto → Storage → Upstash Redis. Las ventas de PayPal funcionan igual sin eso.';
+  }
+  $('go').addEventListener('click', function () { load($('tok').value.trim()); });
+  $('tok').addEventListener('keydown', function (e) { if (e.key === 'Enter') load($('tok').value.trim()); });
+  $('logout').addEventListener('click', function () { localStorage.removeItem(LS); location.reload(); });
+  var saved = localStorage.getItem(LS);
+  if (saved) load(saved); else $('login').hidden = false;
+})();
+</script>
+</body>
+</html>

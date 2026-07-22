@@ -431,6 +431,8 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
 <!-- Vercel Web Analytics -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<!-- /oculto metrics beacon -->
+<script>if(navigator.sendBeacon&&location.pathname.indexOf('/oculto')!==0){try{navigator.sendBeacon('/api/track',JSON.stringify({p:location.pathname}))}catch(e){}}</script>
 
 </body>
 </html>

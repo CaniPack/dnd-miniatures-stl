@@ -90,6 +90,23 @@ module.exports = async function handler(req, res) {
       } catch (e) { emailSent = false; }
     }
 
+    // Log sale to Redis for /oculto metrics — best-effort, deduped by order ID
+    const rUrl = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+    const rTok = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+    if (rUrl && rTok) {
+      try {
+        const rh = { Authorization: 'Bearer ' + rTok, 'Content-Type': 'application/json' };
+        const first = await fetch(rUrl + '/pipeline', { method: 'POST', headers: rh, body: JSON.stringify([['SET', 'dnd:o:' + orderID, '1', 'NX', 'EX', 7776000]]) });
+        const fj = first.ok ? await first.json() : null;
+        if (fj && fj[0] && fj[0].result === 'OK') {
+          await fetch(rUrl + '/pipeline', { method: 'POST', headers: rh, body: JSON.stringify([
+            ['LPUSH', 'dnd:sales', JSON.stringify({ t: Date.now(), slug: slug, title: product.title, paid: paid, buyer: buyerEmail, order: orderID })],
+            ['LTRIM', 'dnd:sales', 0, 999],
+          ]) });
+        }
+      } catch (e) { /* ignore */ }
+    }
+
     // Sale notification to shop owner — best-effort, never blocks delivery
     if (key) {
       try {
