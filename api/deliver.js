@@ -90,6 +90,29 @@ module.exports = async function handler(req, res) {
       } catch (e) { emailSent = false; }
     }
 
+    // Sale notification to shop owner — best-effort, never blocks delivery
+    if (key) {
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { Authorization: 'Bearer ' + key, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: process.env.RESEND_FROM || DEFAULT_FROM,
+            to: [CONTACT],
+            subject: '[Sale] ' + SITE_NAME + ': ' + product.title.split(' STL')[0] + ' — $' + paid.toFixed(2),
+            html: '<div style="font-family:Arial,sans-serif;max-width:560px;color:#222">'
+              + '<h2 style="margin:0 0 12px">New sale on ' + SITE_NAME + ' &#127881;</h2>'
+              + '<p><b>Product:</b> ' + product.title + '</p>'
+              + '<p><b>Amount:</b> $' + paid.toFixed(2) + ' USD</p>'
+              + '<p><b>Buyer:</b> ' + (buyerEmail || 'unknown') + '</p>'
+              + '<p><b>PayPal Order ID:</b> ' + orderID + '</p>'
+              + '<p><b>Delivery email to buyer:</b> ' + (emailSent ? 'sent OK' : 'NOT SENT — send the links manually') + '</p>'
+              + '</div>',
+          }),
+        });
+      } catch (e) { /* ignore */ }
+    }
+
     res.status(200).json({ ok: true, links: product.links, emailSent: emailSent, buyerEmail: buyerEmail });
   } catch (e) {
     res.status(500).json({ error: 'delivery_failed' });
