@@ -35,9 +35,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0a0e1a; --bg-card: #141822; --bg-card-hover: #1a1f2e;
-  --accent: #c0392b; --accent-glow: #c0392b40; --gold: #d4af37;
-  --text: #f4f4f4; --text-dim: #9ba3b4; --border: #232838;
+  --bg: #0b0d13; --bg-card: #131722; --bg-card-hover: #1a2030;
+  --accent: #d43b32; --accent-hi: #e25549; --accent-lo: #a92a23; --accent-glow: #d43b3240;
+  --gold: #d4af37; --gold-soft: #d4af3799; --parchment: #f0e9d8;
+  --text: #f2f3f5; --text-dim: #9aa2b1; --border: #262b38;
   --max: 1200px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,34 +46,41 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
-.header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-.header__inner { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-.brand { display: flex; align-items: center; line-height: 1; }
-.brand__img { height: 64px; width: auto; flex-shrink: 0; display: block; }
+.header { position: sticky; top: 0; z-index: 50; background: rgba(11,13,19,.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.header__inner { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 11px; line-height: 1; }
+.brand__mark { width: 36px; height: 36px; flex-shrink: 0; }
+.brand__mark svg { width: 100%; height: 100%; display: block; }
+.brand__mark polygon, .brand__mark line { fill: none; stroke: var(--gold); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+.brand__mark .d20m-edges { stroke-width: 2; opacity: .75; }
+.brand__name { font-family: 'Cinzel', serif; font-size: 19px; font-weight: 700; letter-spacing: 1px; color: var(--parchment); white-space: nowrap; }
+.brand__name b { color: var(--gold); }
 @media (max-width: 700px) {
-  .brand__img { height: 44px; }
-  .header__inner { padding: 10px 16px; gap: 16px; }
+  .brand__mark { width: 30px; height: 30px; }
+  .brand__name { font-size: 15px; }
+  .header__inner { padding: 10px 16px; gap: 14px; }
 }
-.nav { display: flex; gap: 28px; align-items: center; }
-.nav__item { font-size: 15px; font-weight: 600; color: #1a1f2e; transition: color .15s; white-space: nowrap; padding: 8px 0; }
-.nav__item:hover { color: var(--accent); }
+.nav { display: flex; gap: 26px; align-items: center; }
+.nav__item { font-size: 14px; font-weight: 600; color: #ccd1db; transition: color .15s; white-space: nowrap; padding: 8px 0; letter-spacing: .3px; }
+.nav__item:hover { color: #fff; }
 .nav__dropdown { position: relative; }
 .nav__dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
 .nav__dropdown-toggle::after { content: '▾'; font-size: 11px; transition: transform .15s; }
 .nav__dropdown:hover .nav__dropdown-toggle::after,
-.nav__dropdown:focus-within .nav__dropdown-toggle::after { transform: rotate(180deg); color: var(--accent); }
-.nav__dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; box-shadow: 0 8px 28px rgba(0,0,0,0.12); border: 1px solid #e5e5e5; border-radius: 10px; padding: 8px 0; min-width: 260px; margin-top: 4px; }
+.nav__dropdown:focus-within .nav__dropdown-toggle::after { transform: rotate(180deg); color: var(--gold); }
+.nav__dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #161a26; box-shadow: 0 14px 38px rgba(0,0,0,.55); border: 1px solid var(--border); border-radius: 10px; padding: 8px 0; min-width: 260px; margin-top: 4px; }
 .nav__dropdown:hover .nav__dropdown-menu,
 .nav__dropdown:focus-within .nav__dropdown-menu { display: block; }
-.nav__dropdown-menu a { display: block; padding: 10px 18px; font-size: 14px; font-weight: 500; color: #1a1f2e; }
-.nav__dropdown-menu a:hover { background: #f7f7f7; color: var(--accent); }
-.header__cta { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; white-space: nowrap; transition: transform .12s, box-shadow .12s; }
-.header__cta:hover { filter: brightness(1.12); transform: translateY(-1px); box-shadow: 0 4px 14px var(--accent-glow); }
+.nav__dropdown-menu a { display: block; padding: 10px 18px; font-size: 14px; font-weight: 500; color: #ccd1db; }
+.nav__dropdown-menu a:hover { background: #1d2331; color: #fff; }
+.header__cta { background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .8px; white-space: nowrap; border: 1px solid rgba(0,0,0,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 2px 8px rgba(0,0,0,.4); transition: transform .12s, box-shadow .12s, filter .12s; }
+.header__cta:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px var(--accent-glow); }
 @media (max-width: 800px) {
   .nav__item:not(.header__cta), .nav__dropdown { display: none; }
 }
-.footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 32px 20px; text-align: center; font-size: 13px; color: var(--text-dim); }
-.footer a { color: var(--accent); }
+.footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 36px 20px; text-align: center; font-size: 13px; color: var(--text-dim); background: #090b10; }
+.footer a { color: var(--gold); }
+.footer a:hover { color: #fff; }
 .custom { max-width: var(--max); margin: 0 auto; padding: 30px 20px 40px; }
 .custom__box { background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover)); border: 1px solid var(--accent); border-radius: 16px; padding: 36px 28px; text-align: center; }
 .custom__box h2 { font-family: 'Cinzel', serif; font-size: clamp(24px, 3.5vw, 34px); letter-spacing: 1px; margin-bottom: 10px; }
@@ -178,13 +186,13 @@ img { display: block; max-width: 100%; height: auto; }
 .gallery__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .gallery__thumb { aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: #0a0a0a; }
 .gallery__thumb img { width: 100%; height: 100%; object-fit: cover; }
-.info h1 { font-family: 'Cinzel', serif; font-size: clamp(26px, 4vw, 40px); line-height: 1.1; letter-spacing: 1px; margin-bottom: 12px; }
-.info__cat { color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; font-weight: 700; margin-bottom: 14px; }
+.info h1 { font-family: 'Cinzel', serif; font-size: clamp(26px, 4vw, 40px); line-height: 1.1; letter-spacing: 1px; margin-bottom: 12px; color: var(--parchment); }
+.info__cat { color: var(--gold); text-transform: uppercase; letter-spacing: 1.8px; font-size: 11px; font-weight: 700; margin-bottom: 14px; }
 .info__price-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 18px 0 24px; }
 .info__price { font-family: 'Cinzel', serif; font-size: 40px; color: var(--gold); letter-spacing: 1px; line-height: 1; font-weight: 700; }
 .info__price-label { color: var(--text-dim); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-.cta-btn { display: inline-block; background: var(--accent); color: #fff; padding: 16px 26px; border-radius: 10px; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; transition: transform .15s, box-shadow .15s; }
-.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+.cta-btn { display: inline-block; background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 16px 26px; border-radius: 8px; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(0,0,0,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 4px 14px rgba(0,0,0,.4); transition: transform .15s, box-shadow .15s, filter .15s; }
+.cta-btn:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 8px 24px var(--accent-glow); }
 .cta-btn--etsy { background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-size: 13px; padding: 12px 20px; }
 .cta-btn--etsy:hover { border-color: var(--accent); color: var(--accent); box-shadow: none; }
 .cta-block { background: var(--bg-card); border: 1px solid var(--border); padding: 22px; border-radius: 12px; text-align: center; margin: 18px 0; }
@@ -250,7 +258,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 <header class="header">
   <div class="header__inner">
-    <a href="../../index.html" class="brand" aria-label="DnD Miniatures STL · home"><img class="brand__img" src="../../images/logo.png" alt="DnD Miniatures STL" width="220" height="68"></a>
+    <a href="../../index.html" class="brand" aria-label="DnD Miniatures STL · home"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><polygon points="50,4 89,27 89,73 50,96 11,73 11,27"/><g class="d20m-edges"><polygon points="50,25 76,67 24,67"/><line x1="50" y1="4" x2="50" y2="25"/><line x1="11" y1="27" x2="50" y2="25"/><line x1="89" y1="27" x2="50" y2="25"/><line x1="11" y1="27" x2="24" y2="67"/><line x1="89" y1="27" x2="76" y2="67"/><line x1="11" y1="73" x2="24" y2="67"/><line x1="89" y1="73" x2="76" y2="67"/><line x1="50" y1="96" x2="24" y2="67"/><line x1="50" y1="96" x2="76" y2="67"/></g></svg></span><span class="brand__name">DnD Miniatures <b>STL</b></span></a>
     <nav class="nav">
       <a class="nav__item" href="../../index.html">All Minis</a>
       <a class="nav__item" href="/mercenary-stl/">Mercenary Warband</a>
