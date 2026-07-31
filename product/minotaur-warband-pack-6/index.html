@@ -85,10 +85,16 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 600px) { .custom__form { flex-direction: column; } }
 .custom__input { flex: 1; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: inherit; }
 .custom__input:focus { outline: none; border-color: var(--accent); }
-.custom__btn { background: var(--accent); color: #fff; border: 0; cursor: pointer; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: inherit; transition: transform .15s, box-shadow .15s; }
+.custom__btn { display: inline-block; background: var(--accent); color: #fff; border: 0; cursor: pointer; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: inherit; transition: transform .15s, box-shadow .15s; }
 .custom__btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
-.custom__note { margin-top: 12px; font-size: 12px; color: var(--text-dim); }
+.custom__note { margin-top: 14px; font-size: 12px; color: var(--text-dim); max-width: 640px; margin-left: auto; margin-right: auto; }
 .custom__note a { color: var(--accent); }
+.custom__hint { color: var(--gold); font-size: 13px; margin-top: 10px; }
+#custom-paypal { max-width: 400px; margin: 16px auto 0; }
+.custom__success { background: var(--bg); border: 1px solid var(--gold); border-radius: 12px; padding: 20px; max-width: 620px; margin: 16px auto 0; text-align: left; }
+.custom__success h3 { color: var(--gold); margin-bottom: 8px; font-size: 17px; }
+.custom__success p { color: var(--text-dim); font-size: 14px; }
+.custom__success a { color: var(--accent); }
 .custom-banner { background: var(--bg-card); border: 1px dashed var(--accent); border-radius: 12px; padding: 16px 18px; font-size: 14px; color: var(--text-dim); text-align: center; margin: 18px 0; }
 .custom-banner b { color: var(--text); }
 .custom-banner a { color: var(--accent); font-weight: 700; white-space: nowrap; }
@@ -233,7 +239,7 @@ img { display: block; max-width: 100%; height: auto; }
       <a class="cta-btn cta-btn--etsy" href="https://www.etsy.com/listing/4510881261" target="_blank" rel="noopener" style="padding:12px 20px" data-slug="minotaur-warband-pack-6" data-title="Minotaur Warband Bundle 6 STL — DnD Fantasy Labyrinth Pack Miniatures 3D Print" data-price="20.00" data-cat="Bundles" data-listing-id="4510881261" data-list="product-page-message">Message us on Etsy</a>
     </div>
     
-<div class="custom-banner">🎨 <b>Create your custom figure</b> — send us a link to a photo and we make it into a printable mini. From <b>$15 USD</b> per figure. <a href="/#custom">Request yours →</a></div>
+<div class="custom-banner"><b>Custom figures:</b> send us a link to a photo, we turn it into a printable mini. Flat <b>$15 USD</b>. <a href="/#custom">Order yours →</a></div>
   </div>
 </main>
 
@@ -389,7 +395,7 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
 /* PayPal Checkout — capture on approval, then fetch verified download links from /api/deliver */
 (function(){
   var ITEM = {"slug":"minotaur-warband-pack-6","title":"Minotaur Warband Bundle 6 STL — DnD Fantasy Labyrinth Pack Miniatures 3D Print","price":20,"cat":"Bundles"};
-  var CONTACT = "seba.fyd@gmail.com";
+  var CONTACT = "info@dndminiaturestl.com";
   function openBox(){
     var btns = document.getElementById('paypal-button-container');
     if (btns) btns.style.display = 'none';
