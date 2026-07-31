@@ -120,8 +120,8 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 [hidden] { display: none !important; }
 .cart-fab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 90; background: var(--accent); color: #fff; border: 0; cursor: pointer; width: 56px; height: 56px; border-radius: 50%; font-size: 24px; box-shadow: 0 6px 20px rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; }
 .cart-fab__count { position: absolute; top: -4px; right: -4px; background: var(--gold); color: #000; font-size: 12px; font-weight: 800; min-width: 20px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 0 5px; }
-.cart-overlay { position: fixed; inset: 0; background: rgba(4,5,9,.68); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); z-index: 95; }
-.cart-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); background: var(--bg-card); border-left: 1px solid var(--border); z-index: 96; display: flex; flex-direction: column; animation: cartSlideIn .25s ease; }
+.cart-overlay { position: fixed; inset: 0; background: rgba(4,5,9,.68); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); z-index: 190; }
+.cart-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); background: var(--bg-card); border-left: 1px solid var(--border); z-index: 191; display: flex; flex-direction: column; animation: cartSlideIn .25s ease; }
 @keyframes cartSlideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
 .cart-drawer__head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--border); }
 .cart-drawer__head h3 { font-size: 18px; }
@@ -157,7 +157,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .cart-upgrade b { color: var(--gold); }
 .cart-upgrade button { margin-top: 8px; width: 100%; background: var(--gold); color: #14100a; border: 0; cursor: pointer; padding: 10px; border-radius: 8px; font-weight: 800; font-size: 13px; font-family: inherit; }
 .cart-upgrade button:hover { filter: brightness(1.08); }
-.cart-toast { position: fixed; top: 14px; right: 14px; z-index: 98; width: min(340px, calc(100vw - 28px)); background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid #6fdc9c; border-radius: 12px; padding: 13px 15px; box-shadow: 0 18px 50px rgba(0,0,0,.55); animation: toastIn .22s ease; }
+.cart-toast { position: fixed; top: 14px; right: 14px; z-index: 194; width: min(340px, calc(100vw - 28px)); background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid #6fdc9c; border-radius: 12px; padding: 13px 15px; box-shadow: 0 18px 50px rgba(0,0,0,.55); animation: toastIn .22s ease; }
 @keyframes toastIn { from { transform: translateY(-14px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 .cart-toast__head { display: flex; justify-content: space-between; align-items: center; color: #6fdc9c; font-weight: 800; font-size: 13px; margin-bottom: 9px; }
 .cart-toast__close { background: none; border: 0; color: var(--text-dim); font-size: 20px; cursor: pointer; line-height: 1; padding: 0 2px; }
@@ -177,7 +177,12 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .dice-fab { position: fixed; left: 0; top: 52%; transform: translateY(-50%); z-index: 90; display: flex; align-items: center; justify-content: center; width: 34px; min-height: 168px; background: linear-gradient(180deg, var(--gold), #b8952c); color: #14100a; border: 0; border-radius: 0 10px 10px 0; padding: 14px 5px; cursor: pointer; font-family: inherit; box-shadow: 4px 0 18px rgba(0,0,0,.4); transition: filter .15s, width .15s; }
 .dice-fab span { writing-mode: vertical-rl; text-orientation: mixed; font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; white-space: nowrap; }
 .dice-fab:hover { filter: brightness(1.07); width: 38px; }
-.dice-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 97; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
+@media (max-width: 700px) {
+  .dice-fab { left: 12px; top: auto; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: none; width: auto; min-height: 0; border-radius: 999px; padding: 10px 14px; }
+  .dice-fab span { writing-mode: horizontal-tb; font-size: 11px; letter-spacing: .8px; }
+  .dice-fab:hover { width: auto; }
+}
+.dice-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 193; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
 .dice-box { background: var(--bg-card); border: 1px solid var(--gold); border-radius: 16px; max-width: 430px; width: 100%; padding: 30px 26px; text-align: center; position: relative; max-height: 92vh; overflow-y: auto; animation: dicePop .22s ease; }
 @keyframes dicePop { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 .dice-box__close { position: absolute; top: 10px; right: 14px; background: none; border: 0; color: var(--text-dim); font-size: 24px; cursor: pointer; }
@@ -238,6 +243,8 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .feature p { font-size: 13px; color: var(--text-dim); }
 .section { max-width: var(--max); margin: 0 auto; padding: 60px 20px; scroll-margin-top: 160px; }
 @media (max-width: 700px) { .section { scroll-margin-top: 130px; } }
+.custom, .faq { scroll-margin-top: 150px; }
+@media (max-width: 700px) { .custom, .faq { scroll-margin-top: 120px; } }
 
 .quicknav { position: sticky; top: 82px; z-index: 40; background: rgba(13,16,23,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); box-shadow: 0 6px 18px rgba(0,0,0,.35); }
 @media (max-width: 700px) { .quicknav { top: 60px; } }
@@ -247,8 +254,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .quicknav__inner::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 .quicknav__chip { flex-shrink: 0; padding: 7px 16px; background: #1a2030; border-radius: 999px; font-size: 12px; font-weight: 600; color: #cfd4de; white-space: nowrap; transition: all .15s; border: 1px solid var(--border); letter-spacing: .3px; }
 .quicknav__chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-1px); }
-.quicknav__chip--first { background: var(--gold); color: #14100a; border-color: var(--gold); font-weight: 700; }
-.quicknav__chip--first:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.quicknav__chip--first { font-weight: 700; }
 .section__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 26px; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 14px; position: relative; }
 .section__head::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 90px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
 .section__title { font-family: 'Cinzel', serif; font-size: clamp(23px, 3.6vw, 34px); letter-spacing: 1.2px; font-weight: 700; color: var(--parchment); }
@@ -314,7 +320,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
       <a class="nav__item" href="/">All Minis</a>
       <a class="nav__item" href="/#bundles">Bundles</a>
       <a class="nav__item" href="/#faq">FAQ</a>
-      <a class="nav__item" href="https://www.dndanimeminiatures.com/" title="Our anime miniatures site — One Piece STL collection">Anime Minis ↗</a>
+      <a class="nav__item" href="https://www.dndanimeminiatures.com/" target="_blank" rel="noopener" title="Our anime miniatures site — One Piece STL collection">Anime Minis ↗</a>
     </nav>
     <button class="nav-burger" id="nav-burger" aria-label="Open menu">&#9776;</button>
     <a class="header__cta" href="#minis">Shop Models ↓</a>
@@ -324,7 +330,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 <section class="section" id="minis">
   <header class="section__head">
     <h1 class="section__title">Bandit Miniature STL Files</h1>
-    <p class="section__count">7 minis</p>
+    <p class="section__count">6 minis + 1 bundle</p>
   </header>
   <p class="cat-intro">Six highway robbers ready to spring an ambush on any forest road — the cool-headed captain, a crossbow sniper, a hex-sorcerer, an axe-swinging brute, a twin-dagger rogue and a duelist swordsman. Every bandit miniature STL is watertight-repaired, sized for 32mm D&amp;D and Pathfinder play, and prints clean on FDM or resin up to 200mm display scale.</p>
   <div style="height:24px"></div>
@@ -486,7 +492,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
         <li><a href="/#faq">FAQ &amp; print help</a></li>
         <li><a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a></li>
         <li><a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" data-shop-link="footer">Etsy shop</a></li>
-        <li><a href="https://www.dndanimeminiatures.com/">Anime minis (One Piece)</a></li>
+        <li><a href="https://www.dndanimeminiatures.com/" target="_blank" rel="noopener">Anime minis (One Piece)</a></li>
       </ul>
     </div>
   </div>
