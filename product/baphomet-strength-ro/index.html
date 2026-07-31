@@ -73,6 +73,25 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 32px 20px; text-align: center; font-size: 13px; color: var(--text-dim); }
 .footer a { color: var(--accent); }
+.custom { max-width: var(--max); margin: 0 auto; padding: 30px 20px 40px; }
+.custom__box { background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover)); border: 1px solid var(--accent); border-radius: 16px; padding: 36px 28px; text-align: center; }
+.custom__box h2 { font-family: 'Cinzel', serif; font-size: clamp(24px, 3.5vw, 34px); letter-spacing: 1px; margin-bottom: 10px; }
+.custom__price { color: var(--gold); font-weight: 800; }
+.custom__box > p { color: var(--text-dim); max-width: 640px; margin: 0 auto 20px; font-size: 15px; }
+.custom__steps { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.custom__step { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; font-size: 13px; color: var(--text-dim); max-width: 220px; text-align: left; }
+.custom__step b { color: var(--text); display: block; margin-bottom: 4px; }
+.custom__form { display: flex; gap: 10px; max-width: 600px; margin: 0 auto; }
+@media (max-width: 600px) { .custom__form { flex-direction: column; } }
+.custom__input { flex: 1; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: inherit; }
+.custom__input:focus { outline: none; border-color: var(--accent); }
+.custom__btn { background: var(--accent); color: #fff; border: 0; cursor: pointer; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: inherit; transition: transform .15s, box-shadow .15s; }
+.custom__btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+.custom__note { margin-top: 12px; font-size: 12px; color: var(--text-dim); }
+.custom__note a { color: var(--accent); }
+.custom-banner { background: var(--bg-card); border: 1px dashed var(--accent); border-radius: 12px; padding: 16px 18px; font-size: 14px; color: var(--text-dim); text-align: center; margin: 18px 0; }
+.custom-banner b { color: var(--text); }
+.custom-banner a { color: var(--accent); font-weight: 700; white-space: nowrap; }
 
 .crumbs { max-width: var(--max); margin: 0 auto; padding: 18px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
@@ -122,8 +141,11 @@ img { display: block; max-width: 100%; height: auto; }
 .faq__item summary::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--accent); }
 .faq__item[open] summary::after { content: '−'; }
 .faq__item p { padding: 0 20px 16px; color: var(--text-dim); font-size: 14px; }
-.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform .2s, border-color .2s; }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform .2s, border-color .2s; display: flex; flex-direction: column; }
 .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.card__link { display: block; flex: 1; }
+.card__etsy { display: block; padding: 8px 12px; font-size: 11px; font-weight: 600; color: var(--text-dim); text-align: center; border-top: 1px solid var(--border); transition: color .15s; }
+.card__etsy:hover { color: var(--accent); }
 .card__img-wrap { position: relative; aspect-ratio: 1/1; overflow: hidden; background: #0a0a0a; }
 .card__img { width: 100%; height: 100%; object-fit: cover; }
 .card__body { padding: 12px; }
@@ -213,6 +235,8 @@ img { display: block; max-width: 100%; height: auto; }
       <p>Download links appear right after payment — Etsy checkout also available above.<br>Need a different format or custom adjustments?</p>
       <a class="cta-btn cta-btn--etsy" href="https://www.etsy.com/listing/4510880934" target="_blank" rel="noopener" style="padding:12px 20px" data-slug="baphomet-strength-ro" data-title="Baphomet Demon Lord STL — Ragnarok Online MVP Boss Strength Pose DnD 3D Print Miniature" data-price="4.00" data-cat="Baphomet Demon Lords — RO MVP Bosses" data-listing-id="4510880934" data-list="product-page-message">Message us on Etsy</a>
     </div>
+    
+<div class="custom-banner">🎨 <b>Create your custom figure</b> — send us a link to a photo and we make it into a printable mini. From <b>$15 USD</b> per figure. <a href="/#custom">Request yours →</a></div>
   </div>
 </main>
 
@@ -285,20 +309,26 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
 <section class="related">
   <h2>More from Baphomet Demon Lords — RO MVP Bosses</h2>
   <div class="related__grid">
-    <a class="card" href="../baphomet-mage-ro/" aria-label="View Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print" data-slug="baphomet-mage-ro" data-title="Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print" data-price="4.00" data-cat="Baphomet Demon Lords — RO MVP Bosses" data-listing-id="4510880784" data-list="related">
+    <div class="card" data-slug="baphomet-mage-ro" data-title="Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print" data-price="4.00" data-cat="Baphomet Demon Lords — RO MVP Bosses" data-listing-id="4510880784" data-list="related">
+      <a class="card__link" href="../baphomet-mage-ro/" aria-label="View Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print">
       <div class="card__img-wrap"><img class="card__img" src="../../images/baphomet-mage-ro-1.png" alt="Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View &amp; Buy →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
       </div>
-    </a>
-    <a class="card" href="../baphomet-speed-ro/" aria-label="View Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print" data-slug="baphomet-speed-ro" data-title="Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print" data-price="4.00" data-cat="Baphomet Demon Lords — RO MVP Bosses" data-listing-id="4510880878" data-list="related">
+      </a>
+      <a class="card__etsy" href="https://www.etsy.com/listing/4510880784" target="_blank" rel="noopener" aria-label="Buy Baphomet Demon Mage STL — Ragnarok Online Inspired Spellcaster Boss Miniature DnD Print on Etsy">or buy on Etsy →</a>
+    </div>
+    <div class="card" data-slug="baphomet-speed-ro" data-title="Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print" data-price="4.00" data-cat="Baphomet Demon Lords — RO MVP Bosses" data-listing-id="4510880878" data-list="related">
+      <a class="card__link" href="../baphomet-speed-ro/" aria-label="View Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print">
       <div class="card__img-wrap"><img class="card__img" src="../../images/baphomet-speed-ro-1.png" alt="Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View &amp; Buy →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
       </div>
-    </a>
+      </a>
+      <a class="card__etsy" href="https://www.etsy.com/listing/4510880878" target="_blank" rel="noopener" aria-label="Buy Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print on Etsy">or buy on Etsy →</a>
+    </div>
   </div>
 </section>
 
