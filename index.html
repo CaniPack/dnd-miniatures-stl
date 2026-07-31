@@ -1078,6 +1078,14 @@ img { display: block; max-width: 100%; height: auto; }
 <!-- /oculto metrics beacon -->
 <script>if(navigator.sendBeacon&&location.pathname.indexOf('/oculto')!==0){try{navigator.sendBeacon('/api/track',JSON.stringify({p:location.pathname}))}catch(e){}}</script>
 
+<!-- Omnisend web tracking -->
+<script type="text/javascript">
+window.omnisend = window.omnisend || [];
+omnisend.push(["brandID", "6a6bccbdc6ac202127c1d48a"]);
+omnisend.push(["track", "$pageViewed"]);
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+</script>
+
 <script src="https://www.paypal.com/sdk/js?client-id=ARQlghbBNJ8PC7_91voWgXSPX-K7X2ZZ8ABK-oSAiKkdg3m7NAvl7RmAGKw0BHn4-30OyU0Wb3GbZg1Z&currency=USD&intent=capture"></script>
 <script>
 (function(){
@@ -1117,6 +1125,10 @@ img { display: block; max-width: 100%; height: auto; }
           value: 15, currency: 'USD', affiliation: 'PayPal Direct',
           items: [{ item_id: 'custom-figure', item_name: 'Custom figure commission', price: 15, quantity: 1 }]
         });
+        try {
+          var pEmail = details && details.payer && details.payer.email_address;
+          if (pEmail && window.omnisend && typeof omnisend.identifyContact === 'function') omnisend.identifyContact({ email: pEmail });
+        } catch (e) { /* ignore */ }
       });
     },
     onError: function(err){ console.error('PayPal error', err); }

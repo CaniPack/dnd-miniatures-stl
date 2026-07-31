@@ -131,6 +131,35 @@ module.exports = async function handler(req, res) {
       } catch (e) { /* ignore */ }
     }
 
+    // Omnisend "placed order" event — best-effort, never blocks delivery
+    try {
+      const omniKey = process.env.OMNISEND_API_KEY;
+      if (omniKey && buyerEmail) {
+        await fetch('https://api.omnisend.com/api/events', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: omniKey, 'Omnisend-Version': '2026-03-15' },
+          body: JSON.stringify({
+            eventName: 'placed order',
+            origin: 'api',
+            eventVersion: 'v2',
+            eventTime: new Date().toISOString(),
+            contact: { email: buyerEmail },
+            properties: {
+              orderID: orderID,
+              orderNumber: orderID,
+              currency: 'USD',
+              createdAt: new Date().toISOString(),
+              totalPrice: paid,
+              subTotalPrice: paid,
+              paymentStatus: 'paid',
+              fulfillmentStatus: 'fulfilled',
+              lineItems: [{ productID: slug, productTitle: product.title, productPrice: product.price, productQuantity: 1 }],
+            },
+          }),
+        });
+      }
+    } catch (e) { /* ignore */ }
+
     res.status(200).json({ ok: true, links: product.links, emailSent: emailSent, buyerEmail: buyerEmail });
   } catch (e) {
     res.status(500).json({ error: 'delivery_failed' });

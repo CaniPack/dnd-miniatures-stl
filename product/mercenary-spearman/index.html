@@ -468,6 +468,10 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
       return actions.order.capture().then(function(details){
         openBox();
         trackPurchase(details);
+        try {
+          var pEmail = details && details.payer && details.payer.email_address;
+          if (pEmail && window.omnisend && typeof omnisend.identifyContact === 'function') omnisend.identifyContact({ email: pEmail });
+        } catch (e) { /* ignore */ }
         return fetch('/api/deliver', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -489,6 +493,29 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
 <script defer src="/_vercel/insights/script.js"></script>
 <!-- /oculto metrics beacon -->
 <script>if(navigator.sendBeacon&&location.pathname.indexOf('/oculto')!==0){try{navigator.sendBeacon('/api/track',JSON.stringify({p:location.pathname}))}catch(e){}}</script>
+
+<!-- Omnisend web tracking -->
+<script type="text/javascript">
+window.omnisend = window.omnisend || [];
+omnisend.push(["brandID", "6a6bccbdc6ac202127c1d48a"]);
+omnisend.push(["track", "$pageViewed"]);
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+</script>
+<script>
+omnisend.push(["track", "viewed product", {
+  origin: "api",
+  eventVersion: "v4",
+  properties: { product: {
+    id: "mercenary-spearman",
+    title: "Mercenary Spearman STL — DnD Fantasy Sellsword Pike Phalanx Miniature 3D Print Tabletop RPG",
+    currency: "USD",
+    price: 400,
+    imageUrl: "https://www.dndminiaturestl.com/images/mercenary-spearman-1.png",
+    url: "https://www.dndminiaturestl.com/product/mercenary-spearman/",
+    status: "inStock"
+  } }
+}]);
+</script>
 
 </body>
 </html>
