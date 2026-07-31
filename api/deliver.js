@@ -95,7 +95,9 @@ module.exports = async function handler(req, res) {
     const paid = parseFloat(((cap.amount || {}).value) || ((unit.amount || {}).value) || '0');
     if (!(paid + 0.001 >= product.price)) { res.status(402).json({ error: 'amount_mismatch' }); return; }
 
-    const buyerEmail = (order.payer || {}).email_address || null;
+    const prefEmail = (typeof body.email === 'string' && body.email.trim().length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(body.email.trim()))
+      ? body.email.trim().toLowerCase() : null;
+    const buyerEmail = prefEmail || (order.payer || {}).email_address || null;
     let emailSent = false;
     const key = process.env.RESEND_API_KEY;
     if (key && buyerEmail) {
