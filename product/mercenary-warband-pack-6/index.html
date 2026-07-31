@@ -99,6 +99,57 @@ img { display: block; max-width: 100%; height: auto; }
 .custom-banner b { color: var(--text); }
 .custom-banner a { color: var(--accent); font-weight: 700; white-space: nowrap; }
 
+.cart-fab { position: fixed; right: 18px; bottom: 18px; z-index: 90; background: var(--accent); color: #fff; border: 0; cursor: pointer; width: 56px; height: 56px; border-radius: 50%; font-size: 24px; box-shadow: 0 6px 20px rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; }
+.cart-fab__count { position: absolute; top: -4px; right: -4px; background: var(--gold); color: #000; font-size: 12px; font-weight: 800; min-width: 20px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 0 5px; }
+.cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 95; }
+.cart-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); background: var(--bg-card); border-left: 1px solid var(--border); z-index: 96; display: flex; flex-direction: column; }
+.cart-drawer__head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--border); }
+.cart-drawer__head h3 { font-size: 18px; }
+.cart-drawer__close { background: none; border: 0; color: var(--text-dim); font-size: 26px; cursor: pointer; line-height: 1; }
+.cart-items { flex: 1; overflow-y: auto; padding: 12px 20px; }
+.cart-empty { color: var(--text-dim); font-size: 14px; text-align: center; padding: 40px 0; }
+.cart-item { display: flex; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.cart-item img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; }
+.cart-item__title { flex: 1; font-size: 13px; font-weight: 600; line-height: 1.3; }
+.cart-item__price { color: var(--gold); font-weight: 700; font-size: 14px; white-space: nowrap; }
+.cart-item__rm { background: none; border: 0; color: var(--text-dim); font-size: 18px; cursor: pointer; }
+.cart-foot { border-top: 1px solid var(--border); padding: 14px 20px 18px; }
+.cart-coupon { display: flex; gap: 8px; margin-bottom: 12px; }
+.cart-coupon input { flex: 1; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 13px; font-family: inherit; text-transform: uppercase; }
+.cart-coupon input:focus { outline: none; border-color: var(--accent); }
+.cart-coupon button { background: var(--bg); border: 1px solid var(--accent); color: var(--accent); border-radius: 8px; padding: 10px 14px; font-weight: 700; font-size: 12px; cursor: pointer; font-family: inherit; }
+.cart-coupon__msg { font-size: 12px; margin: -6px 0 10px; }
+.cart-coupon__msg--ok { color: #6fdc9c; }
+.cart-coupon__msg--bad { color: #e07b7b; }
+.cart-total { display: flex; justify-content: space-between; font-size: 14px; color: var(--text-dim); margin-bottom: 4px; }
+.cart-total--final { font-size: 18px; color: var(--text); font-weight: 800; margin: 8px 0 12px; }
+.cart-total--final span:last-child { color: var(--gold); }
+#cart-paypal { max-width: 100%; }
+.cart-note { font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 8px; }
+.cart-success { padding: 10px 0; }
+.cart-success h4 { color: var(--gold); margin-bottom: 8px; }
+.cart-success p { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+.cart-success a.cart-dl { display: block; padding: 8px 0; color: #6fdc9c; font-weight: 700; font-size: 14px; }
+.dice-fab { position: fixed; left: 18px; bottom: 18px; z-index: 90; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text); cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13px; font-weight: 700; font-family: inherit; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
+.dice-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 97; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.dice-box { background: var(--bg-card); border: 1px solid var(--gold); border-radius: 16px; max-width: 430px; width: 100%; padding: 30px 26px; text-align: center; position: relative; }
+.dice-box__close { position: absolute; top: 10px; right: 14px; background: none; border: 0; color: var(--text-dim); font-size: 24px; cursor: pointer; }
+.dice-box h3 { font-size: 26px; margin-bottom: 6px; }
+.dice-box__sub { color: var(--text-dim); font-size: 14px; margin-bottom: 18px; }
+.dice-d20 { width: 110px; height: 110px; margin: 0 auto 18px; background: var(--accent); clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%); display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; color: #fff; transition: transform .1s; }
+.dice-d20--rolling { animation: diceShake .5s infinite; }
+@keyframes diceShake { 0%{transform:rotate(-8deg) scale(1)} 25%{transform:rotate(6deg) scale(1.06)} 50%{transform:rotate(-5deg) scale(.97)} 75%{transform:rotate(8deg) scale(1.04)} 100%{transform:rotate(-8deg) scale(1)} }
+.dice-form { display: flex; flex-direction: column; gap: 10px; }
+.dice-form input { padding: 13px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: inherit; }
+.dice-form input:focus { outline: none; border-color: var(--gold); }
+.dice-form button { background: var(--gold); color: #000; border: 0; cursor: pointer; padding: 13px; border-radius: 10px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: inherit; }
+.dice-form button:disabled { opacity: .6; cursor: wait; }
+.dice-err { color: #e07b7b; font-size: 12px; min-height: 15px; }
+.dice-note { color: var(--text-dim); font-size: 11px; margin-top: 12px; }
+.dice-result h4 { color: var(--gold); font-size: 22px; margin-bottom: 8px; }
+.dice-result p { color: var(--text-dim); font-size: 14px; }
+.dice-result b { color: var(--text); }
+
 .crumbs { max-width: var(--max); margin: 0 auto; padding: 18px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -216,6 +267,7 @@ img { display: block; max-width: 100%; height: auto; }
     <div class="pp-wrap" id="buy">
       <div class="pp-divider">Pay with PayPal or card — instant download</div>
       <div id="paypal-button-container"></div>
+      <button type="button" class="cta-btn cta-btn--etsy" style="cursor:pointer;width:100%;max-width:360px;margin-top:10px" data-add-cart data-slug="mercenary-warband-pack-6" data-title="Mercenary Warband Pack 6" data-price="30.00" data-img="/images/mercenary-warband-pack-6-1.png">&#128722; Add to cart — buy several at once</button>
       <div id="pp-success" class="pp-success" hidden>
         <h3 id="pp-title">✅ Payment received — thank you!</h3>
         <p id="pp-note">Preparing your download links…</p>
@@ -487,6 +539,269 @@ omnisend.push(["track", "viewed product", {
     status: "inStock"
   } }
 }]);
+</script>
+
+<button class="cart-fab" id="cart-fab" aria-label="Open cart" hidden>&#128722;<span class="cart-fab__count" id="cart-count" hidden>0</span></button>
+<button class="dice-fab" id="dice-fab" hidden>&#127922; Roll for a discount</button>
+<div class="cart-overlay" id="cart-overlay" hidden></div>
+<aside class="cart-drawer" id="cart-drawer" hidden aria-label="Shopping cart">
+  <div class="cart-drawer__head"><h3>Your Cart</h3><button class="cart-drawer__close" id="cart-close" aria-label="Close cart">&times;</button></div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-foot" id="cart-foot">
+    <div class="cart-coupon">
+      <input id="coupon-input" placeholder="Discount code" aria-label="Discount code">
+      <button id="coupon-apply" type="button">Apply</button>
+    </div>
+    <div class="cart-coupon__msg" id="coupon-msg"></div>
+    <div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+    <div class="cart-total" id="cart-discount-row" hidden><span id="cart-discount-label">Discount</span><span id="cart-discount">-$0.00</span></div>
+    <div class="cart-total cart-total--final"><span>Total</span><span id="cart-total">$0.00</span></div>
+    <div id="cart-paypal"></div>
+    <div class="cart-note">Instant download — links shown here and emailed to your PayPal address.</div>
+  </div>
+  <div class="cart-foot cart-success" id="cart-success" hidden>
+    <h4>&#9989; Payment received!</h4>
+    <p id="cart-success-note">Your files are ready — links also sent to your PayPal email.</p>
+    <div id="cart-links"></div>
+  </div>
+</aside>
+<div class="dice-overlay" id="dice-overlay" hidden>
+  <div class="dice-box">
+    <button class="dice-box__close" id="dice-close" aria-label="Close">&times;</button>
+    <div class="dice-d20" id="dice-d20">20</div>
+    <div id="dice-step1">
+      <h3>Roll the D20</h3>
+      <p class="dice-box__sub">One roll per adventurer. Whatever number it lands on is your discount — up to <b>20% off</b>.</p>
+      <div class="dice-form">
+        <input id="dice-email" type="email" placeholder="your@email.com" autocomplete="email" aria-label="Your email">
+        <div class="dice-err" id="dice-err"></div>
+        <button id="dice-roll" type="button">Roll for my discount</button>
+      </div>
+      <p class="dice-note">Your discount code will be emailed to this address — double-check it's correct. No spam, unsubscribe anytime.</p>
+    </div>
+    <div class="dice-result" id="dice-result" hidden>
+      <h4 id="dice-result-title">You rolled a 20!</h4>
+      <p id="dice-result-text"></p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var CART_KEY = 'stl_cart', COUPON_KEY = 'stl_coupon', D20_SHOWN = 'd20_shown', D20_DONE = 'd20_done';
+  function readCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
+  function writeCart(c){ try { localStorage.setItem(CART_KEY, JSON.stringify(c)); } catch(e){} renderCart(); }
+  function readCoupon(){ try { return JSON.parse(localStorage.getItem(COUPON_KEY)); } catch(e){ return null; } }
+  function money(n){ return '$' + n.toFixed(2); }
+  function subtotal(){ return readCart().reduce(function(t,i){ return t + (parseFloat(i.price)||0); }, 0); }
+  function discountPct(){ var c = readCoupon(); return c && c.percent ? c.percent : 0; }
+  function total(){ return Math.round(subtotal() * (100 - discountPct())) / 100; }
+
+  var fab = document.getElementById('cart-fab');
+  var paypalRendered = false;
+
+  window.addToCart = function(item){
+    var cart = readCart();
+    for (var i = 0; i < cart.length; i++) if (cart[i].slug === item.slug) { openCart(); return; }
+    cart.push(item); writeCart(cart); openCart();
+  };
+  function removeFromCart(slug){ writeCart(readCart().filter(function(i){ return i.slug !== slug; })); }
+
+  function renderCart(){
+    var cart = readCart();
+    var count = document.getElementById('cart-count');
+    fab.hidden = false;
+    count.hidden = cart.length === 0;
+    count.textContent = cart.length;
+    var box = document.getElementById('cart-items');
+    if (!cart.length) { box.innerHTML = '<div class="cart-empty">Your cart is empty.<br>Add some minis!</div>'; }
+    else {
+      box.innerHTML = cart.map(function(i){
+        return '<div class="cart-item">'
+          + (i.img ? '<img src="' + i.img + '" alt="">' : '')
+          + '<div class="cart-item__title">' + i.title + '</div>'
+          + '<div class="cart-item__price">' + money(parseFloat(i.price)||0) + '</div>'
+          + '<button class="cart-item__rm" data-rm="' + i.slug + '" aria-label="Remove">&times;</button>'
+          + '</div>';
+      }).join('');
+    }
+    var pct = discountPct();
+    document.getElementById('cart-subtotal').textContent = money(subtotal());
+    var dRow = document.getElementById('cart-discount-row');
+    dRow.hidden = !pct;
+    if (pct) {
+      document.getElementById('cart-discount-label').textContent = 'Discount (' + pct + '% off)';
+      document.getElementById('cart-discount').textContent = '-' + money(subtotal() - total());
+    }
+    document.getElementById('cart-total').textContent = money(total());
+    var c = readCoupon();
+    if (c && c.code) document.getElementById('coupon-input').value = c.code;
+  }
+
+  function openCart(){
+    document.getElementById('cart-overlay').hidden = false;
+    document.getElementById('cart-drawer').hidden = false;
+    renderCart();
+    if (!paypalRendered) renderCartPaypal();
+  }
+  function closeCart(){
+    document.getElementById('cart-overlay').hidden = true;
+    document.getElementById('cart-drawer').hidden = true;
+  }
+
+  function renderCartPaypal(){
+    var host = document.getElementById('cart-paypal');
+    if (!host || typeof paypal === 'undefined' || !paypal.Buttons) return;
+    paypalRendered = true;
+    paypal.Buttons({
+      style: { layout: 'horizontal', color: 'gold', shape: 'rect', label: 'paypal', height: 42, tagline: false },
+      onClick: function(data, actions){ return readCart().length ? actions.resolve() : actions.reject(); },
+      createOrder: function(data, actions){
+        var cart = readCart(), c = readCoupon();
+        var sub = subtotal(), tot = total(), disc = Math.round((sub - tot) * 100) / 100;
+        return actions.order.create({
+          purchase_units: [{
+            description: ('DnD Miniatures STL — ' + cart.length + ' item' + (cart.length > 1 ? 's' : '')).slice(0, 127),
+            custom_id: ('CART|' + (c && c.code ? c.code : '-')).slice(0, 127),
+            amount: {
+              value: tot.toFixed(2), currency_code: 'USD',
+              breakdown: {
+                item_total: { value: sub.toFixed(2), currency_code: 'USD' },
+                discount: { value: disc.toFixed(2), currency_code: 'USD' }
+              }
+            },
+            items: cart.map(function(i){
+              return { name: String(i.title).slice(0, 127), sku: String(i.slug).slice(0, 127), quantity: '1',
+                unit_amount: { value: (parseFloat(i.price)||0).toFixed(2), currency_code: 'USD' } };
+            })
+          }]
+        });
+      },
+      onApprove: function(data, actions){
+        return actions.order.capture().then(function(details){
+          try {
+            var pEmail = details && details.payer && details.payer.email_address;
+            if (pEmail && window.omnisend && typeof omnisend.identifyContact === 'function') omnisend.identifyContact({ email: pEmail });
+          } catch(e){}
+          if (typeof gtag === 'function') gtag('event', 'purchase', {
+            transaction_id: (details && details.id) || '', value: total(), currency: 'USD', affiliation: 'PayPal Direct',
+            items: readCart().map(function(i){ return { item_id: i.slug, item_name: i.title, price: parseFloat(i.price)||0, quantity: 1 }; })
+          });
+          document.getElementById('cart-foot').hidden = true;
+          var ok = document.getElementById('cart-success');
+          ok.hidden = false;
+          return fetch('/api/deliver', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orderID: data.orderID }) })
+            .then(function(r){ return r.json(); })
+            .then(function(res){
+              if (res && res.ok && res.links) {
+                document.getElementById('cart-links').innerHTML = res.links.map(function(l){
+                  return '<a class="cart-dl" href="' + l.url + '" target="_blank" rel="noopener">&#11015; ' + l.name + ' (.STL)</a>';
+                }).join('');
+                if (res.emailSent && res.buyerEmail) document.getElementById('cart-success-note').innerHTML = 'Links below — also emailed to <b>' + res.buyerEmail + '</b>. Save them now.';
+              } else {
+                document.getElementById('cart-success-note').textContent = 'Payment OK but links could not load. Email us with your PayPal order ID ' + data.orderID + ' and we will send them right away.';
+              }
+              localStorage.removeItem(CART_KEY); localStorage.removeItem(COUPON_KEY);
+            }).catch(function(){
+              document.getElementById('cart-success-note').textContent = 'Payment OK but links could not load. Email us with your PayPal order ID ' + data.orderID + '.';
+            });
+        });
+      },
+      onError: function(err){ console.error('PayPal cart error', err); }
+    }).render('#cart-paypal');
+  }
+
+  document.addEventListener('click', function(e){
+    var rm = e.target.closest && e.target.closest('[data-rm]');
+    if (rm) { removeFromCart(rm.getAttribute('data-rm')); return; }
+    var add = e.target.closest && e.target.closest('[data-add-cart]');
+    if (add) {
+      addToCart({ slug: add.getAttribute('data-slug'), title: add.getAttribute('data-title'),
+        price: add.getAttribute('data-price'), img: add.getAttribute('data-img') });
+      if (typeof gtag === 'function') gtag('event', 'add_to_cart', { currency: 'USD', value: parseFloat(add.getAttribute('data-price'))||0,
+        items: [{ item_id: add.getAttribute('data-slug'), item_name: add.getAttribute('data-title'), price: parseFloat(add.getAttribute('data-price'))||0, quantity: 1 }] });
+    }
+  });
+  document.getElementById('cart-fab').addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+
+  document.getElementById('coupon-apply').addEventListener('click', function(){
+    var code = (document.getElementById('coupon-input').value || '').trim().toUpperCase();
+    var msg = document.getElementById('coupon-msg');
+    if (!code) { localStorage.removeItem(COUPON_KEY); msg.textContent = ''; renderCart(); return; }
+    msg.className = 'cart-coupon__msg'; msg.textContent = 'Checking…';
+    fetch('/api/coupon', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: code }) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if (res && res.valid) {
+          try { localStorage.setItem(COUPON_KEY, JSON.stringify({ code: code, percent: res.percent })); } catch(e){}
+          msg.className = 'cart-coupon__msg cart-coupon__msg--ok'; msg.textContent = res.percent + '% discount applied!';
+        } else {
+          localStorage.removeItem(COUPON_KEY);
+          msg.className = 'cart-coupon__msg cart-coupon__msg--bad'; msg.textContent = 'That code is not valid.';
+        }
+        renderCart();
+      })
+      .catch(function(){ msg.className = 'cart-coupon__msg cart-coupon__msg--bad'; msg.textContent = 'Could not check the code — try again.'; });
+  });
+
+  /* ===== D20 discount popup ===== */
+  var diceFab = document.getElementById('dice-fab');
+  function d20Done(){ try { return !!localStorage.getItem(D20_DONE); } catch(e){ return false; } }
+  function openDice(){ document.getElementById('dice-overlay').hidden = false; }
+  function closeDice(){ document.getElementById('dice-overlay').hidden = true; }
+  document.getElementById('dice-close').addEventListener('click', closeDice);
+  document.getElementById('dice-overlay').addEventListener('click', function(e){ if (e.target === this) closeDice(); });
+  diceFab.addEventListener('click', openDice);
+  if (!d20Done()) {
+    diceFab.hidden = false;
+    var shown = false;
+    try { shown = !!localStorage.getItem(D20_SHOWN); } catch(e){}
+    if (!shown) setTimeout(function(){ try { localStorage.setItem(D20_SHOWN, '1'); } catch(e){} openDice(); }, 6000);
+  }
+
+  document.getElementById('dice-roll').addEventListener('click', function(){
+    var btn = this, err = document.getElementById('dice-err');
+    var email = (document.getElementById('dice-email').value || '').trim().toLowerCase();
+    err.textContent = '';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Please enter a valid email — your code is sent there.'; return; }
+    btn.disabled = true; btn.textContent = 'Rolling…';
+    var die = document.getElementById('dice-d20');
+    die.classList.add('dice-d20--rolling');
+    var spin = setInterval(function(){ die.textContent = 1 + Math.floor(Math.random() * 20); }, 90);
+    fetch('/api/dice', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        setTimeout(function(){
+          clearInterval(spin); die.classList.remove('dice-d20--rolling');
+          if (!res || !res.ok) {
+            btn.disabled = false; btn.textContent = 'Roll for my discount';
+            err.textContent = (res && res.error === 'bad_email') ? 'That email looks wrong — check it and try again.' : 'Something failed — try again in a minute.';
+            return;
+          }
+          die.textContent = res.roll;
+          document.getElementById('dice-step1').hidden = true;
+          var out = document.getElementById('dice-result');
+          out.hidden = false;
+          document.getElementById('dice-result-title').textContent = 'You rolled a ' + res.roll + ' — ' + res.roll + '% off!';
+          document.getElementById('dice-result-text').innerHTML = res.emailSent
+            ? 'Your discount code is on its way to <b>' + email + '</b>. Check your inbox (and spam) — then paste the code in the cart at checkout.'
+            : 'You won ' + res.roll + '% off, but we could not send the email. Write to us and mention this roll — we will send your code.';
+          try { localStorage.setItem(D20_DONE, '1'); } catch(e){}
+          diceFab.hidden = true;
+          try { if (window.omnisend && typeof omnisend.identifyContact === 'function') omnisend.identifyContact({ email: email }); } catch(e){}
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', { currency: 'USD', value: res.roll });
+        }, 1600);
+      })
+      .catch(function(){
+        clearInterval(spin); die.classList.remove('dice-d20--rolling');
+        btn.disabled = false; btn.textContent = 'Roll for my discount';
+        err.textContent = 'Network error — try again.';
+      });
+  });
+
+  renderCart();
+})();
 </script>
 
 </body>

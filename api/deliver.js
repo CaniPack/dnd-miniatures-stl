@@ -5,6 +5,19 @@ const SITE_NAME = "DnD Miniatures STL";
 const CONTACT = "info@dndminiaturestl.com"; // customer-facing (reply-to)
 const OWNER = "seba.fyd@gmail.com"; // private sale notifications
 const DEFAULT_FROM = SITE_NAME + ' <downloads@dndminiaturestl.com>';
+
+function couponPercent(code) {
+  try {
+    const m = /^D20-(\d{1,2})-([A-Z0-9]{4})-([A-Fa-f0-9]{8})$/i.exec(String(code || '').trim());
+    if (!m) return 0;
+    const pct = parseInt(m[1], 10);
+    if (!(pct >= 1 && pct <= 20)) return 0;
+    const secret = process.env.COUPON_SECRET || process.env.PAYPAL_SECRET || 'd20-static';
+    const sig = require('crypto').createHmac('sha256', secret).update('d20:' + pct + ':' + m[2].toUpperCase()).digest('hex').slice(0, 8);
+    return sig === m[3].toLowerCase() ? pct : 0;
+  } catch (e) { return 0; }
+}
+
 const LOGO_URL = "https://www.dndminiaturestl.com/images/logo.png";
 
 async function paypalToken(base, id, secret) {
@@ -50,7 +63,32 @@ module.exports = async function handler(req, res) {
 
     const unit = (order.purchase_units || [])[0] || {};
     const slug = unit.custom_id;
-    const product = slug && CATALOG[slug];
+
+    let product = null;
+    if (slug && slug.indexOf('CART') === 0) {
+      const coupon = (slug.split('|')[1] || '').trim();
+      const cartItems = unit.items || [];
+      const slugsInCart = [];
+      for (const it of cartItems) {
+        const s = String(it.sku || '').trim();
+        if (CATALOG[s] && slugsInCart.indexOf(s) === -1) slugsInCart.push(s);
+      }
+      if (slugsInCart.length) {
+        const cartSubtotal = slugsInCart.reduce((t, s) => t + CATALOG[s].price, 0);
+        const pct = couponPercent(coupon);
+        const required = Math.round(cartSubtotal * (100 - pct)) / 100;
+        const allLinks = [];
+        for (const s of slugsInCart) for (const l of CATALOG[s].links) allLinks.push(l);
+        product = {
+          title: slugsInCart.map(s => CATALOG[s].title.split(' STL')[0]).join(', ').slice(0, 110) + ' (' + slugsInCart.length + (slugsInCart.length > 1 ? ' items' : ' item') + ')',
+          price: required,
+          links: allLinks,
+        };
+      }
+    } else {
+      product = slug && CATALOG[slug];
+    }
+
     if (!product) { res.status(404).json({ error: 'unknown_product' }); return; }
 
     const cap = (((unit.payments || {}).captures) || [])[0] || {};
