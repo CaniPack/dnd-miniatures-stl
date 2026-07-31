@@ -76,9 +76,39 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 800px) {
   .nav__item:not(.header__cta), .nav__dropdown { display: none; }
 }
-.footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 36px 20px; text-align: center; font-size: 13px; color: var(--text-dim); background: #090b10; }
-.footer a { color: var(--gold); }
-.footer a:hover { color: #fff; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .03; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+::selection { background: var(--gold); color: #14100a; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+html { scrollbar-color: #2a3040 #0b0d13; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #0b0d13; }
+::-webkit-scrollbar-thumb { background: #262b38; border-radius: 6px; border: 3px solid #0b0d13; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+.ornament { display: flex; align-items: center; gap: 14px; max-width: 380px; margin: 0 auto 26px; color: var(--gold); }
+.ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.ornament::after { background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.ornament i { font-style: normal; width: 9px; height: 9px; border: 1px solid var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+.kicker { font-size: 11px; font-weight: 800; letter-spacing: 2.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.totop { position: fixed; right: 18px; bottom: calc(86px + env(safe-area-inset-bottom, 0px)); z-index: 89; width: 42px; height: 42px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-dim); font-size: 17px; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.4); transition: color .15s, border-color .15s; }
+.totop:hover { color: var(--gold); border-color: var(--gold-soft); }
+.nav-burger { display: none; background: none; border: 1px solid var(--border); color: #ccd1db; border-radius: 8px; width: 40px; height: 40px; font-size: 17px; cursor: pointer; flex-shrink: 0; }
+@media (max-width: 800px) { .nav-burger { display: block; } }
+.mobilenav { position: fixed; inset: 0; z-index: 94; background: rgba(9,11,16,.97); backdrop-filter: blur(8px); padding: 84px 30px 30px; overflow-y: auto; }
+.mobilenav a { display: block; padding: 16px 0; font-size: 19px; font-weight: 700; color: var(--parchment); border-bottom: 1px solid var(--border); font-family: 'Cinzel', serif; letter-spacing: 1px; }
+.mobilenav a:hover { color: var(--gold); }
+.mobilenav__close { position: absolute; top: 18px; right: 20px; background: none; border: 0; color: var(--text-dim); font-size: 32px; cursor: pointer; line-height: 1; }
+.footer { border-top: 1px solid var(--border); margin-top: 40px; font-size: 13px; color: var(--text-dim); background: #090b10; }
+.footer__grid { max-width: var(--max); margin: 0 auto; padding: 46px 20px 30px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 36px; text-align: left; }
+@media (max-width: 700px) { .footer__grid { grid-template-columns: 1fr; gap: 26px; } }
+.footer__brand img { height: 46px; width: auto; }
+.footer__brand p { margin-top: 12px; font-size: 13px; color: var(--text-dim); max-width: 340px; line-height: 1.6; }
+.footer h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 12px; font-weight: 700; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { padding: 4px 0; }
+.footer a { color: var(--text-dim); }
+.footer a:hover { color: var(--gold); }
+.footer__legal { border-top: 1px solid var(--border); padding: 18px 20px; text-align: center; font-size: 12px; color: #6d7482; }
+.footer__legal a { color: var(--gold-soft); }
 .custom { max-width: var(--max); margin: 0 auto; padding: 30px 20px 40px; }
 .custom__box { background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover)); border: 1px solid var(--accent); border-radius: 16px; padding: 36px 28px; text-align: center; }
 .custom__box h2 { font-family: 'Cinzel', serif; font-size: clamp(24px, 3.5vw, 34px); letter-spacing: 1px; margin-bottom: 10px; }
@@ -138,6 +168,35 @@ img { display: block; max-width: 100%; height: auto; }
 .cart-success h4 { color: var(--gold); margin-bottom: 8px; }
 .cart-success p { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
 .cart-success a.cart-dl { display: block; padding: 8px 0; color: #6fdc9c; font-weight: 700; font-size: 14px; }
+.cart-upgrade { background: linear-gradient(135deg, rgba(212,175,55,.12), transparent); border: 1px solid var(--gold-soft, var(--gold)); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; font-size: 13px; }
+.cart-upgrade b { color: var(--gold); }
+.cart-upgrade button { margin-top: 8px; width: 100%; background: var(--gold); color: #14100a; border: 0; cursor: pointer; padding: 10px; border-radius: 8px; font-weight: 800; font-size: 13px; font-family: inherit; }
+.cart-upgrade button:hover { filter: brightness(1.08); }
+.added-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.66); z-index: 98; display: flex; align-items: center; justify-content: center; padding: 16px; overflow-y: auto; }
+.added-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; max-width: 440px; width: 100%; padding: 22px; position: relative; max-height: 92vh; overflow-y: auto; animation: dicePop .2s ease; }
+.added-box__close { position: absolute; top: 8px; right: 12px; background: none; border: 0; color: var(--text-dim); font-size: 24px; cursor: pointer; line-height: 1; }
+.added-head { color: #6fdc9c; font-weight: 800; font-size: 15px; margin-bottom: 12px; }
+.added-item { display: flex; gap: 12px; align-items: center; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.added-item img { width: 52px; height: 52px; border-radius: 8px; object-fit: cover; }
+.added-item__title { flex: 1; font-size: 13px; font-weight: 600; line-height: 1.3; }
+.added-item__price { color: var(--gold); font-weight: 700; white-space: nowrap; }
+.added-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; }
+.added-recs-title { font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 8px; }
+.added-rec { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.added-rec:last-of-type { border-bottom: 0; }
+.added-rec img { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; }
+.added-rec__title { flex: 1; font-size: 12px; font-weight: 600; line-height: 1.3; }
+.added-rec__price { color: var(--gold); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.added-rec__btn { background: transparent; border: 1px solid var(--accent); color: var(--accent); border-radius: 8px; padding: 7px 12px; font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; white-space: nowrap; transition: background .15s, color .15s; }
+.added-rec__btn:hover { background: var(--accent); color: #fff; }
+.added-actions { display: flex; gap: 10px; margin-top: 14px; }
+.added-actions button { flex: 1; padding: 12px; border-radius: 9px; font-weight: 800; font-size: 13px; cursor: pointer; font-family: inherit; text-transform: uppercase; letter-spacing: .5px; }
+.added-actions .added-checkout { background: var(--accent); color: #fff; border: 0; }
+.added-actions .added-checkout:hover { filter: brightness(1.1); }
+.added-actions .added-continue { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
+.added-actions .added-continue:hover { color: var(--text); border-color: var(--text-dim); }
+.card__img, .gallery__main img, .added-item img, .added-rec img { opacity: 0; transition: opacity .35s ease; }
+.card__img.img-in, .gallery__main img.img-in, .added-item img.img-in, .added-rec img.img-in { opacity: 1; }
 .dice-fab { position: fixed; left: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 90; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text); cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13px; font-weight: 700; font-family: inherit; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
 .dice-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 97; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
 .dice-box { background: var(--bg-card); border: 1px solid var(--gold); border-radius: 16px; max-width: 430px; width: 100%; padding: 30px 26px; text-align: center; position: relative; max-height: 92vh; overflow-y: auto; animation: dicePop .22s ease; }
@@ -189,6 +248,9 @@ img { display: block; max-width: 100%; height: auto; }
 .hero__cta:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 10px 28px var(--accent-glow); }
 .hero__cta--ghost { background: rgba(11,13,19,.5); border: 1px solid var(--gold-soft); color: var(--parchment); box-shadow: none; }
 .hero__cta--ghost:hover { border-color: var(--gold); box-shadow: 0 8px 22px rgba(212,175,55,.18); }
+.trustbar { border-bottom: 1px solid var(--border); background: #0d1017; }
+.trustbar__inner { max-width: var(--max); margin: 0 auto; padding: 13px 20px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 12.5px; color: var(--text-dim); }
+.trustbar__inner b { color: var(--parchment); font-weight: 600; }
 .features { max-width: var(--max); margin: 0 auto; padding: 44px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
 .feature { background: linear-gradient(180deg, var(--bg-card), #10141d); border: 1px solid var(--border); padding: 22px 20px; border-radius: 10px; transition: border-color .2s; }
 .feature:hover { border-color: rgba(212,175,55,.4); }
@@ -277,6 +339,7 @@ img { display: block; max-width: 100%; height: auto; }
   <a class="nav__item" href="#custom">Custom Minis</a>
   <a class="nav__item" href="#faq">FAQ</a>
   <a class="nav__item" href="https://www.dndanimeminiatures.com/" title="Our anime miniatures site — One Piece STL collection">Anime Minis ↗</a></nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu">&#9776;</button>
     <a class="header__cta" href="#bundles">Shop Models ↓</a>
   </div>
 </header>
@@ -300,6 +363,15 @@ img { display: block; max-width: 100%; height: auto; }
   </div>
 </section>
 
+<div class="trustbar">
+  <div class="trustbar__inner">
+    <span>&#128737; <b>Secure checkout</b> · PayPal &amp; cards</span>
+    <span>&#9889; <b>Instant download</b> · files in minutes</span>
+    <span>&#128424; <b>Sell your prints</b> · commercial license included</span>
+    <span>&#9993; <b>Real human support</b> · info@dndminiaturestl.com</span>
+  </div>
+</div>
+
 <section class="features">
   <div class="feature"><div class="feature__icon">🎲</div><h3>D&amp;D &amp; Pathfinder Ready</h3><p>Each mini sized for 32mm grid play with a suggested D&amp;D 5e / Pathfinder statblock fit.</p></div>
   <div class="feature"><div class="feature__icon">🛠️</div><h3>Repaired &amp; Watertight</h3><p>Every STL pre-processed in Blender: watertight, decimated, scanned for thin walls and overhangs.</p></div>
@@ -321,8 +393,12 @@ img { display: block; max-width: 100%; height: auto; }
 
 
 <section id="bundles" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Bundles · Multi-Mini Warband Packs</h2>
+    <div>
+      <div class="kicker">Best value · full warbands</div>
+      <h2 class="section__title">Bundles · Multi-Mini Warband Packs</h2>
+    </div>
     <p class="section__count">4 minis</p>
   </header>
   <div class="grid">
@@ -402,8 +478,12 @@ img { display: block; max-width: 100%; height: auto; }
 </section>
 
 <section id="road-bandits-highway-robbers" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Road Bandits — Highway Robbers</h2>
+    <div>
+      <div class="kicker">Warband collection</div>
+      <h2 class="section__title">Road Bandits — Highway Robbers</h2>
+    </div>
     <p class="section__count">6 minis</p>
   </header>
   <div class="grid">
@@ -519,8 +599,12 @@ img { display: block; max-width: 100%; height: auto; }
 </section>
 
 <section id="mercenary-warband-sellswords-for-hire" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Mercenary Warband — Sellswords for Hire</h2>
+    <div>
+      <div class="kicker">Warband collection</div>
+      <h2 class="section__title">Mercenary Warband — Sellswords for Hire</h2>
+    </div>
     <p class="section__count">6 minis</p>
   </header>
   <div class="grid">
@@ -636,8 +720,12 @@ img { display: block; max-width: 100%; height: auto; }
 </section>
 
 <section id="orc-warband-ragnarok-online-inspired" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Orc Warband — Ragnarok Online Inspired</h2>
+    <div>
+      <div class="kicker">Warband collection</div>
+      <h2 class="section__title">Orc Warband — Ragnarok Online Inspired</h2>
+    </div>
     <p class="section__count">6 minis</p>
   </header>
   <div class="grid">
@@ -753,8 +841,12 @@ img { display: block; max-width: 100%; height: auto; }
 </section>
 
 <section id="minotaur-warband-labyrinth-guardians" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Minotaur Warband — Labyrinth Guardians</h2>
+    <div>
+      <div class="kicker">Warband collection</div>
+      <h2 class="section__title">Minotaur Warband — Labyrinth Guardians</h2>
+    </div>
     <p class="section__count">6 minis</p>
   </header>
   <div class="grid">
@@ -870,8 +962,12 @@ img { display: block; max-width: 100%; height: auto; }
 </section>
 
 <section id="baphomet-demon-lords-ro-mvp-bosses" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Baphomet Demon Lords — RO MVP Bosses</h2>
+    <div>
+      <div class="kicker">Warband collection</div>
+      <h2 class="section__title">Baphomet Demon Lords — RO MVP Bosses</h2>
+    </div>
     <p class="section__count">3 minis</p>
   </header>
   <div class="grid">
@@ -933,8 +1029,12 @@ img { display: block; max-width: 100%; height: auto; }
 </section>
 
 <section id="monsters-terrain" class="section">
+  <div class="ornament" aria-hidden="true"><i></i></div>
   <header class="section__head">
-    <h2 class="section__title">Monsters &amp; Terrain</h2>
+    <div>
+      <div class="kicker">Warband collection</div>
+      <h2 class="section__title">Monsters &amp; Terrain</h2>
+    </div>
     <p class="section__count">5 minis</p>
   </header>
   <div class="grid">
@@ -1117,10 +1217,37 @@ img { display: block; max-width: 100%; height: auto; }
   </div>
 </section>
 
+
 <footer class="footer">
-  <p>Browse by warband: <a href="/bandit-stl/">Bandit STL</a> · <a href="/mercenary-stl/">Mercenary STL</a> · <a href="/orc-stl/">Orc STL</a> · <a href="/minotaur-stl/">Minotaur STL</a> · <a href="/baphomet-stl/">Baphomet Demon Lord STL</a> · <a href="/monster-stl/">DnD Monster &amp; Terrain STL</a></p>
-  <p>Into anime? Check our sister site <a href="https://www.dndanimeminiatures.com/">DND Anime Miniatures</a> — One Piece characters as 3D printable minis.</p>
-  <p>© 2026 DnD Miniatures STL · <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" data-shop-link="footer">Etsy Shop</a> · Original fantasy creature designs. Some minis are fan-art inspired by Gravity Co.'s Ragnarok Online (no official affiliation).</p>
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img src="images/logo-dark.png" alt="DnD Miniatures STL" width="347" height="104">
+      <p>Hand-curated fantasy miniature STLs for D&amp;D, Pathfinder and tabletop RPG. Every mesh repaired, watertight and print-tested — FDM and resin, 32mm to display scale.</p>
+    </div>
+    <div>
+      <h4>The Armory</h4>
+      <ul>
+        <li><a href="/bandit-stl/">Bandit Miniature</a></li>
+        <li><a href="/mercenary-stl/">Mercenary Miniature</a></li>
+        <li><a href="/orc-stl/">Orc Miniature</a></li>
+        <li><a href="/minotaur-stl/">Minotaur Miniature</a></li>
+        <li><a href="/baphomet-stl/">Baphomet Demon Lord</a></li>
+        <li><a href="/monster-stl/">DnD Monster &amp; Terrain</a></li>
+        <li><a href="#bundles">Warband Bundles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Adventurer Support</h4>
+      <ul>
+        <li><a href="#custom">Custom figures — flat $15</a></li>
+        <li><a href="#faq">FAQ &amp; print help</a></li>
+        <li><a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a></li>
+        <li><a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" data-shop-link="footer">Etsy shop</a></li>
+        <li><a href="https://www.dndanimeminiatures.com/">Anime minis (One Piece)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">© 2026 DnD Miniatures STL · License: personal use + selling physical prints · Original fantasy creature designs. Some minis are fan-art inspired by Gravity Co.'s Ragnarok Online (no official affiliation).</div>
 </footer>
 
 <script>
@@ -1218,6 +1345,7 @@ omnisend.push(["track", "$pageViewed"]);
   }).render('#custom-paypal');
 })();
 </script>
+<script>window.CART_RECS=[{"slug":"mercenary-warband-pack-6","title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1.png"},{"slug":"minotaur-warband-pack-6","title":"Minotaur Warband Bundle 6","price":20,"img":"/images/minotaur-warband-pack-6-1.png"},{"slug":"orc-warband-pack-6-ro","title":"Orc Warband Bundle 6","price":20,"img":"/images/orc-warband-pack-6-ro-1.png"},{"slug":"road-bandits-pack-6","title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1.png"}];window.CART_BUNDLES={"road-bandits-pack-6":{"title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1.png","members":["bandit-captain","bandit-crossbowman","bandit-sorcerer","bandit-brute","bandit-rogue","bandit-swordsman"],"memberPrices":{"bandit-captain":4,"bandit-crossbowman":4,"bandit-sorcerer":4,"bandit-brute":4,"bandit-rogue":4,"bandit-swordsman":4}},"mercenary-warband-pack-6":{"title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1.png","members":["mercenary-captain","mercenary-sword-shield","mercenary-spearman","mercenary-sword-axe","mercenary-veteran","mercenary-twin-blades"],"memberPrices":{"mercenary-captain":4,"mercenary-sword-shield":4,"mercenary-spearman":4,"mercenary-sword-axe":4,"mercenary-veteran":4,"mercenary-twin-blades":4}},"orc-warband-pack-6-ro":{"title":"Orc Warband Bundle 6","price":20,"img":"/images/orc-warband-pack-6-ro-1.png","members":["orc-baby-ro","orc-hero-ro","orc-lady-ro","orc-lord-ro","orc-archer-ro","orc-axe-warrior-ro"],"memberPrices":{"orc-baby-ro":4,"orc-hero-ro":4,"orc-lady-ro":4,"orc-lord-ro":4,"orc-archer-ro":4,"orc-axe-warrior-ro":4}},"minotaur-warband-pack-6":{"title":"Minotaur Warband Bundle 6","price":20,"img":"/images/minotaur-warband-pack-6-1.png","members":["minotaur-dual-axe","minotaur-greataxe","minotaur-spear","minotaur-shaman","minotaur-morning-star","minotaur-trident"],"memberPrices":{"minotaur-dual-axe":4,"minotaur-greataxe":4,"minotaur-spear":4,"minotaur-shaman":4,"minotaur-morning-star":4,"minotaur-trident":4}}};</script>
 
 <button class="cart-fab" id="cart-fab" aria-label="Open cart" hidden>&#128722;<span class="cart-fab__count" id="cart-count" hidden>0</span></button>
 <button class="dice-fab" id="dice-fab" hidden>&#127922; Roll for a discount</button>
@@ -1226,6 +1354,7 @@ omnisend.push(["track", "$pageViewed"]);
   <div class="cart-drawer__head"><h3>Your Cart</h3><button class="cart-drawer__close" id="cart-close" aria-label="Close cart">&times;</button></div>
   <div class="cart-items" id="cart-items"></div>
   <div class="cart-foot" id="cart-foot">
+    <div id="cart-upgrade"></div>
     <div class="cart-coupon">
       <input id="coupon-input" placeholder="Discount code" aria-label="Discount code">
       <button id="coupon-apply" type="button">Apply</button>
@@ -1243,6 +1372,20 @@ omnisend.push(["track", "$pageViewed"]);
     <div id="cart-links"></div>
   </div>
 </aside>
+<div class="added-overlay" id="added-overlay" hidden>
+  <div class="added-box">
+    <button class="added-box__close" id="added-close" aria-label="Close">&times;</button>
+    <div class="added-head">&#10003; Added to your cart</div>
+    <div class="added-item" id="added-item"></div>
+    <div class="added-sub" id="added-sub"></div>
+    <div id="added-upgrade"></div>
+    <div id="added-recs"></div>
+    <div class="added-actions">
+      <button class="added-continue" id="added-continue" type="button">Keep browsing</button>
+      <button class="added-checkout" id="added-checkout" type="button">Checkout</button>
+    </div>
+  </div>
+</div>
 <div class="dice-overlay" id="dice-overlay" hidden>
   <div class="dice-box">
     <button class="dice-box__close" id="dice-close" aria-label="Close">&times;</button>
@@ -1296,10 +1439,93 @@ omnisend.push(["track", "$pageViewed"]);
 
   window.addToCart = function(item){
     var cart = readCart();
-    for (var i = 0; i < cart.length; i++) if (cart[i].slug === item.slug) { openCart(); return; }
-    cart.push(item); writeCart(cart); openCart();
+    for (var i = 0; i < cart.length; i++) if (cart[i].slug === item.slug) { openAdded(item, true); return; }
+    cart.push(item); writeCart(cart); openAdded(item, false);
   };
   function removeFromCart(slug){ writeCart(readCart().filter(function(i){ return i.slug !== slug; })); }
+
+  function imgFade(){
+    var imgs = document.querySelectorAll('.card__img, .gallery__main img, .added-item img, .added-rec img');
+    for (var i = 0; i < imgs.length; i++) (function(im){
+      if (im.classList.contains('img-in')) return;
+      function mark(){ im.classList.add('img-in'); }
+      if (im.complete && im.naturalWidth) { mark(); return; }
+      im.addEventListener('load', mark);
+      setTimeout(mark, 1800);
+    })(imgs[i]);
+  }
+
+  /* ===== bundle upgrade (window.CART_BUNDLES = { bundleSlug: {title, price, img, members, memberPrices} }) ===== */
+  function upgradeOffer(){
+    var map = window.CART_BUNDLES || {};
+    var cart = readCart();
+    var inCart = {};
+    for (var i = 0; i < cart.length; i++) inCart[cart[i].slug] = true;
+    for (var bslug in map) {
+      if (inCart[bslug]) continue;
+      var b = map[bslug], have = 0;
+      for (var j = 0; j < b.members.length; j++) if (inCart[b.members[j]]) have++;
+      if (have >= 3) {
+        var singles = 0;
+        for (var s in (b.memberPrices || {})) singles += b.memberPrices[s];
+        return { slug: bslug, title: b.title, price: b.price, img: b.img, members: b.members, count: b.members.length, save: Math.max(0, Math.round((singles - b.price) * 100) / 100) };
+      }
+    }
+    return null;
+  }
+  function upgradeHtml(off){
+    if (!off) return '';
+    return '<div class="cart-upgrade">&#127873; <b>Upgrade:</b> get all ' + off.count + ' minis for $' + off.price.toFixed(2)
+      + (off.save ? ' — save $' + off.save.toFixed(2) + ' vs singles' : '') + '.'
+      + '<button type="button" data-upgrade="' + off.slug + '">Upgrade my cart — $' + off.price.toFixed(2) + '</button></div>';
+  }
+  function renderUpgrades(){
+    var off = upgradeOffer();
+    var d = document.getElementById('cart-upgrade');
+    if (d) d.innerHTML = upgradeHtml(off);
+    var m = document.getElementById('added-upgrade');
+    if (m) m.innerHTML = upgradeHtml(off);
+  }
+  function applyUpgrade(bslug){
+    var b = (window.CART_BUNDLES || {})[bslug];
+    if (!b) return;
+    var cart = readCart().filter(function(i){ return b.members.indexOf(i.slug) === -1; });
+    cart.push({ slug: bslug, title: b.title, price: String(b.price), img: b.img });
+    writeCart(cart);
+    if (typeof gtag === 'function') gtag('event', 'add_to_cart', { currency: 'USD', value: b.price,
+      items: [{ item_id: bslug, item_name: b.title, price: b.price, quantity: 1 }] });
+    closeAdded();
+    openCart();
+  }
+
+  /* ===== added-to-cart modal (recs come from window.CART_RECS injected per page) ===== */
+  function openAdded(item, already){
+    var cart = readCart();
+    document.getElementById('added-item').innerHTML =
+      (item.img ? '<img src="' + item.img + '" alt="">' : '')
+      + '<div class="added-item__title">' + item.title + (already ? ' <span style="color:var(--text-dim);font-weight:400">(already in cart)</span>' : '') + '</div>'
+      + '<div class="added-item__price">' + money(parseFloat(item.price)||0) + '</div>';
+    document.getElementById('added-sub').textContent = cart.length + (cart.length > 1 ? ' items' : ' item') + ' · Subtotal ' + money(subtotal());
+    var inCart = {};
+    for (var i = 0; i < cart.length; i++) inCart[cart[i].slug] = true;
+    var recs = (window.CART_RECS || []).filter(function(r){ return !inCart[r.slug] && r.slug !== item.slug; }).slice(0, 3);
+    document.getElementById('added-recs').innerHTML = !recs.length ? '' :
+      '<div class="added-recs-title">Adventurers also print</div>' + recs.map(function(r){
+        return '<div class="added-rec"><img src="' + (r.img || '') + '" alt="">'
+          + '<div class="added-rec__title">' + r.title + '</div>'
+          + '<div class="added-rec__price">$' + (parseFloat(r.price)||0).toFixed(2) + '</div>'
+          + '<button class="added-rec__btn" type="button" data-add-cart data-slug="' + r.slug + '" data-title="' + String(r.title).replace(/"/g, '&quot;') + '" data-price="' + r.price + '" data-img="' + (r.img || '') + '">+ Add</button></div>';
+      }).join('');
+    if (recs.length && typeof gtag === 'function') gtag('event', 'view_item_list', {
+      item_list_name: 'added-modal-recs',
+      items: recs.map(function(r){ return { item_id: r.slug, item_name: r.title, price: parseFloat(r.price)||0 }; })
+    });
+    renderUpgrades();
+    document.getElementById('added-overlay').hidden = false;
+    lockScroll();
+    imgFade();
+  }
+  function closeAdded(){ document.getElementById('added-overlay').hidden = true; lockScroll(); }
 
   function renderCart(){
     var cart = readCart();
@@ -1330,12 +1556,15 @@ omnisend.push(["track", "$pageViewed"]);
     document.getElementById('cart-total').textContent = money(total());
     var c = readCoupon();
     if (c && c.code) document.getElementById('coupon-input').value = c.code;
+    renderUpgrades();
+    imgFade();
   }
 
   function lockScroll(){
     var cartOpen = !document.getElementById('cart-drawer').hidden;
     var diceOpen = !document.getElementById('dice-overlay').hidden;
-    document.documentElement.style.overflow = (cartOpen || diceOpen) ? 'hidden' : '';
+    var addedOpen = !document.getElementById('added-overlay').hidden;
+    document.documentElement.style.overflow = (cartOpen || diceOpen || addedOpen) ? 'hidden' : '';
   }
   function openCart(){
     document.getElementById('cart-overlay').hidden = false;
@@ -1413,6 +1642,8 @@ omnisend.push(["track", "$pageViewed"]);
   }
 
   document.addEventListener('click', function(e){
+    var up = e.target.closest && e.target.closest('[data-upgrade]');
+    if (up) { applyUpgrade(up.getAttribute('data-upgrade')); return; }
     var rm = e.target.closest && e.target.closest('[data-rm]');
     if (rm) { removeFromCart(rm.getAttribute('data-rm')); return; }
     var add = e.target.closest && e.target.closest('[data-add-cart]');
@@ -1426,6 +1657,10 @@ omnisend.push(["track", "$pageViewed"]);
   document.getElementById('cart-fab').addEventListener('click', openCart);
   document.getElementById('cart-close').addEventListener('click', closeCart);
   document.getElementById('cart-overlay').addEventListener('click', closeCart);
+  document.getElementById('added-close').addEventListener('click', closeAdded);
+  document.getElementById('added-continue').addEventListener('click', closeAdded);
+  document.getElementById('added-checkout').addEventListener('click', function(){ closeAdded(); openCart(); });
+  document.getElementById('added-overlay').addEventListener('click', function(e){ if (e.target === this) closeAdded(); });
 
   document.getElementById('coupon-apply').addEventListener('click', function(){
     var code = (document.getElementById('coupon-input').value || '').trim().toUpperCase();
@@ -1455,7 +1690,7 @@ omnisend.push(["track", "$pageViewed"]);
   document.getElementById('dice-close').addEventListener('click', closeDice);
   document.getElementById('dice-overlay').addEventListener('click', function(e){ if (e.target === this) closeDice(); });
   diceFab.addEventListener('click', openDice);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeCart(); closeDice(); } });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeCart(); closeDice(); closeAdded(); } });
   if (!d20Done()) {
     diceFab.hidden = false;
     var shown = false;
@@ -1507,6 +1742,36 @@ omnisend.push(["track", "$pageViewed"]);
   });
 
   renderCart();
+  imgFade();
+})();
+</script>
+
+<div class="mobilenav" id="mobilenav" hidden>
+  <button class="mobilenav__close" id="mobilenav-close" aria-label="Close menu">&times;</button>
+  <nav class="mobilenav__links" id="mobilenav-links"></nav>
+</div>
+<button class="totop" id="totop" hidden aria-label="Back to top">&#8593;</button>
+<script>
+(function(){
+  var burger = document.getElementById('nav-burger');
+  var panel = document.getElementById('mobilenav');
+  if (burger && panel) {
+    var links = document.querySelectorAll('.nav a');
+    var html = '';
+    for (var i = 0; i < links.length; i++) html += '<a href="' + links[i].getAttribute('href') + '">' + links[i].textContent + '</a>';
+    document.getElementById('mobilenav-links').innerHTML = html;
+    burger.addEventListener('click', function(){ panel.hidden = false; document.documentElement.style.overflow = 'hidden'; });
+    panel.addEventListener('click', function(e){
+      if (e.target.closest('a') || e.target.id === 'mobilenav-close' || e.target === panel) { panel.hidden = true; document.documentElement.style.overflow = ''; }
+    });
+  }
+  var totop = document.getElementById('totop');
+  var buybar = document.getElementById('buybar');
+  addEventListener('scroll', function(){
+    if (totop) totop.hidden = scrollY < 700;
+    if (buybar) buybar.hidden = scrollY < 480;
+  }, { passive: true });
+  if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
 

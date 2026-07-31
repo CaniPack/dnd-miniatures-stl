@@ -72,9 +72,39 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 800px) {
   .nav__item:not(.header__cta), .nav__dropdown { display: none; }
 }
-.footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 36px 20px; text-align: center; font-size: 13px; color: var(--text-dim); background: #090b10; }
-.footer a { color: var(--gold); }
-.footer a:hover { color: #fff; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .03; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+::selection { background: var(--gold); color: #14100a; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+html { scrollbar-color: #2a3040 #0b0d13; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #0b0d13; }
+::-webkit-scrollbar-thumb { background: #262b38; border-radius: 6px; border: 3px solid #0b0d13; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+.ornament { display: flex; align-items: center; gap: 14px; max-width: 380px; margin: 0 auto 26px; color: var(--gold); }
+.ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.ornament::after { background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.ornament i { font-style: normal; width: 9px; height: 9px; border: 1px solid var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+.kicker { font-size: 11px; font-weight: 800; letter-spacing: 2.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.totop { position: fixed; right: 18px; bottom: calc(86px + env(safe-area-inset-bottom, 0px)); z-index: 89; width: 42px; height: 42px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-dim); font-size: 17px; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.4); transition: color .15s, border-color .15s; }
+.totop:hover { color: var(--gold); border-color: var(--gold-soft); }
+.nav-burger { display: none; background: none; border: 1px solid var(--border); color: #ccd1db; border-radius: 8px; width: 40px; height: 40px; font-size: 17px; cursor: pointer; flex-shrink: 0; }
+@media (max-width: 800px) { .nav-burger { display: block; } }
+.mobilenav { position: fixed; inset: 0; z-index: 94; background: rgba(9,11,16,.97); backdrop-filter: blur(8px); padding: 84px 30px 30px; overflow-y: auto; }
+.mobilenav a { display: block; padding: 16px 0; font-size: 19px; font-weight: 700; color: var(--parchment); border-bottom: 1px solid var(--border); font-family: 'Cinzel', serif; letter-spacing: 1px; }
+.mobilenav a:hover { color: var(--gold); }
+.mobilenav__close { position: absolute; top: 18px; right: 20px; background: none; border: 0; color: var(--text-dim); font-size: 32px; cursor: pointer; line-height: 1; }
+.footer { border-top: 1px solid var(--border); margin-top: 40px; font-size: 13px; color: var(--text-dim); background: #090b10; }
+.footer__grid { max-width: var(--max); margin: 0 auto; padding: 46px 20px 30px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 36px; text-align: left; }
+@media (max-width: 700px) { .footer__grid { grid-template-columns: 1fr; gap: 26px; } }
+.footer__brand img { height: 46px; width: auto; }
+.footer__brand p { margin-top: 12px; font-size: 13px; color: var(--text-dim); max-width: 340px; line-height: 1.6; }
+.footer h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 12px; font-weight: 700; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { padding: 4px 0; }
+.footer a { color: var(--text-dim); }
+.footer a:hover { color: var(--gold); }
+.footer__legal { border-top: 1px solid var(--border); padding: 18px 20px; text-align: center; font-size: 12px; color: #6d7482; }
+.footer__legal a { color: var(--gold-soft); }
 .custom { max-width: var(--max); margin: 0 auto; padding: 30px 20px 40px; }
 .custom__box { background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover)); border: 1px solid var(--accent); border-radius: 16px; padding: 36px 28px; text-align: center; }
 .custom__box h2 { font-family: 'Cinzel', serif; font-size: clamp(24px, 3.5vw, 34px); letter-spacing: 1px; margin-bottom: 10px; }
@@ -134,6 +164,35 @@ img { display: block; max-width: 100%; height: auto; }
 .cart-success h4 { color: var(--gold); margin-bottom: 8px; }
 .cart-success p { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
 .cart-success a.cart-dl { display: block; padding: 8px 0; color: #6fdc9c; font-weight: 700; font-size: 14px; }
+.cart-upgrade { background: linear-gradient(135deg, rgba(212,175,55,.12), transparent); border: 1px solid var(--gold-soft, var(--gold)); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; font-size: 13px; }
+.cart-upgrade b { color: var(--gold); }
+.cart-upgrade button { margin-top: 8px; width: 100%; background: var(--gold); color: #14100a; border: 0; cursor: pointer; padding: 10px; border-radius: 8px; font-weight: 800; font-size: 13px; font-family: inherit; }
+.cart-upgrade button:hover { filter: brightness(1.08); }
+.added-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.66); z-index: 98; display: flex; align-items: center; justify-content: center; padding: 16px; overflow-y: auto; }
+.added-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; max-width: 440px; width: 100%; padding: 22px; position: relative; max-height: 92vh; overflow-y: auto; animation: dicePop .2s ease; }
+.added-box__close { position: absolute; top: 8px; right: 12px; background: none; border: 0; color: var(--text-dim); font-size: 24px; cursor: pointer; line-height: 1; }
+.added-head { color: #6fdc9c; font-weight: 800; font-size: 15px; margin-bottom: 12px; }
+.added-item { display: flex; gap: 12px; align-items: center; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.added-item img { width: 52px; height: 52px; border-radius: 8px; object-fit: cover; }
+.added-item__title { flex: 1; font-size: 13px; font-weight: 600; line-height: 1.3; }
+.added-item__price { color: var(--gold); font-weight: 700; white-space: nowrap; }
+.added-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; }
+.added-recs-title { font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 8px; }
+.added-rec { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.added-rec:last-of-type { border-bottom: 0; }
+.added-rec img { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; }
+.added-rec__title { flex: 1; font-size: 12px; font-weight: 600; line-height: 1.3; }
+.added-rec__price { color: var(--gold); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.added-rec__btn { background: transparent; border: 1px solid var(--accent); color: var(--accent); border-radius: 8px; padding: 7px 12px; font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; white-space: nowrap; transition: background .15s, color .15s; }
+.added-rec__btn:hover { background: var(--accent); color: #fff; }
+.added-actions { display: flex; gap: 10px; margin-top: 14px; }
+.added-actions button { flex: 1; padding: 12px; border-radius: 9px; font-weight: 800; font-size: 13px; cursor: pointer; font-family: inherit; text-transform: uppercase; letter-spacing: .5px; }
+.added-actions .added-checkout { background: var(--accent); color: #fff; border: 0; }
+.added-actions .added-checkout:hover { filter: brightness(1.1); }
+.added-actions .added-continue { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
+.added-actions .added-continue:hover { color: var(--text); border-color: var(--text-dim); }
+.card__img, .gallery__main img, .added-item img, .added-rec img { opacity: 0; transition: opacity .35s ease; }
+.card__img.img-in, .gallery__main img.img-in, .added-item img.img-in, .added-rec img.img-in { opacity: 1; }
 .dice-fab { position: fixed; left: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 90; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text); cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13px; font-weight: 700; font-family: inherit; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
 .dice-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 97; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
 .dice-box { background: var(--bg-card); border: 1px solid var(--gold); border-radius: 16px; max-width: 430px; width: 100%; padding: 30px 26px; text-align: center; position: relative; max-height: 92vh; overflow-y: auto; animation: dicePop .22s ease; }
@@ -175,11 +234,41 @@ img { display: block; max-width: 100%; height: auto; }
 .product { max-width: var(--max); margin: 0 auto; padding: 30px 20px 60px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; }
 @media (max-width: 800px) { .product { grid-template-columns: 1fr; gap: 24px; } }
 .gallery { display: flex; flex-direction: column; gap: 10px; }
-.gallery__main { aspect-ratio: 1/1; background: #0a0a0a; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+@media (min-width: 801px) { .gallery { position: sticky; top: 100px; align-self: start; } }
+.gallery__main { aspect-ratio: 1/1; background: #0d0f16; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); cursor: zoom-in; position: relative; }
+.gallery__main::after { content: '⛶'; position: absolute; right: 12px; bottom: 10px; color: rgba(255,255,255,.65); font-size: 18px; background: rgba(11,13,19,.55); border-radius: 8px; padding: 3px 9px; pointer-events: none; }
 .gallery__main img { width: 100%; height: 100%; object-fit: cover; }
-.gallery__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.gallery__thumb { aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: #0a0a0a; }
+.gallery__thumbs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.gallery__thumb { aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: #0d0f16; padding: 0; cursor: pointer; transition: border-color .15s, opacity .15s; opacity: .7; }
+.gallery__thumb:hover { opacity: 1; }
+.gallery__thumb.is-active { border-color: var(--gold); opacity: 1; }
 .gallery__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.lightbox { position: fixed; inset: 0; z-index: 99; background: rgba(5,6,10,.93); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.lightbox img { max-width: min(92vw, 900px); max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 24px 80px rgba(0,0,0,.7); }
+.lightbox__close { position: absolute; top: 16px; right: 22px; background: none; border: 0; color: #cfd4de; font-size: 38px; cursor: pointer; line-height: 1; }
+.buy-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 20px; }
+.buy-chips span { font-size: 11.5px; font-weight: 600; color: var(--text-dim); background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; letter-spacing: .3px; }
+.buy-chips span b { color: #6fdc9c; font-weight: 700; }
+.wyg { background: linear-gradient(180deg, var(--bg-card), #10141d); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 18px 0; }
+.wyg h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.6px; color: var(--parchment); margin-bottom: 10px; }
+.wyg li { list-style: none; display: flex; gap: 10px; align-items: baseline; padding: 5px 0; font-size: 13.5px; color: var(--text-dim); }
+.wyg li b { color: var(--text); font-weight: 600; }
+.wband { display: flex; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(212,175,55,.12), var(--bg-card)); border: 1px solid var(--gold-soft); border-radius: 12px; padding: 16px; margin: 18px 0; }
+.wband img { width: 92px; height: 92px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.wband__kicker { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 4px; }
+.wband__body { flex: 1; }
+.wband__body b { font-size: 15px; color: var(--parchment); }
+.wband__body p { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+.wband__cta { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
+.wband__cta button { background: var(--gold); color: #14100a; border: 0; cursor: pointer; padding: 11px 16px; border-radius: 8px; font-weight: 800; font-size: 13px; font-family: inherit; white-space: nowrap; }
+.wband__cta button:hover { filter: brightness(1.08); }
+.wband__cta a { font-size: 12px; color: var(--gold); text-align: center; font-weight: 600; }
+@media (max-width: 560px) { .wband { flex-wrap: wrap; } .wband__cta { flex-direction: row; width: 100%; } .wband__cta button { flex: 1; } }
+.buybar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 85; background: rgba(13,16,23,.97); backdrop-filter: blur(10px); border-top: 1px solid var(--border); padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); display: none; align-items: center; justify-content: space-between; gap: 14px; }
+@media (max-width: 800px) { .buybar { display: flex; } }
+.buybar__price { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold); font-weight: 700; line-height: 1; }
+.buybar__note { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+.buybar__btn { background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 13px 30px; border-radius: 8px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .8px; border: 1px solid rgba(0,0,0,.35); }
 .info h1 { font-family: 'Cinzel', serif; font-size: clamp(26px, 4vw, 40px); line-height: 1.1; letter-spacing: 1px; margin-bottom: 12px; color: var(--parchment); }
 .info__cat { color: var(--gold); text-transform: uppercase; letter-spacing: 1.8px; font-size: 11px; font-weight: 700; margin-bottom: 14px; }
 .info__price-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 18px 0 24px; }
@@ -187,14 +276,16 @@ img { display: block; max-width: 100%; height: auto; }
 .info__price-label { color: var(--text-dim); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 .cta-btn { display: inline-block; background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 16px 26px; border-radius: 8px; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(0,0,0,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 4px 14px rgba(0,0,0,.4); transition: transform .15s, box-shadow .15s, filter .15s; }
 .cta-btn:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 8px 24px var(--accent-glow); }
-.cta-btn--etsy { background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-size: 13px; padding: 12px 20px; }
+.cta-btn--etsy { background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-size: 13px; padding: 12px 20px; box-shadow: none; }
 .cta-btn--etsy:hover { border-color: var(--accent); color: var(--accent); box-shadow: none; }
+.cta-btn--cart { background: var(--bg-card-hover); border: 1px solid var(--gold-soft); color: var(--parchment); font-size: 13px; padding: 13px 20px; box-shadow: none; }
+.cta-btn--cart:hover { border-color: var(--gold); box-shadow: 0 6px 18px rgba(212,175,55,.15); }
 .cta-block { background: var(--bg-card); border: 1px solid var(--border); padding: 22px; border-radius: 12px; text-align: center; margin: 18px 0; }
 .cta-block p { color: var(--text-dim); margin-bottom: 12px; font-size: 14px; }
 .specs { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; border-radius: 12px; margin: 18px 0; }
 .specs h2 { font-size: 16px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
-.specs__row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; gap: 12px; }
-.specs__row:last-child { border-bottom: none; }
+.specs__row { display: flex; justify-content: space-between; padding: 9px 10px; font-size: 13.5px; gap: 12px; border-radius: 6px; }
+.specs__row:nth-child(odd) { background: rgba(255,255,255,.025); }
 .specs__row b { color: var(--text-dim); font-weight: 500; }
 .intro { font-size: 17px; line-height: 1.6; margin: 16px 0 24px; }
 .full-desc { max-width: var(--max); margin: 0 auto; padding: 40px 20px; }
@@ -209,6 +300,12 @@ img { display: block; max-width: 100%; height: auto; }
 .related { max-width: var(--max); margin: 0 auto; padding: 40px 20px; }
 .related h2 { font-family: 'Cinzel', serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
 .related__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+@media (max-width: 700px) {
+  .related__grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 10px; scrollbar-width: thin; }
+  .related__grid .card { flex: 0 0 74%; max-width: 260px; scroll-snap-align: start; }
+}
+.card__add { display: block; width: calc(100% - 24px); margin: 0 12px 12px; background: transparent; border: 1px solid var(--accent); color: var(--accent-hi); border-radius: 8px; padding: 9px; font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; text-transform: uppercase; letter-spacing: .5px; transition: background .15s, color .15s; }
+.card__add:hover { background: var(--accent); color: #fff; }
 .faq { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 .faq h2 { font-family: 'Cinzel', serif; font-size: 28px; margin-bottom: 18px; letter-spacing: 1px; text-align: center; }
 .faq__item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
@@ -259,6 +356,7 @@ img { display: block; max-width: 100%; height: auto; }
       <a class="nav__item" href="../../index.html#faq">FAQ</a>
       <a class="nav__item" href="https://www.dndanimeminiatures.com/" title="Our anime miniatures site — One Piece STL collection">Anime Minis ↗</a>
     </nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu">&#9776;</button>
     <a class="header__cta" href="#buy">Buy Now ↓</a>
   </div>
 </header>
@@ -272,8 +370,8 @@ img { display: block; max-width: 100%; height: auto; }
 <main class="product">
   
 <div class="gallery">
-  <div class="gallery__main"><img src="../../images/bandit-swordsman-1.png" alt="Bandit Swordsman STL — DnD Fantasy Highway Robber Duelist Miniature 3D Print Tabletop — main view" width="800" height="800"></div>
-  <div class="gallery__thumbs"><a class="gallery__thumb" href="../../images/bandit-swordsman-1.png"><img src="../../images/bandit-swordsman-1.png" alt="Bandit Swordsman view 1" loading="lazy" width="200" height="200"></a><a class="gallery__thumb" href="../../images/bandit-swordsman-2.png"><img src="../../images/bandit-swordsman-2.png" alt="Bandit Swordsman view 2" loading="lazy" width="200" height="200"></a><a class="gallery__thumb" href="../../images/bandit-swordsman-3.png"><img src="../../images/bandit-swordsman-3.png" alt="Bandit Swordsman view 3" loading="lazy" width="200" height="200"></a><a class="gallery__thumb" href="../../images/bandit-swordsman-4.png"><img src="../../images/bandit-swordsman-4.png" alt="Bandit Swordsman view 4" loading="lazy" width="200" height="200"></a><a class="gallery__thumb" href="../../images/bandit-swordsman-5.png"><img src="../../images/bandit-swordsman-5.png" alt="Bandit Swordsman view 5" loading="lazy" width="200" height="200"></a><a class="gallery__thumb" href="../../images/bandit-swordsman-6.png"><img src="../../images/bandit-swordsman-6.png" alt="Bandit Swordsman view 6" loading="lazy" width="200" height="200"></a></div>
+  <div class="gallery__main" id="gallery-main" role="button" tabindex="0" aria-label="Open image full size"><img src="../../images/bandit-swordsman-1.png" alt="Bandit Swordsman STL — DnD Fantasy Highway Robber Duelist Miniature 3D Print Tabletop — main view" width="800" height="800"></div>
+  <div class="gallery__thumbs"><button type="button" class="gallery__thumb is-active" data-img="../../images/bandit-swordsman-1.png" aria-label="Show view 1"><img src="../../images/bandit-swordsman-1.png" alt="Bandit Swordsman view 1" loading="lazy" width="200" height="200"></button><button type="button" class="gallery__thumb" data-img="../../images/bandit-swordsman-2.png" aria-label="Show view 2"><img src="../../images/bandit-swordsman-2.png" alt="Bandit Swordsman view 2" loading="lazy" width="200" height="200"></button><button type="button" class="gallery__thumb" data-img="../../images/bandit-swordsman-3.png" aria-label="Show view 3"><img src="../../images/bandit-swordsman-3.png" alt="Bandit Swordsman view 3" loading="lazy" width="200" height="200"></button><button type="button" class="gallery__thumb" data-img="../../images/bandit-swordsman-4.png" aria-label="Show view 4"><img src="../../images/bandit-swordsman-4.png" alt="Bandit Swordsman view 4" loading="lazy" width="200" height="200"></button><button type="button" class="gallery__thumb" data-img="../../images/bandit-swordsman-5.png" aria-label="Show view 5"><img src="../../images/bandit-swordsman-5.png" alt="Bandit Swordsman view 5" loading="lazy" width="200" height="200"></button><button type="button" class="gallery__thumb" data-img="../../images/bandit-swordsman-6.png" aria-label="Show view 6"><img src="../../images/bandit-swordsman-6.png" alt="Bandit Swordsman view 6" loading="lazy" width="200" height="200"></button></div>
 </div>
   <div class="info">
     <div class="info__cat">Road Bandits — Highway Robbers</div>
@@ -283,10 +381,16 @@ img { display: block; max-width: 100%; height: auto; }
       <div class="info__price">$4.00</div>
       <div class="info__price-label">USD<br>Instant Download</div>
     </div>
+    <div class="buy-chips">
+      <span><b>&#10003;</b> Watertight — printable</span>
+      <span>FDM + Resin</span>
+      <span>32mm tabletop &#8594; 200mm+ display</span>
+      <span>&#9889; Instant download</span>
+    </div>
     <div class="pp-wrap" id="buy">
       <div class="pp-divider">Pay with PayPal or card — instant download</div>
       <div id="paypal-button-container"></div>
-      <button type="button" class="cta-btn cta-btn--etsy" style="cursor:pointer;width:100%;max-width:360px;margin-top:10px" data-add-cart data-slug="bandit-swordsman" data-title="Bandit Swordsman" data-price="4.00" data-img="/images/bandit-swordsman-1.png">&#128722; Add to cart — buy several at once</button>
+      <button type="button" class="cta-btn cta-btn--cart" style="cursor:pointer;width:100%;max-width:360px;margin-top:10px" data-add-cart data-slug="bandit-swordsman" data-title="Bandit Swordsman" data-price="4.00" data-img="/images/bandit-swordsman-1.png">&#128722; Add to cart — buy several at once</button>
       <div id="pp-success" class="pp-success" hidden>
         <h3 id="pp-title">✅ Payment received — thank you!</h3>
         <p id="pp-note">Preparing your download link…</p>
@@ -294,6 +398,27 @@ img { display: block; max-width: 100%; height: auto; }
       </div>
       <div class="pp-divider">or buy on Etsy</div>
       <a class="cta-btn cta-btn--etsy" href="https://www.etsy.com/listing/4511698525" target="_blank" rel="noopener" data-slug="bandit-swordsman" data-title="Bandit Swordsman STL — DnD Fantasy Highway Robber Duelist Miniature 3D Print Tabletop" data-price="4.00" data-cat="Road Bandits — Highway Robbers" data-listing-id="4511698525" data-list="product-page-hero">Buy on Etsy →</a>
+    </div>
+    
+    <div class="wband" data-slug="road-bandits-pack-6" data-title="Road Bandits Pack 6 STL — DnD Fantasy Highway Robber Ambush Bundle 3D Print Tabletop" data-price="20.00" data-listing-id="4511705190" data-list="pdp-bundle-upsell">
+      <img src="../../images/road-bandits-pack-6-1.png" alt="Road Bandits Pack 6 STL — DnD Fantasy Highway Robber Ambush Bundle 3D Print Tabletop" loading="lazy" width="92" height="92">
+      <div class="wband__body">
+        <div class="wband__kicker">Complete the warband</div>
+        <b>Road Bandits Pack 6</b>
+        <p>All 6 minis for $20.00 — save $4.00 vs buying them one by one.</p>
+      </div>
+      <div class="wband__cta">
+        <button type="button" data-add-cart data-slug="road-bandits-pack-6" data-title="Road Bandits Pack 6" data-price="20.00" data-img="/images/road-bandits-pack-6-1.png">+ Add pack · $20.00</button>
+        <a href="../road-bandits-pack-6/">View pack →</a>
+      </div>
+    </div>
+    <div class="wyg">
+      <h3>What you get</h3>
+      <ul>
+        <li>&#128230; <b>Print-ready STL file</b> — repaired, watertight, oriented for printing</li>
+        <li>&#128203; <b>Print report</b> — thin-wall &amp; overhang scan included</li>
+        <li>&#128424; <b>Full license</b> — personal use + selling your physical prints</li>
+      </ul>
     </div>
     
 <div class="specs">
@@ -391,57 +516,141 @@ If you have any issues printing or need adjustments, message us and we&#39;ll he
       <div class="card__img-wrap"><img class="card__img" src="../../images/bandit-brute-1.png" alt="Bandit Brute STL — DnD Fantasy Axe Highway Robber Berserker Miniature 3D Print Tabletop" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Bandit Brute STL — DnD Fantasy Axe Highway Robber Berserker Miniature 3D Print Tabletop</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
       </div>
       </a>
-      <a class="card__etsy" href="https://www.etsy.com/listing/4511697891" target="_blank" rel="noopener" aria-label="Buy Bandit Brute STL — DnD Fantasy Axe Highway Robber Berserker Miniature 3D Print Tabletop on Etsy">or buy on Etsy →</a>
+      <button type="button" class="card__add" data-add-cart data-slug="bandit-brute" data-title="Bandit Brute" data-price="4.00" data-img="/images/bandit-brute-1.png">+ Add to cart</button>
     </div>
     <div class="card" data-slug="bandit-captain" data-title="Bandit Captain STL — DnD Fantasy Highway Robber Leader Miniature 3D Print Tabletop" data-price="4.00" data-cat="Road Bandits — Highway Robbers" data-listing-id="4511698806" data-list="related">
       <a class="card__link" href="../bandit-captain/" aria-label="View Bandit Captain STL — DnD Fantasy Highway Robber Leader Miniature 3D Print Tabletop">
       <div class="card__img-wrap"><img class="card__img" src="../../images/bandit-captain-1.png" alt="Bandit Captain STL — DnD Fantasy Highway Robber Leader Miniature 3D Print Tabletop" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Bandit Captain STL — DnD Fantasy Highway Robber Leader Miniature 3D Print Tabletop</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
       </div>
       </a>
-      <a class="card__etsy" href="https://www.etsy.com/listing/4511698806" target="_blank" rel="noopener" aria-label="Buy Bandit Captain STL — DnD Fantasy Highway Robber Leader Miniature 3D Print Tabletop on Etsy">or buy on Etsy →</a>
+      <button type="button" class="card__add" data-add-cart data-slug="bandit-captain" data-title="Bandit Captain" data-price="4.00" data-img="/images/bandit-captain-1.png">+ Add to cart</button>
     </div>
     <div class="card" data-slug="bandit-crossbowman" data-title="Bandit Crossbowman STL — DnD Fantasy Highway Robber Sniper Miniature 3D Print Tabletop" data-price="4.00" data-cat="Road Bandits — Highway Robbers" data-listing-id="4511698910" data-list="related">
       <a class="card__link" href="../bandit-crossbowman/" aria-label="View Bandit Crossbowman STL — DnD Fantasy Highway Robber Sniper Miniature 3D Print Tabletop">
       <div class="card__img-wrap"><img class="card__img" src="../../images/bandit-crossbowman-1.png" alt="Bandit Crossbowman STL — DnD Fantasy Highway Robber Sniper Miniature 3D Print Tabletop" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Bandit Crossbowman STL — DnD Fantasy Highway Robber Sniper Miniature 3D Print Tabletop</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
       </div>
       </a>
-      <a class="card__etsy" href="https://www.etsy.com/listing/4511698910" target="_blank" rel="noopener" aria-label="Buy Bandit Crossbowman STL — DnD Fantasy Highway Robber Sniper Miniature 3D Print Tabletop on Etsy">or buy on Etsy →</a>
+      <button type="button" class="card__add" data-add-cart data-slug="bandit-crossbowman" data-title="Bandit Crossbowman" data-price="4.00" data-img="/images/bandit-crossbowman-1.png">+ Add to cart</button>
     </div>
     <div class="card" data-slug="bandit-rogue" data-title="Bandit Rogue STL — DnD Fantasy Twin Daggers Cutpurse Miniature 3D Print Tabletop RPG" data-price="4.00" data-cat="Road Bandits — Highway Robbers" data-listing-id="4511699014" data-list="related">
       <a class="card__link" href="../bandit-rogue/" aria-label="View Bandit Rogue STL — DnD Fantasy Twin Daggers Cutpurse Miniature 3D Print Tabletop RPG">
       <div class="card__img-wrap"><img class="card__img" src="../../images/bandit-rogue-1.png" alt="Bandit Rogue STL — DnD Fantasy Twin Daggers Cutpurse Miniature 3D Print Tabletop RPG" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Bandit Rogue STL — DnD Fantasy Twin Daggers Cutpurse Miniature 3D Print Tabletop RPG</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
       </div>
       </a>
-      <a class="card__etsy" href="https://www.etsy.com/listing/4511699014" target="_blank" rel="noopener" aria-label="Buy Bandit Rogue STL — DnD Fantasy Twin Daggers Cutpurse Miniature 3D Print Tabletop RPG on Etsy">or buy on Etsy →</a>
+      <button type="button" class="card__add" data-add-cart data-slug="bandit-rogue" data-title="Bandit Rogue" data-price="4.00" data-img="/images/bandit-rogue-1.png">+ Add to cart</button>
     </div>
     <div class="card" data-slug="bandit-sorcerer" data-title="Bandit Sorcerer STL — DnD Fantasy Hexer Outlaw Mage Miniature 3D Print Tabletop RPG" data-price="4.00" data-cat="Road Bandits — Highway Robbers" data-listing-id="4511699132" data-list="related">
       <a class="card__link" href="../bandit-sorcerer/" aria-label="View Bandit Sorcerer STL — DnD Fantasy Hexer Outlaw Mage Miniature 3D Print Tabletop RPG">
       <div class="card__img-wrap"><img class="card__img" src="../../images/bandit-sorcerer-1.png" alt="Bandit Sorcerer STL — DnD Fantasy Hexer Outlaw Mage Miniature 3D Print Tabletop RPG" loading="lazy" width="400" height="400"></div>
       <div class="card__body">
         <h3 class="card__title">Bandit Sorcerer STL — DnD Fantasy Hexer Outlaw Mage Miniature 3D Print Tabletop RPG</h3>
-        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">Buy with PayPal →</span></div>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
       </div>
       </a>
-      <a class="card__etsy" href="https://www.etsy.com/listing/4511699132" target="_blank" rel="noopener" aria-label="Buy Bandit Sorcerer STL — DnD Fantasy Hexer Outlaw Mage Miniature 3D Print Tabletop RPG on Etsy">or buy on Etsy →</a>
+      <button type="button" class="card__add" data-add-cart data-slug="bandit-sorcerer" data-title="Bandit Sorcerer" data-price="4.00" data-img="/images/bandit-sorcerer-1.png">+ Add to cart</button>
     </div>
   </div>
 </section>
 
+
+<section class="related">
+  <h2>More from the Dungeon</h2>
+  <div class="related__grid">
+    <div class="card" data-slug="forest-slime" data-title="Forest Slime STL — DnD Fantasy Ooze Monster Miniature 3D Print Tabletop RPG" data-price="4.00" data-cat="Monsters &amp; Terrain" data-listing-id="4510881002" data-list="cross-sell">
+      <a class="card__link" href="../forest-slime/" aria-label="View Forest Slime STL — DnD Fantasy Ooze Monster Miniature 3D Print Tabletop RPG">
+      <div class="card__img-wrap"><img class="card__img" src="../../images/forest-slime-1.png" alt="Forest Slime STL — DnD Fantasy Ooze Monster Miniature 3D Print Tabletop RPG" loading="lazy" width="400" height="400"></div>
+      <div class="card__body">
+        <h3 class="card__title">Forest Slime STL — DnD Fantasy Ooze Monster Miniature 3D Print Tabletop RPG</h3>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
+      </div>
+      </a>
+      <button type="button" class="card__add" data-add-cart data-slug="forest-slime" data-title="Forest Slime" data-price="4.00" data-img="/images/forest-slime-1.png">+ Add to cart</button>
+    </div>
+    <div class="card" data-slug="mercenary-warband-pack-6" data-title="Mercenary Warband Pack 6 STL — DnD Fantasy Sellsword Company Bundle 3D Print Tabletop" data-price="30.00" data-cat="Bundles" data-listing-id="4512455591" data-list="cross-sell">
+      <a class="card__link" href="../mercenary-warband-pack-6/" aria-label="View Mercenary Warband Pack 6 STL — DnD Fantasy Sellsword Company Bundle 3D Print Tabletop">
+      <div class="card__img-wrap"><img class="card__img" src="../../images/mercenary-warband-pack-6-1.png" alt="Mercenary Warband Pack 6 STL — DnD Fantasy Sellsword Company Bundle 3D Print Tabletop" loading="lazy" width="400" height="400"></div>
+      <div class="card__body">
+        <h3 class="card__title">Mercenary Warband Pack 6 STL — DnD Fantasy Sellsword Company Bundle 3D Print Tabletop</h3>
+        <div class="card__foot"><span class="card__price">$30.00</span><span class="card__cta">View mini →</span></div>
+      </div>
+      </a>
+      <button type="button" class="card__add" data-add-cart data-slug="mercenary-warband-pack-6" data-title="Mercenary Warband Pack 6" data-price="30.00" data-img="/images/mercenary-warband-pack-6-1.png">+ Add to cart</button>
+    </div>
+    <div class="card" data-slug="baphomet-speed-ro" data-title="Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print" data-price="4.00" data-cat="Baphomet Demon Lords — RO MVP Bosses" data-listing-id="4510880878" data-list="cross-sell">
+      <a class="card__link" href="../baphomet-speed-ro/" aria-label="View Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print">
+      <div class="card__img-wrap"><img class="card__img" src="../../images/baphomet-speed-ro-1.png" alt="Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print" loading="lazy" width="400" height="400"></div>
+      <div class="card__body">
+        <h3 class="card__title">Baphomet Demon Lord STL — Ragnarok Online Inspired MVP Boss Miniature DnD 3D Print</h3>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
+      </div>
+      </a>
+      <button type="button" class="card__add" data-add-cart data-slug="baphomet-speed-ro" data-title="Baphomet Demon Lord" data-price="4.00" data-img="/images/baphomet-speed-ro-1.png">+ Add to cart</button>
+    </div>
+    <div class="card" data-slug="four-armed-aberration" data-title="Four-Armed Monster STL — DnD Fantasy Aberration Miniature 3D Print Tabletop RPG" data-price="4.00" data-cat="Monsters &amp; Terrain" data-listing-id="4510881066" data-list="cross-sell">
+      <a class="card__link" href="../four-armed-aberration/" aria-label="View Four-Armed Monster STL — DnD Fantasy Aberration Miniature 3D Print Tabletop RPG">
+      <div class="card__img-wrap"><img class="card__img" src="../../images/four-armed-aberration-1.png" alt="Four-Armed Monster STL — DnD Fantasy Aberration Miniature 3D Print Tabletop RPG" loading="lazy" width="400" height="400"></div>
+      <div class="card__body">
+        <h3 class="card__title">Four-Armed Monster STL — DnD Fantasy Aberration Miniature 3D Print Tabletop RPG</h3>
+        <div class="card__foot"><span class="card__price">$4.00</span><span class="card__cta">View mini →</span></div>
+      </div>
+      </a>
+      <button type="button" class="card__add" data-add-cart data-slug="four-armed-aberration" data-title="Four-Armed Monster" data-price="4.00" data-img="/images/four-armed-aberration-1.png">+ Add to cart</button>
+    </div>
+  </div>
+</section>
+
+
 <footer class="footer">
-  <p>© 2026 DnD Miniatures STL · <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" data-shop-link="product-page-footer">All Etsy listings</a> · <a href="https://www.dndanimeminiatures.com/">Anime minis (One Piece)</a> · Original fantasy creature designs.</p>
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img src="../../images/logo-dark.png" alt="DnD Miniatures STL" width="347" height="104">
+      <p>Hand-curated fantasy miniature STLs for D&amp;D, Pathfinder and tabletop RPG. Every mesh repaired, watertight and print-tested — FDM and resin, 32mm to display scale.</p>
+    </div>
+    <div>
+      <h4>The Armory</h4>
+      <ul>
+        <li><a href="/bandit-stl/">Bandit Miniature</a></li>
+        <li><a href="/mercenary-stl/">Mercenary Miniature</a></li>
+        <li><a href="/orc-stl/">Orc Miniature</a></li>
+        <li><a href="/minotaur-stl/">Minotaur Miniature</a></li>
+        <li><a href="/baphomet-stl/">Baphomet Demon Lord</a></li>
+        <li><a href="/monster-stl/">DnD Monster &amp; Terrain</a></li>
+        <li><a href="/#bundles">Warband Bundles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Adventurer Support</h4>
+      <ul>
+        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/#faq">FAQ &amp; print help</a></li>
+        <li><a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a></li>
+        <li><a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" data-shop-link="footer">Etsy shop</a></li>
+        <li><a href="https://www.dndanimeminiatures.com/">Anime minis (One Piece)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">© 2026 DnD Miniatures STL · License: personal use + selling physical prints · Original fantasy creature designs. Some minis are fan-art inspired by Gravity Co.'s Ragnarok Online (no official affiliation).</div>
 </footer>
+
+<div class="buybar" id="buybar" hidden>
+  <div>
+    <div class="buybar__price">$4.00</div>
+    <div class="buybar__note">USD · Instant download</div>
+  </div>
+  <a class="buybar__btn" href="#buy">Buy now</a>
+</div>
 
 <script>
 (function(){
@@ -587,6 +796,7 @@ omnisend.push(["track", "viewed product", {
   } }
 }]);
 </script>
+<script>window.CART_RECS=[{"slug":"bandit-brute","title":"Bandit Brute","price":4,"img":"/images/bandit-brute-1.png"},{"slug":"bandit-captain","title":"Bandit Captain","price":4,"img":"/images/bandit-captain-1.png"},{"slug":"bandit-crossbowman","title":"Bandit Crossbowman","price":4,"img":"/images/bandit-crossbowman-1.png"},{"slug":"bandit-rogue","title":"Bandit Rogue","price":4,"img":"/images/bandit-rogue-1.png"},{"slug":"bandit-sorcerer","title":"Bandit Sorcerer","price":4,"img":"/images/bandit-sorcerer-1.png"},{"slug":"road-bandits-pack-6","title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1.png"},{"slug":"forest-slime","title":"Forest Slime","price":4,"img":"/images/forest-slime-1.png"},{"slug":"mercenary-warband-pack-6","title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1.png"}];window.CART_BUNDLES={"road-bandits-pack-6":{"title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1.png","members":["bandit-captain","bandit-crossbowman","bandit-sorcerer","bandit-brute","bandit-rogue","bandit-swordsman"],"memberPrices":{"bandit-captain":4,"bandit-crossbowman":4,"bandit-sorcerer":4,"bandit-brute":4,"bandit-rogue":4,"bandit-swordsman":4}},"mercenary-warband-pack-6":{"title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1.png","members":["mercenary-captain","mercenary-sword-shield","mercenary-spearman","mercenary-sword-axe","mercenary-veteran","mercenary-twin-blades"],"memberPrices":{"mercenary-captain":4,"mercenary-sword-shield":4,"mercenary-spearman":4,"mercenary-sword-axe":4,"mercenary-veteran":4,"mercenary-twin-blades":4}},"orc-warband-pack-6-ro":{"title":"Orc Warband Bundle 6","price":20,"img":"/images/orc-warband-pack-6-ro-1.png","members":["orc-baby-ro","orc-hero-ro","orc-lady-ro","orc-lord-ro","orc-archer-ro","orc-axe-warrior-ro"],"memberPrices":{"orc-baby-ro":4,"orc-hero-ro":4,"orc-lady-ro":4,"orc-lord-ro":4,"orc-archer-ro":4,"orc-axe-warrior-ro":4}},"minotaur-warband-pack-6":{"title":"Minotaur Warband Bundle 6","price":20,"img":"/images/minotaur-warband-pack-6-1.png","members":["minotaur-dual-axe","minotaur-greataxe","minotaur-spear","minotaur-shaman","minotaur-morning-star","minotaur-trident"],"memberPrices":{"minotaur-dual-axe":4,"minotaur-greataxe":4,"minotaur-spear":4,"minotaur-shaman":4,"minotaur-morning-star":4,"minotaur-trident":4}}};</script>
 
 <button class="cart-fab" id="cart-fab" aria-label="Open cart" hidden>&#128722;<span class="cart-fab__count" id="cart-count" hidden>0</span></button>
 <button class="dice-fab" id="dice-fab" hidden>&#127922; Roll for a discount</button>
@@ -595,6 +805,7 @@ omnisend.push(["track", "viewed product", {
   <div class="cart-drawer__head"><h3>Your Cart</h3><button class="cart-drawer__close" id="cart-close" aria-label="Close cart">&times;</button></div>
   <div class="cart-items" id="cart-items"></div>
   <div class="cart-foot" id="cart-foot">
+    <div id="cart-upgrade"></div>
     <div class="cart-coupon">
       <input id="coupon-input" placeholder="Discount code" aria-label="Discount code">
       <button id="coupon-apply" type="button">Apply</button>
@@ -612,6 +823,20 @@ omnisend.push(["track", "viewed product", {
     <div id="cart-links"></div>
   </div>
 </aside>
+<div class="added-overlay" id="added-overlay" hidden>
+  <div class="added-box">
+    <button class="added-box__close" id="added-close" aria-label="Close">&times;</button>
+    <div class="added-head">&#10003; Added to your cart</div>
+    <div class="added-item" id="added-item"></div>
+    <div class="added-sub" id="added-sub"></div>
+    <div id="added-upgrade"></div>
+    <div id="added-recs"></div>
+    <div class="added-actions">
+      <button class="added-continue" id="added-continue" type="button">Keep browsing</button>
+      <button class="added-checkout" id="added-checkout" type="button">Checkout</button>
+    </div>
+  </div>
+</div>
 <div class="dice-overlay" id="dice-overlay" hidden>
   <div class="dice-box">
     <button class="dice-box__close" id="dice-close" aria-label="Close">&times;</button>
@@ -665,10 +890,93 @@ omnisend.push(["track", "viewed product", {
 
   window.addToCart = function(item){
     var cart = readCart();
-    for (var i = 0; i < cart.length; i++) if (cart[i].slug === item.slug) { openCart(); return; }
-    cart.push(item); writeCart(cart); openCart();
+    for (var i = 0; i < cart.length; i++) if (cart[i].slug === item.slug) { openAdded(item, true); return; }
+    cart.push(item); writeCart(cart); openAdded(item, false);
   };
   function removeFromCart(slug){ writeCart(readCart().filter(function(i){ return i.slug !== slug; })); }
+
+  function imgFade(){
+    var imgs = document.querySelectorAll('.card__img, .gallery__main img, .added-item img, .added-rec img');
+    for (var i = 0; i < imgs.length; i++) (function(im){
+      if (im.classList.contains('img-in')) return;
+      function mark(){ im.classList.add('img-in'); }
+      if (im.complete && im.naturalWidth) { mark(); return; }
+      im.addEventListener('load', mark);
+      setTimeout(mark, 1800);
+    })(imgs[i]);
+  }
+
+  /* ===== bundle upgrade (window.CART_BUNDLES = { bundleSlug: {title, price, img, members, memberPrices} }) ===== */
+  function upgradeOffer(){
+    var map = window.CART_BUNDLES || {};
+    var cart = readCart();
+    var inCart = {};
+    for (var i = 0; i < cart.length; i++) inCart[cart[i].slug] = true;
+    for (var bslug in map) {
+      if (inCart[bslug]) continue;
+      var b = map[bslug], have = 0;
+      for (var j = 0; j < b.members.length; j++) if (inCart[b.members[j]]) have++;
+      if (have >= 3) {
+        var singles = 0;
+        for (var s in (b.memberPrices || {})) singles += b.memberPrices[s];
+        return { slug: bslug, title: b.title, price: b.price, img: b.img, members: b.members, count: b.members.length, save: Math.max(0, Math.round((singles - b.price) * 100) / 100) };
+      }
+    }
+    return null;
+  }
+  function upgradeHtml(off){
+    if (!off) return '';
+    return '<div class="cart-upgrade">&#127873; <b>Upgrade:</b> get all ' + off.count + ' minis for $' + off.price.toFixed(2)
+      + (off.save ? ' — save $' + off.save.toFixed(2) + ' vs singles' : '') + '.'
+      + '<button type="button" data-upgrade="' + off.slug + '">Upgrade my cart — $' + off.price.toFixed(2) + '</button></div>';
+  }
+  function renderUpgrades(){
+    var off = upgradeOffer();
+    var d = document.getElementById('cart-upgrade');
+    if (d) d.innerHTML = upgradeHtml(off);
+    var m = document.getElementById('added-upgrade');
+    if (m) m.innerHTML = upgradeHtml(off);
+  }
+  function applyUpgrade(bslug){
+    var b = (window.CART_BUNDLES || {})[bslug];
+    if (!b) return;
+    var cart = readCart().filter(function(i){ return b.members.indexOf(i.slug) === -1; });
+    cart.push({ slug: bslug, title: b.title, price: String(b.price), img: b.img });
+    writeCart(cart);
+    if (typeof gtag === 'function') gtag('event', 'add_to_cart', { currency: 'USD', value: b.price,
+      items: [{ item_id: bslug, item_name: b.title, price: b.price, quantity: 1 }] });
+    closeAdded();
+    openCart();
+  }
+
+  /* ===== added-to-cart modal (recs come from window.CART_RECS injected per page) ===== */
+  function openAdded(item, already){
+    var cart = readCart();
+    document.getElementById('added-item').innerHTML =
+      (item.img ? '<img src="' + item.img + '" alt="">' : '')
+      + '<div class="added-item__title">' + item.title + (already ? ' <span style="color:var(--text-dim);font-weight:400">(already in cart)</span>' : '') + '</div>'
+      + '<div class="added-item__price">' + money(parseFloat(item.price)||0) + '</div>';
+    document.getElementById('added-sub').textContent = cart.length + (cart.length > 1 ? ' items' : ' item') + ' · Subtotal ' + money(subtotal());
+    var inCart = {};
+    for (var i = 0; i < cart.length; i++) inCart[cart[i].slug] = true;
+    var recs = (window.CART_RECS || []).filter(function(r){ return !inCart[r.slug] && r.slug !== item.slug; }).slice(0, 3);
+    document.getElementById('added-recs').innerHTML = !recs.length ? '' :
+      '<div class="added-recs-title">Adventurers also print</div>' + recs.map(function(r){
+        return '<div class="added-rec"><img src="' + (r.img || '') + '" alt="">'
+          + '<div class="added-rec__title">' + r.title + '</div>'
+          + '<div class="added-rec__price">$' + (parseFloat(r.price)||0).toFixed(2) + '</div>'
+          + '<button class="added-rec__btn" type="button" data-add-cart data-slug="' + r.slug + '" data-title="' + String(r.title).replace(/"/g, '&quot;') + '" data-price="' + r.price + '" data-img="' + (r.img || '') + '">+ Add</button></div>';
+      }).join('');
+    if (recs.length && typeof gtag === 'function') gtag('event', 'view_item_list', {
+      item_list_name: 'added-modal-recs',
+      items: recs.map(function(r){ return { item_id: r.slug, item_name: r.title, price: parseFloat(r.price)||0 }; })
+    });
+    renderUpgrades();
+    document.getElementById('added-overlay').hidden = false;
+    lockScroll();
+    imgFade();
+  }
+  function closeAdded(){ document.getElementById('added-overlay').hidden = true; lockScroll(); }
 
   function renderCart(){
     var cart = readCart();
@@ -699,12 +1007,15 @@ omnisend.push(["track", "viewed product", {
     document.getElementById('cart-total').textContent = money(total());
     var c = readCoupon();
     if (c && c.code) document.getElementById('coupon-input').value = c.code;
+    renderUpgrades();
+    imgFade();
   }
 
   function lockScroll(){
     var cartOpen = !document.getElementById('cart-drawer').hidden;
     var diceOpen = !document.getElementById('dice-overlay').hidden;
-    document.documentElement.style.overflow = (cartOpen || diceOpen) ? 'hidden' : '';
+    var addedOpen = !document.getElementById('added-overlay').hidden;
+    document.documentElement.style.overflow = (cartOpen || diceOpen || addedOpen) ? 'hidden' : '';
   }
   function openCart(){
     document.getElementById('cart-overlay').hidden = false;
@@ -782,6 +1093,8 @@ omnisend.push(["track", "viewed product", {
   }
 
   document.addEventListener('click', function(e){
+    var up = e.target.closest && e.target.closest('[data-upgrade]');
+    if (up) { applyUpgrade(up.getAttribute('data-upgrade')); return; }
     var rm = e.target.closest && e.target.closest('[data-rm]');
     if (rm) { removeFromCart(rm.getAttribute('data-rm')); return; }
     var add = e.target.closest && e.target.closest('[data-add-cart]');
@@ -795,6 +1108,10 @@ omnisend.push(["track", "viewed product", {
   document.getElementById('cart-fab').addEventListener('click', openCart);
   document.getElementById('cart-close').addEventListener('click', closeCart);
   document.getElementById('cart-overlay').addEventListener('click', closeCart);
+  document.getElementById('added-close').addEventListener('click', closeAdded);
+  document.getElementById('added-continue').addEventListener('click', closeAdded);
+  document.getElementById('added-checkout').addEventListener('click', function(){ closeAdded(); openCart(); });
+  document.getElementById('added-overlay').addEventListener('click', function(e){ if (e.target === this) closeAdded(); });
 
   document.getElementById('coupon-apply').addEventListener('click', function(){
     var code = (document.getElementById('coupon-input').value || '').trim().toUpperCase();
@@ -824,7 +1141,7 @@ omnisend.push(["track", "viewed product", {
   document.getElementById('dice-close').addEventListener('click', closeDice);
   document.getElementById('dice-overlay').addEventListener('click', function(e){ if (e.target === this) closeDice(); });
   diceFab.addEventListener('click', openDice);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeCart(); closeDice(); } });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeCart(); closeDice(); closeAdded(); } });
   if (!d20Done()) {
     diceFab.hidden = false;
     var shown = false;
@@ -876,6 +1193,64 @@ omnisend.push(["track", "viewed product", {
   });
 
   renderCart();
+  imgFade();
+})();
+</script>
+
+<div class="mobilenav" id="mobilenav" hidden>
+  <button class="mobilenav__close" id="mobilenav-close" aria-label="Close menu">&times;</button>
+  <nav class="mobilenav__links" id="mobilenav-links"></nav>
+</div>
+<button class="totop" id="totop" hidden aria-label="Back to top">&#8593;</button>
+<script>
+(function(){
+  var burger = document.getElementById('nav-burger');
+  var panel = document.getElementById('mobilenav');
+  if (burger && panel) {
+    var links = document.querySelectorAll('.nav a');
+    var html = '';
+    for (var i = 0; i < links.length; i++) html += '<a href="' + links[i].getAttribute('href') + '">' + links[i].textContent + '</a>';
+    document.getElementById('mobilenav-links').innerHTML = html;
+    burger.addEventListener('click', function(){ panel.hidden = false; document.documentElement.style.overflow = 'hidden'; });
+    panel.addEventListener('click', function(e){
+      if (e.target.closest('a') || e.target.id === 'mobilenav-close' || e.target === panel) { panel.hidden = true; document.documentElement.style.overflow = ''; }
+    });
+  }
+  var totop = document.getElementById('totop');
+  var buybar = document.getElementById('buybar');
+  addEventListener('scroll', function(){
+    if (totop) totop.hidden = scrollY < 700;
+    if (buybar) buybar.hidden = scrollY < 480;
+  }, { passive: true });
+  if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="Full size view">
+</div>
+<script>
+(function(){
+  var main = document.getElementById('gallery-main');
+  if (!main) return;
+  var mainImg = main.querySelector('img');
+  var thumbs = document.querySelectorAll('.gallery__thumb');
+  for (var i = 0; i < thumbs.length; i++) thumbs[i].addEventListener('click', function(){
+    mainImg.src = this.getAttribute('data-img');
+    mainImg.classList.add('img-in');
+    for (var j = 0; j < thumbs.length; j++) thumbs[j].classList.remove('is-active');
+    this.classList.add('is-active');
+  });
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  function openLb(){ lbImg.src = mainImg.src; lb.hidden = false; document.documentElement.style.overflow = 'hidden'; }
+  function closeLb(){ if (lb.hidden) return; lb.hidden = true; document.documentElement.style.overflow = ''; }
+  main.addEventListener('click', openLb);
+  main.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(); } });
+  document.getElementById('lightbox-close').addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLb(); });
 })();
 </script>
 
