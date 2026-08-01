@@ -91,6 +91,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.dndminiaturestl.com/guides/fdm-settings-dnd-miniatures/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/guides/scale-stl-bambu-orca-cura/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/guides/selling-3d-printed-miniatures/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/guides/where-to-find-dnd-stl-files/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/custom-dnd-miniatures/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.dndminiaturestl.com/about/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>yearly</changefreq>

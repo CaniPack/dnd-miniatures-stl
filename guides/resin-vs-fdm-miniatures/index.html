@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Resin vs FDM for Miniatures: What Actually Matters","description":"Which printer for tabletop minis? Detail, durability, cost, smell and cleanup compared honestly — plus the settings we use for our own catalog on both.","datePublished":"2026-07-31","dateModified":"2026-07-31","author":{"@type":"Organization","name":"DnD Miniatures STL"},"publisher":{"@type":"Organization","name":"DnD Miniatures STL"},"mainEntityOfPage":"https://www.dndminiaturestl.com/guides/resin-vs-fdm-miniatures/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"Resin vs FDM for Miniatures: What Actually Matters","item":"https://www.dndminiaturestl.com/guides/resin-vs-fdm-miniatures/"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
@@ -326,6 +327,20 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
 .guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
 .guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.toc { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; margin: 0 0 26px; }
+.toc b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 8px; }
+.toc ol { margin: 0 0 0 18px; padding: 0; }
+.toc li { padding: 3px 0; font-size: 14px; }
+.toc a { color: #c6cbd6; text-decoration: none; }
+.toc a:hover { color: var(--gold); }
+.yt-embed { position: relative; aspect-ratio: 16/9; margin: 16px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose-faq { margin-top: 34px; }
+.prose-faq h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin-bottom: 12px; }
+.prose-faq details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 0; }
+.prose-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: #e8eaef; font-size: 14.5px; }
+.prose-faq details p { padding: 0 18px 14px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.prose h2 { scroll-margin-top: 100px; }
 .crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -352,22 +367,24 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 <main>
 <article class="prose">
   <h1>Resin vs FDM for Miniatures: What Actually Matters</h1>
-  <p class="prose__meta">6 min read · by the DnD Miniatures STL print team</p>
+  <p class="prose__meta">6 min read · by the DnD Miniatures STL print team · updated 2026-07-31</p>
+  <nav class="toc" aria-label="Table of contents"><b>In this guide</b><ol><li><a href="#detail-resin-wins-but-less-than-it-used-to">Detail: resin wins, but less than it used to</a></li><li><a href="#durability-fdm-wins-outright">Durability: FDM wins outright</a></li><li><a href="#cost-and-mess">Cost and mess</a></li><li><a href="#our-baseline-settings">Our baseline settings</a></li><li><a href="#the-actual-answer">The actual answer</a></li></ol></nav>
   
 <p>We print our whole catalog on both technologies before release, so this comparison comes from failure logs, not spec sheets.</p>
-<h2>Detail: resin wins, but less than it used to</h2>
+<h2 id="detail-resin-wins-but-less-than-it-used-to">Detail: resin wins, but less than it used to</h2>
 <p>At 32mm, an MSLA resin printer resolves chainmail links, teeth and fingertips that a 0.4mm FDM nozzle simply averages away. That said, a modern FDM with a 0.2mm nozzle at 0.08mm layers produces tabletop minis that look great from arm's length — where minis actually live. If you paint competitively or photograph your figures, resin. If they fight on a grid, FDM is fine.</p>
-<h2>Durability: FDM wins outright</h2>
+<h2 id="durability-fdm-wins-outright">Durability: FDM wins outright</h2>
 <p>PLA minis bounce off the floor; standard resin minis snap at ankles and spear shafts. For pieces that travel to game night weekly, FDM or a tough/ABS-like resin mix is the practical answer. Thin-weapon sculpts — like our <a href="/product/mercenary-spearman/">spearman</a> — survive best in FDM or flexible resin blends.</p>
-<h2>Cost and mess</h2>
+<h2 id="cost-and-mess">Cost and mess</h2>
 <p>FDM: ~$0.10-0.30 of PLA per mini, zero cleanup. Resin: ~$0.30-0.60 per mini plus isopropyl alcohol, gloves, filters and a wash-and-cure routine. Resin is also a skin sensitizer and needs ventilation — a real consideration in an apartment.</p>
-<h2>Our baseline settings</h2>
+<h2 id="our-baseline-settings">Our baseline settings</h2>
 <ul>
 <li><b>Resin (32mm):</b> 0.05mm layers, 1.8-2.5s exposure (calibrate with a cones test), light-to-medium supports, tilt 20-30°.</li>
 <li><b>FDM (32mm):</b> 0.12mm layers, 0.4 nozzle (0.2 if you have one), 10-15% gyroid infill, tree supports, 45mm/s outer walls.</li>
 </ul>
-<h2>The actual answer</h2>
+<h2 id="the-actual-answer">The actual answer</h2>
 <p>Own one printer? A $200 MSLA resin machine is the miniature specialist. Print terrain too? FDM earns its place fast — buildings like our <a href="/product/haunted-house-diorama/">haunted house</a> print beautifully in PLA where resin would cost a fortune. Both parks? Resin for heroes and bosses, FDM for hordes and scenery. Every STL here ships watertight and tested on both.</p>
+  
 </article>
 <div class="prose-cta">
   <div class="prose-cta__box">
@@ -400,7 +417,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
     <div>
       <h4>Adventurer Support</h4>
       <ul>
-        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/custom-dnd-miniatures/">Custom figures — flat $15</a></li>
         <li><a href="/guides/">Printing guides</a></li>
         <li><a href="/how-it-works/">How buying works</a></li>
         <li><a href="/license/">License</a></li>
@@ -876,5 +893,6 @@ omnisend.push(["track", "$pageViewed"]);
   if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
+
 </body>
 </html>

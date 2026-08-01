@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Scale an STL Miniature to 32mm — or Any Size You Want","description":"Turn any STL into a correct 32mm tabletop mini: the one formula you need, slicer percentages for D&D scales, and how to handle Large and Huge monsters.","datePublished":"2026-07-31","dateModified":"2026-07-31","author":{"@type":"Organization","name":"DnD Miniatures STL"},"publisher":{"@type":"Organization","name":"DnD Miniatures STL"},"mainEntityOfPage":"https://www.dndminiaturestl.com/guides/how-to-scale-stl-miniatures/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"How to Scale an STL Miniature to 32mm — or Any Size You Want","item":"https://www.dndminiaturestl.com/guides/how-to-scale-stl-miniatures/"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
@@ -326,6 +327,20 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
 .guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
 .guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.toc { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; margin: 0 0 26px; }
+.toc b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 8px; }
+.toc ol { margin: 0 0 0 18px; padding: 0; }
+.toc li { padding: 3px 0; font-size: 14px; }
+.toc a { color: #c6cbd6; text-decoration: none; }
+.toc a:hover { color: var(--gold); }
+.yt-embed { position: relative; aspect-ratio: 16/9; margin: 16px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose-faq { margin-top: 34px; }
+.prose-faq h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin-bottom: 12px; }
+.prose-faq details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 0; }
+.prose-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: #e8eaef; font-size: 14.5px; }
+.prose-faq details p { padding: 0 18px 14px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.prose h2 { scroll-margin-top: 100px; }
 .crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -352,13 +367,14 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 <main>
 <article class="prose">
   <h1>How to Scale an STL Miniature to 32mm — or Any Size You Want</h1>
-  <p class="prose__meta">5 min read · by the DnD Miniatures STL print team</p>
+  <p class="prose__meta">5 min read · by the DnD Miniatures STL print team · updated 2026-07-31</p>
+  <nav class="toc" aria-label="Table of contents"><b>In this guide</b><ol><li><a href="#the-one-formula">The one formula</a></li><li><a href="#quick-reference-for-d-d-sizes">Quick reference for D&D sizes</a></li><li><a href="#display-pieces">Display pieces</a></li><li><a href="#two-mistakes-to-avoid">Two mistakes to avoid</a></li></ol></nav>
   
 <p>Every slicer scales models by percentage, but percentages mean nothing until you know the model's real height. Here's the whole method.</p>
-<h2>The one formula</h2>
+<h2 id="the-one-formula">The one formula</h2>
 <p><b>scale % = (target height ÷ current height) × 100</b></p>
 <p>Say a model is 1898mm tall at 100% (many sculpts export at "real human size") and you want a 32mm-scale figure. Human-sized characters at 32mm scale stand about 32-35mm to the eyes, so: 33 ÷ 1898 × 100 ≈ <b>1.7%</b>. Type that into the uniform-scale box in Cura, PrusaSlicer, Lychee or Chitubox and you're done. Our product pages list each model's exact dimensions so you can run this math in ten seconds — models in our catalog that ship pre-scaled to ~120mm need roughly <b>27%</b> for a Medium 32mm figure instead.</p>
-<h2>Quick reference for D&D sizes</h2>
+<h2 id="quick-reference-for-d-d-sizes">Quick reference for D&D sizes</h2>
 <table>
 <tr><th>D&D size</th><th>Base</th><th>Figure height (approx.)</th></tr>
 <tr><td>Small / Medium (goblin, human, orc)</td><td>25mm / 1"</td><td>28-35mm</td></tr>
@@ -367,10 +383,11 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 <tr><td>Gargantuan (ancient dragon, kraken)</td><td>100mm+ / 4"</td><td>your printer's the limit</td></tr>
 </table>
 <p>Scale monsters by their <i>shoulder or eye height</i>, not the tip of a raised weapon — a minotaur whose axe adds 20mm will look tiny if you scale to total height. Our <a href="/minotaur-stl/">minotaurs</a> list a "D&D scale class" in the specs for exactly this reason.</p>
-<h2>Display pieces</h2>
+<h2 id="display-pieces">Display pieces</h2>
 <p>The same formula works upward: 75mm collectible ≈ 60% of a 120mm model, a 150mm bust ≈ 125%. Resin printers handle upscaling gracefully; on FDM, bump perimeter count when you go past 100mm so thin weapons stay strong.</p>
-<h2>Two mistakes to avoid</h2>
+<h2 id="two-mistakes-to-avoid">Two mistakes to avoid</h2>
 <p>Never scale X, Y and Z separately — one wrong axis gives you a flattened goblin. And re-check supports after any scale change: contact points that worked at 100% are too thick at 27% and will scar the sculpt.</p>
+  
 </article>
 <div class="prose-cta">
   <div class="prose-cta__box">
@@ -403,7 +420,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
     <div>
       <h4>Adventurer Support</h4>
       <ul>
-        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/custom-dnd-miniatures/">Custom figures — flat $15</a></li>
         <li><a href="/guides/">Printing guides</a></li>
         <li><a href="/how-it-works/">How buying works</a></li>
         <li><a href="/license/">License</a></li>
@@ -879,5 +896,6 @@ omnisend.push(["track", "$pageViewed"]);
   if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
+
 </body>
 </html>

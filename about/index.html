@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About DnD Miniatures STL","description":"A small independent studio making print-tested fantasy miniature STLs for D&D and tabletop RPG. Every mesh repaired, watertight and checked before release.","url":"https://www.dndminiaturestl.com/about/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"About DnD Miniatures STL","item":"https://www.dndminiaturestl.com/about/"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
@@ -326,6 +327,20 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
 .guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
 .guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.toc { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; margin: 0 0 26px; }
+.toc b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 8px; }
+.toc ol { margin: 0 0 0 18px; padding: 0; }
+.toc li { padding: 3px 0; font-size: 14px; }
+.toc a { color: #c6cbd6; text-decoration: none; }
+.toc a:hover { color: var(--gold); }
+.yt-embed { position: relative; aspect-ratio: 16/9; margin: 16px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose-faq { margin-top: 34px; }
+.prose-faq h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin-bottom: 12px; }
+.prose-faq details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 0; }
+.prose-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: #e8eaef; font-size: 14.5px; }
+.prose-faq details p { padding: 0 18px 14px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.prose h2 { scroll-margin-top: 100px; }
 .crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -354,13 +369,15 @@ html { scrollbar-color: #2a3040 #0b0d13; }
   <h1>About DnD Miniatures STL</h1>
   
   
+  
 <p>DnD Miniatures STL is a small independent studio with one job: fantasy miniatures that print right the first time. No marketplaces full of untested meshes, no "buyer beware" — every model in the catalog went through the same pipeline before it earned a product page.</p>
-<h2>How a mini earns its place here</h2>
+<h2 id="how-a-mini-earns-its-place-here">How a mini earns its place here</h2>
 <p>Each sculpt is repaired and rebuilt in Blender: we make the mesh watertight, remove self-intersections, decimate it to a clean triangle count and orient it for printing. Then we scan it for thin walls and overhangs and ship that diagnostic report with the file, so you know exactly where the tricky spots are before you slice.</p>
 <p>The catalog is built around warbands — a full gang of highway bandits, an orc horde, a minotaur labyrinth guard — because encounters need groups, not lone heroes. Boss-tier demons, monsters and terrain round out the table.</p>
-<h2>Who's behind it</h2>
+<h2 id="who-s-behind-it">Who's behind it</h2>
 <p>We're tabletop players and 3D-printing tinkerers, and we answer our own support email. Questions about a print, a scale, a custom request? Write to <a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a> and a human answers — usually within a day.</p>
 <p>We also run <a href="https://www.dndanimeminiatures.com/" target="_blank" rel="noopener">DND Anime Miniatures</a>, our One Piece fan-art miniature line, and sell on <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener nofollow">Etsy</a> for buyers who prefer it.</p>
+  
 </article>
 <div class="prose-cta">
   <div class="prose-cta__box">
@@ -393,7 +410,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
     <div>
       <h4>Adventurer Support</h4>
       <ul>
-        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/custom-dnd-miniatures/">Custom figures — flat $15</a></li>
         <li><a href="/guides/">Printing guides</a></li>
         <li><a href="/how-it-works/">How buying works</a></li>
         <li><a href="/license/">License</a></li>
@@ -869,5 +886,6 @@ omnisend.push(["track", "$pageViewed"]);
   if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
+
 </body>
 </html>

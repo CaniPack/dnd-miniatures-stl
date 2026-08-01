@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Printing Guides for Tabletop Miniatures","description":"Practical guides from a shop that prints its own catalog: scaling STLs to 32mm, resin vs FDM, supports, D&D miniature sizes and printing big terrain.","url":"https://www.dndminiaturestl.com/guides/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"Printing Guides for Tabletop Miniatures","item":"https://www.dndminiaturestl.com/guides/"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
@@ -326,6 +327,20 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
 .guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
 .guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.toc { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; margin: 0 0 26px; }
+.toc b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 8px; }
+.toc ol { margin: 0 0 0 18px; padding: 0; }
+.toc li { padding: 3px 0; font-size: 14px; }
+.toc a { color: #c6cbd6; text-decoration: none; }
+.toc a:hover { color: var(--gold); }
+.yt-embed { position: relative; aspect-ratio: 16/9; margin: 16px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose-faq { margin-top: 34px; }
+.prose-faq h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin-bottom: 12px; }
+.prose-faq details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 0; }
+.prose-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: #e8eaef; font-size: 14.5px; }
+.prose-faq details p { padding: 0 18px 14px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.prose h2 { scroll-margin-top: 100px; }
 .crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -354,12 +369,18 @@ html { scrollbar-color: #2a3040 #0b0d13; }
   <h1>Printing Guides for Tabletop Miniatures</h1>
   
   
+  
 <p>Written by the people who repair and test every STL in the catalog. Short, specific, and based on our own failure logs — not reblogged spec sheets.</p>
 <a class="guide-card" href="/guides/how-to-scale-stl-miniatures/"><b>How to Scale an STL Miniature to 32mm — or Any Size You Want</b><span>Turn any STL into a correct 32mm tabletop mini: the one formula you need, slicer percentages for D&amp;D scales, and how to handle Large and Huge monsters.</span><i>5 min read →</i></a>
 <a class="guide-card" href="/guides/resin-vs-fdm-miniatures/"><b>Resin vs FDM for Miniatures: What Actually Matters</b><span>Which printer for tabletop minis? Detail, durability, cost, smell and cleanup compared honestly — plus the settings we use for our own catalog on both.</span><i>6 min read →</i></a>
 <a class="guide-card" href="/guides/supports-for-miniatures/"><b>Supports for Miniatures: Where to Put Them and How to Not Scar the Sculpt</b><span>Why we ship STLs unsupported, where minis actually fail, and the resin and FDM support settings that leave no scars: contact sizes, angles and removal.</span><i>6 min read →</i></a>
 <a class="guide-card" href="/guides/dnd-miniature-sizes/"><b>D&amp;D Miniature Sizes: Bases, Heights and What &quot;28mm vs 32mm&quot; Really Means</b><span>Medium, Large, Huge — what each D&amp;D size means in bases and millimeters, the 28mm vs 32mm question answered, and how to keep a mixed collection consistent.</span><i>5 min read →</i></a>
 <a class="guide-card" href="/guides/print-large-terrain/"><b>How to Print Large Terrain and Dioramas on a Normal Printer</b><span>Buildings and dioramas beat mini-sized rules: orientation, splitting models cleanly, FDM settings for structures, and hiding seams when you glue.</span><i>5 min read →</i></a>
+<a class="guide-card" href="/guides/fdm-settings-dnd-miniatures/"><b>3D Printer Settings for DnD Miniatures: the Profile We Use for Our Own Catalog</b><span>Exact FDM and resin settings for D&amp;D miniatures: layer height, speeds, supports, exposure. The profile we print our whole catalog with, plus a video walkthrough.</span><i>7 min read →</i></a>
+<a class="guide-card" href="/guides/scale-stl-bambu-orca-cura/"><b>How to Scale an STL in Bambu Studio, Orca Slicer, Cura and Lychee</b><span>Click-by-click: scaling an STL to 32mm in Bambu Studio, Orca Slicer, Cura and Lychee. The percentage formula plus each slicer&#39;s exact scale tool.</span><i>6 min read →</i></a>
+<a class="guide-card" href="/guides/selling-3d-printed-miniatures/"><b>Is It Legal to Sell 3D Printed Miniatures? Licenses, Explained Like a Human</b><span>When selling 3D printed minis is legal, what a commercial license actually covers, merchant tiers vs included licenses, and the risks with fan-art files.</span><i>6 min read →</i></a>
+<a class="guide-card" href="/guides/where-to-find-dnd-stl-files/"><b>Where to Find STL Files for D&amp;D Miniatures (Free and Paid, Honestly Compared)</b><span>Printables, MakerWorld, Thingiverse, MyMiniFactory, Patreons and specialist stores compared for D&amp;D miniature STLs: licenses, mesh quality, price.</span><i>6 min read →</i></a>
+  
 </article>
 <div class="prose-cta">
   <div class="prose-cta__box">
@@ -392,7 +413,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
     <div>
       <h4>Adventurer Support</h4>
       <ul>
-        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/custom-dnd-miniatures/">Custom figures — flat $15</a></li>
         <li><a href="/guides/">Printing guides</a></li>
         <li><a href="/how-it-works/">How buying works</a></li>
         <li><a href="/license/">License</a></li>
@@ -868,5 +889,6 @@ omnisend.push(["track", "$pageViewed"]);
   if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
+
 </body>
 </html>

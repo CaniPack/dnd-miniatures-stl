@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Refunds on Digital Downloads","description":"Our refund policy for STL downloads: broken or wrong files get fixed or refunded. How to reach us and what we need to make it right fast.","url":"https://www.dndminiaturestl.com/refunds/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"Refunds on Digital Downloads","item":"https://www.dndminiaturestl.com/refunds/"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
@@ -326,6 +327,20 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
 .guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
 .guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.toc { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; margin: 0 0 26px; }
+.toc b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 8px; }
+.toc ol { margin: 0 0 0 18px; padding: 0; }
+.toc li { padding: 3px 0; font-size: 14px; }
+.toc a { color: #c6cbd6; text-decoration: none; }
+.toc a:hover { color: var(--gold); }
+.yt-embed { position: relative; aspect-ratio: 16/9; margin: 16px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose-faq { margin-top: 34px; }
+.prose-faq h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin-bottom: 12px; }
+.prose-faq details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 0; }
+.prose-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: #e8eaef; font-size: 14.5px; }
+.prose-faq details p { padding: 0 18px 14px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.prose h2 { scroll-margin-top: 100px; }
 .crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -354,16 +369,18 @@ html { scrollbar-color: #2a3040 #0b0d13; }
   <h1>Refunds on Digital Downloads</h1>
   
   
+  
 <p>Digital files can't be "returned", so most STL stores simply say all sales are final. Our policy is more useful than that:</p>
-<h2>We make it right if</h2>
+<h2 id="we-make-it-right-if">We make it right if</h2>
 <ul>
 <li><b>The file is broken</b> — won't open, fails mesh checks, isn't the advertised model. We fix and re-deliver, or refund in full. Every mesh is validated before release, so this is rare, but the promise stands.</li>
 <li><b>You were charged and got nothing</b> — payment succeeded but no links arrived and we can't restore them. Full refund.</li>
 <li><b>You bought the same file twice</b> by accident. We refund the duplicate.</li>
 </ul>
-<h2>What we can't refund</h2>
+<h2 id="what-we-can-t-refund">What we can't refund</h2>
 <p>Failed prints caused by slicer settings, resin exposure or printer calibration aren't grounds for a refund — but they ARE grounds for free help. Send a photo of the failure to <a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a> and we'll troubleshoot it with you; our guides on <a href="/guides/resin-vs-fdm-miniatures/">resin vs FDM</a> and <a href="/guides/supports-for-miniatures/">supports</a> solve the most common failures.</p>
 <p>To claim a refund, email your PayPal order ID (it's on your receipt) within 30 days of purchase. Refunds go back to the original payment method, typically within 3-5 business days.</p>
+  
 </article>
 <div class="prose-cta">
   <div class="prose-cta__box">
@@ -396,7 +413,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
     <div>
       <h4>Adventurer Support</h4>
       <ul>
-        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/custom-dnd-miniatures/">Custom figures — flat $15</a></li>
         <li><a href="/guides/">Printing guides</a></li>
         <li><a href="/how-it-works/">How buying works</a></li>
         <li><a href="/license/">License</a></li>
@@ -872,5 +889,6 @@ omnisend.push(["track", "$pageViewed"]);
   if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
+
 </body>
 </html>

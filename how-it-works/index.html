@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"How Buying & Downloading Works","description":"Pay with PayPal or card, get your STL download links instantly on-screen and by email. How delivery, files and support work at DnD Miniatures STL.","url":"https://www.dndminiaturestl.com/how-it-works/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"How Buying & Downloading Works","item":"https://www.dndminiaturestl.com/how-it-works/"}]}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
@@ -326,6 +327,20 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
 .guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
 .guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.toc { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; margin: 0 0 26px; }
+.toc b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 8px; }
+.toc ol { margin: 0 0 0 18px; padding: 0; }
+.toc li { padding: 3px 0; font-size: 14px; }
+.toc a { color: #c6cbd6; text-decoration: none; }
+.toc a:hover { color: var(--gold); }
+.yt-embed { position: relative; aspect-ratio: 16/9; margin: 16px 0 20px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.yt-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.prose-faq { margin-top: 34px; }
+.prose-faq h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin-bottom: 12px; }
+.prose-faq details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 0; }
+.prose-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: #e8eaef; font-size: 14.5px; }
+.prose-faq details p { padding: 0 18px 14px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.prose h2 { scroll-margin-top: 100px; }
 .crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
 .crumbs a { color: var(--accent); }
 .crumbs span { margin: 0 6px; }
@@ -353,16 +368,18 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 <article class="prose">
   <h1>How Buying &amp; Downloading Works</h1>
   
+  <nav class="toc" aria-label="Table of contents"><b>In this guide</b><ol><li><a href="#1-pay-with-paypal-or-card">1 · Pay with PayPal or card</a></li><li><a href="#2-get-your-files-instantly">2 · Get your files instantly</a></li><li><a href="#3-print-it">3 · Print it</a></li><li><a href="#if-something-goes-wrong">If something goes wrong</a></li></ol></nav>
   
 <p>Everything here is a digital download — no shipping, no waiting. Here is the exact flow from click to printed mini.</p>
-<h2>1 · Pay with PayPal or card</h2>
+<h2 id="1-pay-with-paypal-or-card">1 · Pay with PayPal or card</h2>
 <p>Every product page has PayPal buttons (a PayPal account is optional — the second button takes debit and credit cards directly). You can also add several minis to the cart and check out once; discount codes from the D20 roll apply there.</p>
-<h2>2 · Get your files instantly</h2>
+<h2 id="2-get-your-files-instantly">2 · Get your files instantly</h2>
 <p>The moment payment clears, your download links appear right on the page, and we email the same links to the address you gave at checkout (or your PayPal email). Bundles deliver one link per mini. Save the files right away — the page won't remember your purchase if you close it, but the email will.</p>
-<h2>3 · Print it</h2>
+<h2 id="3-print-it">3 · Print it</h2>
 <p>Files are clean STL meshes — watertight, pre-oriented, no supports baked in so you can tune them to your printer. Each listing shows the model's real dimensions plus suggested slicer percentages for 32mm tabletop, 75mm collectible and display scales. New to scaling? Read <a href="/guides/how-to-scale-stl-miniatures/">our scaling guide</a>.</p>
-<h2>If something goes wrong</h2>
+<h2 id="if-something-goes-wrong">If something goes wrong</h2>
 <p>Didn't get the email? Check spam, then write to <a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a> with your PayPal order ID and we re-send the links right away. Print trouble? Send us a photo of the failure — we've debugged hundreds of prints and we'll tell you what's happening.</p>
+  
 </article>
 <div class="prose-cta">
   <div class="prose-cta__box">
@@ -395,7 +412,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
     <div>
       <h4>Adventurer Support</h4>
       <ul>
-        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/custom-dnd-miniatures/">Custom figures — flat $15</a></li>
         <li><a href="/guides/">Printing guides</a></li>
         <li><a href="/how-it-works/">How buying works</a></li>
         <li><a href="/license/">License</a></li>
@@ -871,5 +888,6 @@ omnisend.push(["track", "$pageViewed"]);
   if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script>
+
 </body>
 </html>
