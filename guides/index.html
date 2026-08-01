@@ -493,7 +493,24 @@ omnisend.push(["track", "$pageViewed"]);
 <script>
 (function(){
   var CART_KEY = 'stl_cart', COUPON_KEY = 'stl_coupon', D20_SHOWN = 'd20_shown', D20_DONE = 'd20_done';
-  function readCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
+  function fixImg(u){
+    if (!u) return u;
+    // Carts saved before the WebP migration point at deleted .png files — rewrite to the thumb variant
+    if (/.(png|jpe?g)$/i.test(u) && !/-og.jpg$/i.test(u)) return u.replace(/.(png|jpe?g)$/i, '-t.webp');
+    return u;
+  }
+  function readCart(){
+    try {
+      var cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+      var changed = false;
+      for (var i = 0; i < cart.length; i++) {
+        var fixed = fixImg(cart[i].img);
+        if (fixed !== cart[i].img) { cart[i].img = fixed; changed = true; }
+      }
+      if (changed) try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch(e){}
+      return cart;
+    } catch(e){ return []; }
+  }
   function writeCart(c){ try { localStorage.setItem(CART_KEY, JSON.stringify(c)); } catch(e){} renderCart(); }
   function readCoupon(){ try { return JSON.parse(localStorage.getItem(COUPON_KEY)); } catch(e){ return null; } }
   function money(n){ return '$' + n.toFixed(2); }
@@ -573,7 +590,7 @@ omnisend.push(["track", "$pageViewed"]);
     var cart = readCart();
     document.getElementById('cart-toast-head').innerHTML = already ? 'Already in your cart' : '&#10003; Added to your cart';
     document.getElementById('cart-toast-item').innerHTML =
-      (item.img ? '<img src="' + item.img + '" alt="">' : '')
+      (item.img ? '<img src="' + fixImg(item.img) + '" alt="" onerror="this.style.display=\'none\'">' : '')
       + '<div class="cart-toast__title">' + item.title + '</div>'
       + '<div class="cart-toast__price">' + money(parseFloat(item.price)||0) + '</div>';
     document.getElementById('cart-toast-sub').textContent = cart.length + (cart.length > 1 ? ' items' : ' item') + ' in cart · Subtotal ' + money(subtotal());
@@ -599,7 +616,7 @@ omnisend.push(["track", "$pageViewed"]);
     else {
       box.innerHTML = cart.map(function(i){
         return '<div class="cart-item">'
-          + (i.img ? '<img src="' + i.img + '" alt="">' : '')
+          + (i.img ? '<img src="' + i.img + '" alt="" onerror="this.style.display=\'none\'">' : '')
           + '<div class="cart-item__title">' + i.title + '</div>'
           + '<div class="cart-item__price">' + money(parseFloat(i.price)||0) + '</div>'
           + '<button class="cart-item__rm" data-rm="' + i.slug + '" aria-label="Remove">&times;</button>'
