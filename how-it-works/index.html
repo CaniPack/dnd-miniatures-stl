@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e1a">
+<title>How It Works — Instant STL Downloads | DnD Miniatures STL</title>
+<meta name="description" content="Pay with PayPal or card, get your STL download links instantly on-screen and by email. How delivery, files and support work at DnD Miniatures STL.">
+<link rel="canonical" href="https://www.dndminiaturestl.com/how-it-works/">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How It Works — Instant STL Downloads | DnD Miniatures STL">
+<meta property="og:description" content="Pay with PayPal or card, get your STL download links instantly on-screen and by email. How delivery, files and support work at DnD Miniatures STL.">
+<meta property="og:url" content="https://www.dndminiaturestl.com/how-it-works/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"How Buying & Downloading Works","description":"Pay with PayPal or card, get your STL download links instantly on-screen and by email. How delivery, files and support work at DnD Miniatures STL.","url":"https://www.dndminiaturestl.com/how-it-works/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.dndminiaturestl.com/"},{"@type":"ListItem","position":2,"name":"How Buying & Downloading Works","item":"https://www.dndminiaturestl.com/how-it-works/"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0d13; --bg-card: #131722; --bg-card-hover: #1a2030;
+  --accent: #d43b32; --accent-hi: #e25549; --accent-lo: #a92a23; --accent-glow: #d43b3240;
+  --gold: #d4af37; --gold-soft: #d4af3799; --parchment: #f0e9d8;
+  --text: #f2f3f5; --text-dim: #9aa2b1; --border: #262b38;
+  --max: 1200px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+.header { position: sticky; top: 0; z-index: 50; background: rgba(11,13,19,.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.header__inner { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.brand { display: flex; align-items: center; line-height: 1; }
+.brand__img { height: 54px; width: auto; flex-shrink: 0; display: block; }
+@media (max-width: 700px) {
+  .brand__img { height: 40px; }
+  .header__inner { padding: 10px 16px; gap: 14px; }
+}
+.nav { display: flex; gap: 26px; align-items: center; }
+.nav__item { font-size: 14px; font-weight: 600; color: #ccd1db; transition: color .15s; white-space: nowrap; padding: 8px 0; letter-spacing: .3px; }
+.nav__item:hover { color: #fff; }
+.nav__dropdown { position: relative; }
+.nav__dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+.nav__dropdown-toggle::after { content: '▾'; font-size: 11px; transition: transform .15s; }
+.nav__dropdown:hover .nav__dropdown-toggle::after,
+.nav__dropdown:focus-within .nav__dropdown-toggle::after { transform: rotate(180deg); color: var(--gold); }
+.nav__dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #161a26; box-shadow: 0 14px 38px rgba(0,0,0,.55); border: 1px solid var(--border); border-radius: 10px; padding: 8px 0; min-width: 260px; margin-top: 4px; }
+.nav__dropdown:hover .nav__dropdown-menu,
+.nav__dropdown:focus-within .nav__dropdown-menu { display: block; }
+.nav__dropdown-menu a { display: block; padding: 10px 18px; font-size: 14px; font-weight: 500; color: #ccd1db; }
+.nav__dropdown-menu a:hover { background: #1d2331; color: #fff; }
+.header__cta { background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .8px; white-space: nowrap; border: 1px solid rgba(0,0,0,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 2px 8px rgba(0,0,0,.4); transition: transform .12s, box-shadow .12s, filter .12s; }
+.header__cta:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px var(--accent-glow); }
+@media (max-width: 800px) {
+  .nav__item:not(.header__cta), .nav__dropdown { display: none; }
+  .header__cta { display: none; }
+}
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .03; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+::selection { background: var(--gold); color: #14100a; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+html { scrollbar-color: #2a3040 #0b0d13; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #0b0d13; }
+::-webkit-scrollbar-thumb { background: #262b38; border-radius: 6px; border: 3px solid #0b0d13; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+.ornament { display: flex; align-items: center; gap: 14px; max-width: 380px; margin: 0 auto 26px; color: var(--gold); }
+.ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.ornament::after { background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.ornament i { font-style: normal; width: 9px; height: 9px; border: 1px solid var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+.kicker { font-size: 11px; font-weight: 800; letter-spacing: 2.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.totop { position: fixed; right: 18px; bottom: calc(86px + env(safe-area-inset-bottom, 0px)); z-index: 89; width: 42px; height: 42px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-dim); font-size: 17px; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.4); transition: color .15s, border-color .15s; }
+.totop:hover { color: var(--gold); border-color: var(--gold-soft); }
+.nav-burger { display: none; background: none; border: 1px solid var(--border); color: #ccd1db; border-radius: 8px; width: 40px; height: 40px; font-size: 17px; cursor: pointer; flex-shrink: 0; }
+@media (max-width: 800px) { .nav-burger { display: block; } }
+.mobilenav { position: fixed; inset: 0; z-index: 94; background: rgba(9,11,16,.97); backdrop-filter: blur(8px); padding: 84px 30px 30px; overflow-y: auto; }
+.mobilenav a { display: block; padding: 16px 0; font-size: 19px; font-weight: 700; color: var(--parchment); border-bottom: 1px solid var(--border); font-family: 'Cinzel', serif; letter-spacing: 1px; }
+.mobilenav a:hover { color: var(--gold); }
+.mobilenav__close { position: absolute; top: 18px; right: 20px; background: none; border: 0; color: var(--text-dim); font-size: 32px; cursor: pointer; line-height: 1; }
+.footer { border-top: 1px solid var(--border); margin-top: 40px; font-size: 13px; color: var(--text-dim); background: #090b10; }
+.footer__grid { max-width: var(--max); margin: 0 auto; padding: 46px 20px 30px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 36px; text-align: left; }
+@media (max-width: 700px) { .footer__grid { grid-template-columns: 1fr; gap: 26px; } }
+.footer__brand img { height: 46px; width: auto; }
+.footer__brand p { margin-top: 12px; font-size: 13px; color: var(--text-dim); max-width: 340px; line-height: 1.6; }
+.footer h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; color: var(--parchment); margin-bottom: 12px; font-weight: 700; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { padding: 4px 0; }
+.footer a { color: var(--text-dim); }
+.footer a:hover { color: var(--gold); }
+.footer__legal { border-top: 1px solid var(--border); padding: 18px 20px; text-align: center; font-size: 12px; color: #6d7482; }
+.footer__legal a { color: var(--gold-soft); }
+.custom { max-width: var(--max); margin: 0 auto; padding: 30px 20px 40px; }
+.custom__box { background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover)); border: 1px solid var(--accent); border-radius: 16px; padding: 36px 28px; text-align: center; }
+.custom__box h2 { font-family: 'Cinzel', serif; font-size: clamp(24px, 3.5vw, 34px); letter-spacing: 1px; margin-bottom: 10px; }
+.custom__price { color: var(--gold); font-weight: 800; }
+.custom__box > p { color: var(--text-dim); max-width: 640px; margin: 0 auto 20px; font-size: 15px; }
+.custom__steps { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.custom__step { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; font-size: 13px; color: var(--text-dim); max-width: 220px; text-align: left; }
+.custom__step b { color: var(--text); display: block; margin-bottom: 4px; }
+.custom__form { display: flex; gap: 10px; max-width: 600px; margin: 0 auto; }
+@media (max-width: 600px) { .custom__form { flex-direction: column; } }
+.custom__input { flex: 1; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: inherit; }
+.custom__input:focus { outline: none; border-color: var(--accent); }
+.custom__btn { display: inline-block; background: var(--accent); color: #fff; border: 0; cursor: pointer; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: inherit; transition: transform .15s, box-shadow .15s; }
+.custom__btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+.custom__note { margin-top: 14px; font-size: 12px; color: var(--text-dim); max-width: 640px; margin-left: auto; margin-right: auto; }
+.custom__note a { color: var(--accent); }
+.custom__hint { color: var(--gold); font-size: 13px; margin-top: 10px; }
+#custom-paypal { max-width: 400px; margin: 16px auto 0; }
+.custom__success { background: var(--bg); border: 1px solid var(--gold); border-radius: 12px; padding: 20px; max-width: 620px; margin: 16px auto 0; text-align: left; }
+.custom__success .custom__success-t { color: var(--gold); margin-bottom: 8px; font-size: 17px; font-weight: 700; }
+.custom__success p { color: var(--text-dim); font-size: 14px; }
+.custom__success a { color: var(--accent); }
+.custom-banner { background: var(--bg-card); border: 1px dashed var(--accent); border-radius: 12px; padding: 16px 18px; font-size: 14px; color: var(--text-dim); text-align: center; margin: 18px 0; }
+.custom-banner b { color: var(--text); }
+.custom-banner a { color: var(--accent); font-weight: 700; white-space: nowrap; }
+
+[hidden] { display: none !important; }
+.cart-btn { position: relative; background: none; border: 1px solid rgba(128,134,150,.4); color: inherit; border-radius: 8px; width: 40px; height: 40px; font-size: 17px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color .15s; }
+.cart-btn:hover { border-color: var(--gold); }
+.cart-fab__count { position: absolute; top: -7px; right: -7px; background: var(--gold); color: #000; font-size: 11px; font-weight: 800; min-width: 19px; height: 19px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 0 5px; box-shadow: 0 2px 6px rgba(0,0,0,.35); }
+.cart-overlay { position: fixed; inset: 0; background: rgba(4,5,9,.68); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); z-index: 190; }
+.cart-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); background: var(--bg-card); border-left: 1px solid var(--border); z-index: 191; display: flex; flex-direction: column; animation: cartSlideIn .25s ease; }
+@keyframes cartSlideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+.cart-drawer__head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--border); }
+.cart-drawer__head h3 { font-size: 18px; }
+.cart-drawer__close { background: none; border: 0; color: var(--text-dim); font-size: 26px; cursor: pointer; line-height: 1; }
+.cart-items { flex: 1; min-height: 80px; overflow-y: auto; padding: 12px 20px; }
+.cart-empty { color: var(--text-dim); font-size: 14px; text-align: center; padding: 40px 0; }
+.cart-item { display: flex; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.cart-item img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; }
+.cart-item__title { flex: 1; font-size: 13px; font-weight: 600; line-height: 1.3; }
+.cart-item__price { color: var(--gold); font-weight: 700; font-size: 14px; white-space: nowrap; }
+.cart-item__rm { background: none; border: 0; color: var(--text-dim); font-size: 18px; cursor: pointer; }
+.cart-foot { border-top: 1px solid var(--border); padding: 12px 20px calc(14px + env(safe-area-inset-bottom, 0px)); overflow-y: auto; flex-shrink: 0; max-height: 64vh; }
+.cart-coupon { display: flex; gap: 8px; margin-bottom: 8px; }
+.cart-coupon input { flex: 1; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 13px; font-family: inherit; text-transform: uppercase; }
+.cart-coupon input:focus { outline: none; border-color: var(--accent); }
+.cart-coupon button { background: var(--bg); border: 1px solid var(--accent); color: var(--accent); border-radius: 8px; padding: 10px 14px; font-weight: 700; font-size: 12px; cursor: pointer; font-family: inherit; }
+.cart-coupon__msg { font-size: 12px; margin: -6px 0 10px; }
+.cart-coupon__msg--ok { color: #6fdc9c; }
+.cart-coupon__msg--bad { color: #e07b7b; }
+.cart-email { width: 100%; padding: 11px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 13px; font-family: inherit; margin-bottom: 6px; }
+.cart-email:focus { outline: none; border-color: var(--gold); }
+.cart-email__hint { font-size: 12px; color: var(--gold); margin-bottom: 8px; }
+.cart-total { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-dim); margin-bottom: 3px; }
+.cart-total--final { font-size: 17px; color: var(--text); font-weight: 800; margin: 6px 0 10px; padding-top: 8px; border-top: 1px solid var(--border); }
+.cart-total--final span:last-child { color: var(--gold); }
+#cart-paypal { max-width: 100%; }
+.cart-note { font-size: 10.5px; color: var(--text-dim); text-align: center; margin-top: 6px; line-height: 1.4; }
+.cart-success { padding: 10px 0; }
+.cart-success .cart-success__t { color: var(--gold); margin-bottom: 8px; font-weight: 700; font-size: 16px; }
+.cart-success p { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+.cart-success a.cart-dl { display: block; padding: 8px 0; color: #6fdc9c; font-weight: 700; font-size: 14px; }
+.cart-upgrade { background: linear-gradient(135deg, rgba(212,175,55,.12), transparent); border: 1px solid var(--gold-soft, var(--gold)); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; font-size: 13px; }
+.cart-upgrade b { color: var(--gold); }
+.cart-upgrade button { margin-top: 8px; width: 100%; background: var(--gold); color: #14100a; border: 0; cursor: pointer; padding: 10px; border-radius: 8px; font-weight: 800; font-size: 13px; font-family: inherit; }
+.cart-upgrade button:hover { filter: brightness(1.08); }
+.cart-toast { position: fixed; top: 14px; right: 14px; z-index: 194; width: min(340px, calc(100vw - 28px)); background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid #6fdc9c; border-radius: 12px; padding: 13px 15px; box-shadow: 0 18px 50px rgba(0,0,0,.55); animation: toastIn .22s ease; }
+@keyframes toastIn { from { transform: translateY(-14px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.cart-toast__head { display: flex; justify-content: space-between; align-items: center; color: #6fdc9c; font-weight: 800; font-size: 13px; margin-bottom: 9px; }
+.cart-toast__close { background: none; border: 0; color: var(--text-dim); font-size: 20px; cursor: pointer; line-height: 1; padding: 0 2px; }
+.cart-toast__item { display: flex; gap: 10px; align-items: center; }
+.cart-toast__item img { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; }
+.cart-toast__title { flex: 1; font-size: 13px; font-weight: 600; line-height: 1.3; }
+.cart-toast__price { color: var(--gold); font-weight: 700; font-size: 13px; white-space: nowrap; }
+.cart-toast__sub { font-size: 11.5px; color: var(--text-dim); margin: 8px 0 10px; }
+.cart-toast__upgrade { margin-bottom: 10px; }
+.cart-toast__actions { display: flex; gap: 8px; }
+.cart-toast__actions .cart-toast__checkout { flex: 1; background: var(--accent); color: #fff; border: 0; padding: 10px; border-radius: 8px; font-weight: 800; font-size: 12px; cursor: pointer; font-family: inherit; text-transform: uppercase; letter-spacing: .5px; }
+.cart-toast__actions .cart-toast__checkout:hover { filter: brightness(1.1); }
+.cart-toast__actions .cart-toast__view { flex: 1; background: transparent; color: var(--text-dim); border: 1px solid var(--border); padding: 10px; border-radius: 8px; font-weight: 700; font-size: 12px; cursor: pointer; font-family: inherit; }
+.cart-toast__actions .cart-toast__view:hover { color: var(--text); border-color: var(--text-dim); }
+.card__img, .gallery__main img, .cart-toast img { opacity: 0; transition: opacity .35s ease; }
+.card__img.img-in, .gallery__main img.img-in, .cart-toast img.img-in { opacity: 1; }
+.dice-fab { position: fixed; left: 0; top: 52%; transform: translateY(-50%); z-index: 90; display: flex; align-items: center; justify-content: center; width: 34px; min-height: 168px; background: linear-gradient(180deg, var(--gold), #b8952c); color: #14100a; border: 0; border-radius: 0 10px 10px 0; padding: 14px 5px; cursor: pointer; font-family: inherit; box-shadow: 4px 0 18px rgba(0,0,0,.4); transition: filter .15s, width .15s; }
+.dice-fab span { writing-mode: vertical-rl; text-orientation: mixed; font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; white-space: nowrap; }
+.dice-fab:hover { filter: brightness(1.07); width: 38px; }
+@media (max-width: 700px) {
+  .dice-fab { left: 12px; top: auto; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: none; width: auto; min-height: 0; border-radius: 999px; padding: 10px 14px; }
+  .dice-fab span { writing-mode: horizontal-tb; font-size: 11px; letter-spacing: .8px; }
+  .dice-fab:hover { width: auto; }
+}
+.dice-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 193; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
+.dice-box { background: var(--bg-card); border: 1px solid var(--gold); border-radius: 16px; max-width: 430px; width: 100%; padding: 30px 26px; text-align: center; position: relative; max-height: 92vh; overflow-y: auto; animation: dicePop .22s ease; }
+@keyframes dicePop { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.dice-box__close { position: absolute; top: 10px; right: 14px; background: none; border: 0; color: var(--text-dim); font-size: 24px; cursor: pointer; }
+.dice-box .dice-box__t { font-size: 26px; margin-bottom: 6px; font-weight: 800; }
+.dice-box__sub { color: var(--text-dim); font-size: 14px; margin-bottom: 18px; }
+.dice-d20 { width: 124px; height: 124px; margin: 0 auto 18px; position: relative; }
+.dice-d20 svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 10px 18px rgba(0,0,0,.45)); }
+.d20-body { fill: var(--accent); stroke: rgba(0,0,0,.4); stroke-width: 2; stroke-linejoin: round; }
+.d20-face { fill: rgba(255,255,255,.12); stroke: rgba(0,0,0,.35); stroke-width: 1.5; stroke-linejoin: round; }
+.d20-edges line { stroke: rgba(0,0,0,.35); stroke-width: 1.5; stroke-linecap: round; }
+.dice-d20__num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-top: 12px; font-size: 30px; font-weight: 900; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,.55); }
+.dice-d20--rolling { animation: diceRoll .85s cubic-bezier(.35,.6,.45,1) infinite; }
+.dice-d20--rolling svg { filter: blur(.6px); }
+.dice-d20--rolling .dice-d20__num { opacity: 0; }
+@keyframes diceRoll {
+  0%   { transform: rotate(0deg) translateY(0) scale(1); }
+  16%  { transform: rotate(118deg) translateY(-30px) scale(.94); }
+  32%  { transform: rotate(252deg) translateY(0) scale(1.05); }
+  48%  { transform: rotate(378deg) translateY(-18px) scale(.96); }
+  64%  { transform: rotate(506deg) translateY(0) scale(1.04); }
+  82%  { transform: rotate(628deg) translateY(-7px) scale(.98); }
+  100% { transform: rotate(720deg) translateY(0) scale(1); }
+}
+.dice-d20--land { animation: diceLand .5s cubic-bezier(.2,1.9,.4,1); }
+@keyframes diceLand { 0% { transform: translateY(-16px) scale(1.18); } 55% { transform: translateY(0) scale(.94); } 100% { transform: translateY(0) scale(1); } }
+.dice-d20--land .dice-d20__num { animation: numPop .45s ease; }
+@keyframes numPop { 0% { transform: scale(1.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.dice-form { display: flex; flex-direction: column; gap: 10px; }
+.dice-form input { padding: 13px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: inherit; }
+.dice-form input:focus { outline: none; border-color: var(--gold); }
+.dice-form button { background: var(--gold); color: #000; border: 0; cursor: pointer; padding: 13px; border-radius: 10px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: inherit; }
+.dice-form button:disabled { opacity: .6; cursor: wait; }
+.dice-err { color: #e07b7b; font-size: 12px; min-height: 15px; }
+.dice-note { color: var(--text-dim); font-size: 11px; margin-top: 12px; }
+.dice-result .dice-result__t { color: var(--gold); font-size: 22px; margin-bottom: 8px; font-weight: 800; }
+.dice-result p { color: var(--text-dim); font-size: 14px; }
+.dice-result b { color: var(--text); }
+
+.hero { position: relative; padding: 110px 20px 70px; text-align: center; overflow: hidden; border-bottom: 1px solid var(--border); }
+.hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center 30%; filter: brightness(.32) saturate(1.15); transform: scale(1.04); }
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,13,19,.25) 0%, rgba(11,13,19,.55) 55%, var(--bg) 100%); }
+.hero__inner { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; }
+.hero h1 { font-family: 'Cinzel', serif; font-size: clamp(34px, 5.6vw, 64px); line-height: 1.12; letter-spacing: 2px; margin-bottom: 18px; color: var(--parchment); text-shadow: 0 4px 24px rgba(0,0,0,.65); }
+.hero h1 span { color: var(--gold); }
+.hero p { font-size: clamp(14px, 1.8vw, 17px); color: #c3c9d4; max-width: 700px; margin: 0 auto 26px; text-shadow: 0 2px 12px rgba(0,0,0,.7); }
+.hero__stats { display: flex; justify-content: center; gap: 14px; margin: 34px 0 30px; flex-wrap: wrap; }
+.hero__stats > div { background: rgba(11,13,19,.55); border: 1px solid rgba(212,175,55,.25); border-radius: 10px; padding: 14px 26px; backdrop-filter: blur(4px); }
+.stat__num { font-family: 'Cinzel', serif; font-size: 32px; color: var(--gold); line-height: 1; font-weight: 700; }
+.stat__label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 5px; }
+.hero__actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.hero__cta { display: inline-block; background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 15px 34px; border-radius: 8px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(0,0,0,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 4px 16px rgba(0,0,0,.45); transition: transform .15s, box-shadow .15s, filter .15s; }
+.hero__cta:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 10px 28px var(--accent-glow); }
+.hero__cta--ghost { background: rgba(11,13,19,.5); border: 1px solid var(--gold-soft); color: var(--parchment); box-shadow: none; }
+.hero__cta--ghost:hover { border-color: var(--gold); box-shadow: 0 8px 22px rgba(212,175,55,.18); }
+.trustbar { border-bottom: 1px solid var(--border); background: #0d1017; }
+.trustbar__inner { max-width: var(--max); margin: 0 auto; padding: 13px 20px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 12.5px; color: var(--text-dim); }
+.trustbar__inner b { color: var(--parchment); font-weight: 600; }
+.features { max-width: var(--max); margin: 0 auto; padding: 44px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.feature { background: linear-gradient(180deg, var(--bg-card), #10141d); border: 1px solid var(--border); padding: 22px 20px; border-radius: 10px; transition: border-color .2s; }
+.feature:hover { border-color: rgba(212,175,55,.4); }
+.feature__icon { font-size: 22px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; margin-bottom: 5px; font-weight: 700; letter-spacing: .3px; }
+.feature p { font-size: 13px; color: var(--text-dim); }
+.section { max-width: var(--max); margin: 0 auto; padding: 60px 20px; scroll-margin-top: 160px; }
+@media (max-width: 700px) { .section { scroll-margin-top: 130px; } }
+.custom, .faq { scroll-margin-top: 150px; }
+@media (max-width: 700px) { .custom, .faq { scroll-margin-top: 120px; } }
+
+.quicknav { position: sticky; top: 82px; z-index: 40; background: rgba(13,16,23,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+@media (max-width: 700px) { .quicknav { top: 60px; } }
+.quicknav__inner { max-width: var(--max); margin: 0 auto; padding: 11px 16px; display: flex; gap: 8px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+.quicknav__inner::-webkit-scrollbar { height: 4px; }
+.quicknav__inner::-webkit-scrollbar-track { background: transparent; }
+.quicknav__inner::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+.quicknav__chip { flex-shrink: 0; padding: 7px 16px; background: #1a2030; border-radius: 999px; font-size: 12px; font-weight: 600; color: #cfd4de; white-space: nowrap; transition: all .15s; border: 1px solid var(--border); letter-spacing: .3px; }
+.quicknav__chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-1px); }
+.quicknav__chip--first { font-weight: 700; }
+.section__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 26px; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 14px; position: relative; }
+.section__head::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 90px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+.section__title { font-family: 'Cinzel', serif; font-size: clamp(23px, 3.6vw, 34px); letter-spacing: 1.2px; font-weight: 700; color: var(--parchment); }
+.section__count { color: var(--text-dim); font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.card { background: linear-gradient(180deg, var(--bg-card), #10141d); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform .2s, border-color .2s, box-shadow .2s; display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,.5); box-shadow: 0 16px 40px rgba(0,0,0,.55); }
+.card__link { display: block; flex: 1; }
+.card__etsy { display: block; padding: 9px 14px; font-size: 11px; font-weight: 600; color: var(--text-dim); text-align: center; border-top: 1px solid var(--border); transition: color .15s, background .15s; text-transform: uppercase; letter-spacing: .6px; }
+.card__etsy:hover { color: var(--gold); background: var(--bg-card-hover); }
+.card__img-wrap { position: relative; aspect-ratio: 1/1; overflow: hidden; background: #0d0f16; }
+.card__img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 72%, rgba(11,13,19,.55)); pointer-events: none; }
+.card__img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.card:hover .card__img { transform: scale(1.06); }
+.card__img--missing { display: flex; align-items: center; justify-content: center; color: var(--text-dim); font-size: 14px; }
+.card__badge { position: absolute; top: 10px; left: 10px; z-index: 1; background: var(--gold); color: #16110a; font-size: 10px; font-weight: 800; padding: 5px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: .7px; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.card__body { padding: 15px; }
+.card__title { font-size: 14px; font-weight: 700; line-height: 1.35; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px; color: #e8eaef; }
+.card__desc { font-size: 13px; color: var(--text-dim); margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card__foot { display: flex; justify-content: space-between; align-items: center; padding-top: 11px; border-top: 1px solid var(--border); }
+.card__price { font-family: 'Cinzel', serif; font-size: 21px; color: var(--gold); letter-spacing: 1px; font-weight: 700; }
+.card__cta { font-size: 11px; font-weight: 800; color: var(--accent-hi); text-transform: uppercase; letter-spacing: .6px; }
+.story { max-width: var(--max); margin: 0 auto; padding: 70px 20px; }
+.story__inner { background: linear-gradient(180deg, var(--bg-card), #10141d); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 12px; padding: 42px; }
+.story h2 { font-family: 'Cinzel', serif; font-size: clamp(26px, 3.6vw, 38px); margin-bottom: 16px; letter-spacing: 1px; color: var(--parchment); }
+.story p { color: var(--text-dim); margin-bottom: 12px; font-size: 15px; }
+.char-index { background: rgba(20, 24, 34, 0.5); border-top: 1px solid var(--border); padding: 28px 20px 32px; }
+.char-index__head { max-width: var(--max); margin: 0 auto 18px; text-align: center; }
+.char-index__head h2 { font-size: 13px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+.char-index__head p { font-size: 11px; color: var(--text-dim); opacity: 0.75; max-width: 540px; margin: 0 auto; }
+.char-index__sagas { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px 24px; }
+.char-index__saga h3 { font-size: 11px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; opacity: 0.85; }
+.char-index__saga ul { list-style: none; padding: 0; margin: 0; }
+.char-index__saga li { padding: 1px 0; }
+.char-index__saga a { font-size: 12px; color: var(--text-dim); line-height: 1.5; transition: color 0.15s; }
+.char-index__saga a:hover { color: var(--accent); }
+.faq { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+.faq h2 { font-family: 'Cinzel', serif; font-size: clamp(28px, 4vw, 40px); margin-bottom: 24px; letter-spacing: 1px; text-align: center; }
+.faq__item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.faq__item summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 700; font-size: 15px; position: relative; }
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after { content: '+'; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--accent); transition: transform .15s; }
+.faq__item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq__item p { padding: 0 22px 18px; color: var(--text-dim); font-size: 15px; }
+
+.prose { max-width: 800px; margin: 0 auto; padding: 36px 20px 60px; }
+.prose h1 { font-family: 'Cinzel', serif; font-size: clamp(26px, 4vw, 38px); color: var(--parchment); line-height: 1.2; margin-bottom: 8px; letter-spacing: .5px; }
+.prose h2 { font-family: 'Cinzel', serif; font-size: 21px; color: var(--parchment); margin: 30px 0 10px; letter-spacing: .5px; }
+.prose p { color: #c6cbd6; margin: 0 0 14px; font-size: 15px; line-height: 1.75; }
+.prose ul { margin: 0 0 14px 22px; color: #c6cbd6; font-size: 15px; line-height: 1.7; }
+.prose li { margin-bottom: 7px; }
+.prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { color: #fff; }
+.prose table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 14px; }
+.prose th, .prose td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; color: #c6cbd6; }
+.prose th { background: var(--bg-card); color: var(--parchment); }
+.prose__meta { color: var(--text-dim); font-size: 12px; text-transform: uppercase; letter-spacing: 1.6px; margin-bottom: 24px; }
+.prose-cta { max-width: 800px; margin: 0 auto 50px; padding: 0 20px; }
+.prose-cta__box { background: linear-gradient(135deg, rgba(212,175,55,.1), var(--bg-card)); border: 1px solid var(--gold-soft); border-radius: 12px; padding: 22px; text-align: center; }
+.prose-cta__box p { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; }
+.guide-card { display: block; background: linear-gradient(180deg, var(--bg-card), #10141d); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; margin-bottom: 12px; transition: border-color .15s, transform .15s; }
+.guide-card:hover { border-color: var(--gold-soft); transform: translateY(-2px); }
+.guide-card b { display: block; font-size: 16px; color: var(--parchment); margin-bottom: 5px; }
+.guide-card span { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
+.guide-card i { display: block; font-style: normal; margin-top: 8px; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.2px; }
+.crumbs { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--text-dim); }
+.crumbs a { color: var(--accent); }
+.crumbs span { margin: 0 6px; }
+</style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>if(navigator.sendBeacon&&location.pathname.indexOf('/oculto')!==0){try{navigator.sendBeacon('/api/track',JSON.stringify({p:location.pathname}))}catch(e){}}</script>
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="/" class="brand" aria-label="DnD Miniatures STL · home"><img class="brand__img" src="/images/logo-dark.webp" alt="DnD Miniatures STL" width="347" height="104"></a>
+    <nav class="nav">
+      <a class="nav__item" href="/">All Minis</a>
+      <a class="nav__item" href="/#bundles">Bundles</a>
+      <a class="nav__item" href="/guides/">Guides</a>
+      <a class="nav__item" href="/#faq">FAQ</a>
+    </nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu">&#9776;</button>
+    <button class="cart-btn" id="cart-fab" aria-label="Open cart">&#128722;<span class="cart-fab__count" id="cart-count" hidden>0</span></button>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><span>How Buying &amp; Downloading Works</span></nav>
+<main>
+<article class="prose">
+  <h1>How Buying &amp; Downloading Works</h1>
+  
+  
+<p>Everything here is a digital download — no shipping, no waiting. Here is the exact flow from click to printed mini.</p>
+<h2>1 · Pay with PayPal or card</h2>
+<p>Every product page has PayPal buttons (a PayPal account is optional — the second button takes debit and credit cards directly). You can also add several minis to the cart and check out once; discount codes from the D20 roll apply there.</p>
+<h2>2 · Get your files instantly</h2>
+<p>The moment payment clears, your download links appear right on the page, and we email the same links to the address you gave at checkout (or your PayPal email). Bundles deliver one link per mini. Save the files right away — the page won't remember your purchase if you close it, but the email will.</p>
+<h2>3 · Print it</h2>
+<p>Files are clean STL meshes — watertight, pre-oriented, no supports baked in so you can tune them to your printer. Each listing shows the model's real dimensions plus suggested slicer percentages for 32mm tabletop, 75mm collectible and display scales. New to scaling? Read <a href="/guides/how-to-scale-stl-miniatures/">our scaling guide</a>.</p>
+<h2>If something goes wrong</h2>
+<p>Didn't get the email? Check spam, then write to <a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a> with your PayPal order ID and we re-send the links right away. Print trouble? Send us a photo of the failure — we've debugged hundreds of prints and we'll tell you what's happening.</p>
+</article>
+<div class="prose-cta">
+  <div class="prose-cta__box">
+    <p>Everything in our catalog is repaired, watertight and ships with a print report — so these guides are shorter than they'd otherwise need to be.</p>
+    <a class="cta-btn" href="/#bundles" style="padding:12px 24px;font-size:13px">Browse the minis</a>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img src="/images/logo-dark.webp" alt="DnD Miniatures STL" width="347" height="104">
+      <p>Hand-curated fantasy miniature STLs for D&amp;D, Pathfinder and tabletop RPG. Every mesh repaired, watertight and print-tested — FDM and resin, 32mm to display scale.</p>
+    </div>
+    <div>
+      <h4>The Armory</h4>
+      <ul>
+        <li><a href="/bandit-stl/">Bandit Miniature</a></li>
+        <li><a href="/mercenary-stl/">Mercenary Miniature</a></li>
+        <li><a href="/orc-stl/">Orc Miniature</a></li>
+        <li><a href="/minotaur-stl/">Minotaur Miniature</a></li>
+        <li><a href="/baphomet-stl/">Baphomet Demon Lord</a></li>
+        <li><a href="/monster-stl/">DnD Monster &amp; Terrain</a></li>
+        <li><a href="/terrain-stl/">Terrain &amp; Dioramas</a></li>
+        <li><a href="/halloween-stl/">Halloween minis</a></li>
+        <li><a href="/#bundles">Warband Bundles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Adventurer Support</h4>
+      <ul>
+        <li><a href="/#custom">Custom figures — flat $15</a></li>
+        <li><a href="/guides/">Printing guides</a></li>
+        <li><a href="/how-it-works/">How buying works</a></li>
+        <li><a href="/license/">License</a></li>
+        <li><a href="/refunds/">Refunds</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="mailto:info@dndminiaturestl.com">info@dndminiaturestl.com</a></li>
+        <li><a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener nofollow" data-shop-link="footer">Etsy shop</a></li>
+        <li><a href="https://www.dndanimeminiatures.com/" target="_blank" rel="noopener">Anime minis (One Piece)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">© 2026 DnD Miniatures STL · License: personal use + selling physical prints · Original fantasy creature designs. Some minis are fan-art inspired by Gravity Co.'s Ragnarok Online (no official affiliation).</div>
+</footer>
+
+<!-- Omnisend web tracking -->
+<script type="text/javascript">
+window.omnisend = window.omnisend || [];
+omnisend.push(["brandID", "6a6bccbdc6ac202127c1d48a"]);
+omnisend.push(["track", "$pageViewed"]);
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+</script>
+<script src="https://www.paypal.com/sdk/js?client-id=ARQlghbBNJ8PC7_91voWgXSPX-K7X2ZZ8ABK-oSAiKkdg3m7NAvl7RmAGKw0BHn4-30OyU0Wb3GbZg1Z&currency=USD&intent=capture"></script>
+<script>window.CART_RECS=[{"slug":"mercenary-warband-pack-6","title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1-t.webp"},{"slug":"minotaur-warband-pack-6","title":"Minotaur Warband Bundle 6","price":20,"img":"/images/minotaur-warband-pack-6-1-t.webp"},{"slug":"orc-warband-pack-6-ro","title":"Orc Warband Bundle 6","price":20,"img":"/images/orc-warband-pack-6-ro-1-t.webp"},{"slug":"road-bandits-pack-6","title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1-t.webp"}];window.CART_BUNDLES={"road-bandits-pack-6":{"title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1-t.webp","members":["bandit-captain","bandit-crossbowman","bandit-sorcerer","bandit-brute","bandit-rogue","bandit-swordsman"],"memberPrices":{"bandit-captain":4,"bandit-crossbowman":4,"bandit-sorcerer":4,"bandit-brute":4,"bandit-rogue":4,"bandit-swordsman":4}},"mercenary-warband-pack-6":{"title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1-t.webp","members":["mercenary-captain","mercenary-sword-shield","mercenary-spearman","mercenary-sword-axe","mercenary-veteran","mercenary-twin-blades"],"memberPrices":{"mercenary-captain":4,"mercenary-sword-shield":4,"mercenary-spearman":4,"mercenary-sword-axe":4,"mercenary-veteran":4,"mercenary-twin-blades":4}},"orc-warband-pack-6-ro":{"title":"Orc Warband Bundle 6","price":20,"img":"/images/orc-warband-pack-6-ro-1-t.webp","members":["orc-baby-ro","orc-hero-ro","orc-lady-ro","orc-lord-ro","orc-archer-ro","orc-axe-warrior-ro"],"memberPrices":{"orc-baby-ro":4,"orc-hero-ro":4,"orc-lady-ro":4,"orc-lord-ro":4,"orc-archer-ro":4,"orc-axe-warrior-ro":4}},"minotaur-warband-pack-6":{"title":"Minotaur Warband Bundle 6","price":20,"img":"/images/minotaur-warband-pack-6-1-t.webp","members":["minotaur-dual-axe","minotaur-greataxe","minotaur-spear","minotaur-shaman","minotaur-morning-star","minotaur-trident"],"memberPrices":{"minotaur-dual-axe":4,"minotaur-greataxe":4,"minotaur-spear":4,"minotaur-shaman":4,"minotaur-morning-star":4,"minotaur-trident":4}}};</script>
+
+<button class="dice-fab" id="dice-fab" aria-label="Roll the D20 for a discount"><span>&#127922; Win up to 20% off</span></button>
+<div class="cart-overlay" id="cart-overlay" hidden></div>
+<aside class="cart-drawer" id="cart-drawer" hidden aria-label="Shopping cart">
+  <div class="cart-drawer__head"><h3>Your Cart</h3><button class="cart-drawer__close" id="cart-close" aria-label="Close cart">&times;</button></div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-foot" id="cart-foot">
+    <div id="cart-upgrade"></div>
+    <div class="cart-coupon">
+      <input id="coupon-input" placeholder="Discount code" aria-label="Discount code">
+      <button id="coupon-apply" type="button">Apply</button>
+    </div>
+    <div class="cart-coupon__msg" id="coupon-msg"></div>
+    <div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+    <div class="cart-total" id="cart-discount-row" hidden><span id="cart-discount-label">Discount</span><span id="cart-discount">-$0.00</span></div>
+    <div class="cart-total cart-total--final"><span>Total</span><span id="cart-total">$0.00</span></div>
+    <input class="cart-email" id="cart-email" type="email" autocomplete="email" placeholder="Email for your download links" aria-label="Email for your download links">
+    <div class="cart-email__hint" id="cart-email-hint" hidden>Enter a valid email first — your files are sent there.</div>
+    <div id="cart-paypal"></div>
+    <div class="cart-note">Instant download — links shown here and emailed to your PayPal address.</div>
+  </div>
+  <div class="cart-foot cart-success" id="cart-success" hidden>
+    <p class="cart-success__t">&#9989; Payment received!</p>
+    <p id="cart-success-note">Your files are ready — links also sent to your PayPal email.</p>
+    <div id="cart-links"></div>
+  </div>
+</aside>
+<div class="cart-toast" id="cart-toast" hidden role="status">
+  <div class="cart-toast__head"><span id="cart-toast-head">&#10003; Added to your cart</span><button class="cart-toast__close" id="cart-toast-close" aria-label="Close">&times;</button></div>
+  <div class="cart-toast__item" id="cart-toast-item"></div>
+  <div class="cart-toast__sub" id="cart-toast-sub"></div>
+  <div class="cart-toast__upgrade" id="toast-upgrade"></div>
+  <div class="cart-toast__actions">
+    <button class="cart-toast__view" id="cart-toast-view" type="button">View cart</button>
+    <button class="cart-toast__checkout" id="cart-toast-checkout" type="button">Checkout</button>
+  </div>
+</div>
+<div class="dice-overlay" id="dice-overlay" hidden>
+  <div class="dice-box">
+    <button class="dice-box__close" id="dice-close" aria-label="Close">&times;</button>
+    <div class="dice-d20" id="dice-d20-wrap" aria-hidden="true">
+      <svg viewBox="0 0 100 100" focusable="false">
+        <polygon class="d20-body" points="50,3 90,27 90,75 50,99 10,75 10,27"/>
+        <polygon class="d20-face" points="50,24 77,68 23,68"/>
+        <g class="d20-edges">
+          <line x1="50" y1="3" x2="50" y2="24"/>
+          <line x1="10" y1="27" x2="50" y2="24"/>
+          <line x1="90" y1="27" x2="50" y2="24"/>
+          <line x1="10" y1="27" x2="23" y2="68"/>
+          <line x1="90" y1="27" x2="77" y2="68"/>
+          <line x1="10" y1="75" x2="23" y2="68"/>
+          <line x1="90" y1="75" x2="77" y2="68"/>
+          <line x1="50" y1="99" x2="23" y2="68"/>
+          <line x1="50" y1="99" x2="77" y2="68"/>
+        </g>
+      </svg>
+      <span class="dice-d20__num" id="dice-d20">20</span>
+    </div>
+    <div id="dice-step1">
+      <p class="dice-box__t">Roll the D20</p>
+      <p class="dice-box__sub">One roll per adventurer. Whatever number it lands on is your discount — up to <b>20% off</b>.</p>
+      <div class="dice-form">
+        <input id="dice-email" type="email" placeholder="your@email.com" autocomplete="email" aria-label="Your email">
+        <div class="dice-err" id="dice-err"></div>
+        <button id="dice-roll" type="button">Roll for my discount</button>
+      </div>
+      <p class="dice-note">Your discount code will be emailed to this address — double-check it's correct. No spam, unsubscribe anytime.</p>
+    </div>
+    <div class="dice-result" id="dice-result" hidden>
+      <p class="dice-result__t" id="dice-result-title">You rolled a 20!</p>
+      <p id="dice-result-text"></p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var CART_KEY = 'stl_cart', COUPON_KEY = 'stl_coupon', D20_SHOWN = 'd20_shown', D20_DONE = 'd20_done';
+  function readCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
+  function writeCart(c){ try { localStorage.setItem(CART_KEY, JSON.stringify(c)); } catch(e){} renderCart(); }
+  function readCoupon(){ try { return JSON.parse(localStorage.getItem(COUPON_KEY)); } catch(e){ return null; } }
+  function money(n){ return '$' + n.toFixed(2); }
+  function cartEmailVal(){ var el = document.getElementById('cart-email'); return el ? (el.value || '').trim().toLowerCase() : ''; }
+  function validCartEmail(){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(cartEmailVal()); }
+  function subtotal(){ return readCart().reduce(function(t,i){ return t + (parseFloat(i.price)||0); }, 0); }
+  function discountPct(){ var c = readCoupon(); return c && c.percent ? c.percent : 0; }
+  function total(){ return Math.round(subtotal() * (100 - discountPct())) / 100; }
+
+  var fab = document.getElementById('cart-fab');
+  var paypalRendered = false;
+
+  window.addToCart = function(item){
+    var cart = readCart();
+    for (var i = 0; i < cart.length; i++) if (cart[i].slug === item.slug) { openAdded(item, true); return; }
+    cart.push(item); writeCart(cart); openAdded(item, false);
+  };
+  function removeFromCart(slug){ writeCart(readCart().filter(function(i){ return i.slug !== slug; })); }
+
+  function imgFade(){
+    var imgs = document.querySelectorAll('.card__img, .gallery__main img, .cart-toast img');
+    for (var i = 0; i < imgs.length; i++) (function(im){
+      if (im.classList.contains('img-in')) return;
+      function mark(){ im.classList.add('img-in'); }
+      if (im.complete && im.naturalWidth) { mark(); return; }
+      im.addEventListener('load', mark);
+      setTimeout(mark, 1800);
+    })(imgs[i]);
+  }
+
+  /* ===== bundle upgrade (window.CART_BUNDLES = { bundleSlug: {title, price, img, members, memberPrices} }) ===== */
+  function upgradeOffer(){
+    var map = window.CART_BUNDLES || {};
+    var cart = readCart();
+    var inCart = {};
+    for (var i = 0; i < cart.length; i++) inCart[cart[i].slug] = true;
+    for (var bslug in map) {
+      if (inCart[bslug]) continue;
+      var b = map[bslug], have = 0;
+      for (var j = 0; j < b.members.length; j++) if (inCart[b.members[j]]) have++;
+      if (have >= 3) {
+        var singles = 0;
+        for (var s in (b.memberPrices || {})) singles += b.memberPrices[s];
+        return { slug: bslug, title: b.title, price: b.price, img: b.img, members: b.members, count: b.members.length, save: Math.max(0, Math.round((singles - b.price) * 100) / 100) };
+      }
+    }
+    return null;
+  }
+  function upgradeHtml(off){
+    if (!off) return '';
+    return '<div class="cart-upgrade">&#127873; <b>Upgrade:</b> get all ' + off.count + ' minis for $' + off.price.toFixed(2)
+      + (off.save ? ' — save $' + off.save.toFixed(2) + ' vs singles' : '') + '.'
+      + '<button type="button" data-upgrade="' + off.slug + '">Upgrade my cart — $' + off.price.toFixed(2) + '</button></div>';
+  }
+  function renderUpgrades(){
+    var off = upgradeOffer();
+    var d = document.getElementById('cart-upgrade');
+    if (d) d.innerHTML = upgradeHtml(off);
+    var m = document.getElementById('toast-upgrade');
+    if (m) m.innerHTML = upgradeHtml(off);
+  }
+  function applyUpgrade(bslug){
+    var b = (window.CART_BUNDLES || {})[bslug];
+    if (!b) return;
+    var cart = readCart().filter(function(i){ return b.members.indexOf(i.slug) === -1; });
+    cart.push({ slug: bslug, title: b.title, price: String(b.price), img: b.img });
+    writeCart(cart);
+    if (typeof gtag === 'function') gtag('event', 'add_to_cart', { currency: 'USD', value: b.price,
+      items: [{ item_id: bslug, item_name: b.title, price: b.price, quantity: 1 }] });
+    hideToast();
+    openCart();
+  }
+
+  /* ===== added-to-cart toast — small confirmation, never blocks the page ===== */
+  var toastTimer = null;
+  function openAdded(item, already){
+    var cart = readCart();
+    document.getElementById('cart-toast-head').innerHTML = already ? 'Already in your cart' : '&#10003; Added to your cart';
+    document.getElementById('cart-toast-item').innerHTML =
+      (item.img ? '<img src="' + item.img + '" alt="">' : '')
+      + '<div class="cart-toast__title">' + item.title + '</div>'
+      + '<div class="cart-toast__price">' + money(parseFloat(item.price)||0) + '</div>';
+    document.getElementById('cart-toast-sub').textContent = cart.length + (cart.length > 1 ? ' items' : ' item') + ' in cart · Subtotal ' + money(subtotal());
+    renderUpgrades();
+    document.getElementById('cart-toast').hidden = false;
+    imgFade();
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, 7000);
+  }
+  function hideToast(){
+    document.getElementById('cart-toast').hidden = true;
+    if (toastTimer) { clearTimeout(toastTimer); toastTimer = null; }
+  }
+
+  function renderCart(){
+    var cart = readCart();
+    var count = document.getElementById('cart-count');
+    fab.hidden = false;
+    count.hidden = cart.length === 0;
+    count.textContent = cart.length;
+    var box = document.getElementById('cart-items');
+    if (!cart.length) { box.innerHTML = '<div class="cart-empty">Your cart is empty.<br>Add some minis!</div>'; }
+    else {
+      box.innerHTML = cart.map(function(i){
+        return '<div class="cart-item">'
+          + (i.img ? '<img src="' + i.img + '" alt="">' : '')
+          + '<div class="cart-item__title">' + i.title + '</div>'
+          + '<div class="cart-item__price">' + money(parseFloat(i.price)||0) + '</div>'
+          + '<button class="cart-item__rm" data-rm="' + i.slug + '" aria-label="Remove">&times;</button>'
+          + '</div>';
+      }).join('');
+    }
+    var pct = discountPct();
+    document.getElementById('cart-subtotal').textContent = money(subtotal());
+    var dRow = document.getElementById('cart-discount-row');
+    dRow.hidden = !pct;
+    if (pct) {
+      document.getElementById('cart-discount-label').textContent = 'Discount (' + pct + '% off)';
+      document.getElementById('cart-discount').textContent = '-' + money(subtotal() - total());
+    }
+    document.getElementById('cart-total').textContent = money(total());
+    var c = readCoupon();
+    if (c && c.code) document.getElementById('coupon-input').value = c.code;
+    renderUpgrades();
+    imgFade();
+  }
+
+  function lockScroll(){
+    var cartOpen = !document.getElementById('cart-drawer').hidden;
+    var diceOpen = !document.getElementById('dice-overlay').hidden;
+    document.documentElement.style.overflow = (cartOpen || diceOpen) ? 'hidden' : '';
+  }
+  function openCart(){
+    document.getElementById('cart-overlay').hidden = false;
+    document.getElementById('cart-drawer').hidden = false;
+    lockScroll();
+    renderCart();
+    if (!paypalRendered) renderCartPaypal();
+  }
+  function closeCart(){
+    document.getElementById('cart-overlay').hidden = true;
+    document.getElementById('cart-drawer').hidden = true;
+    lockScroll();
+  }
+
+  function renderCartPaypal(){
+    var host = document.getElementById('cart-paypal');
+    if (!host || typeof paypal === 'undefined' || !paypal.Buttons) return;
+    paypalRendered = true;
+    paypal.Buttons({
+      style: { layout: 'horizontal', color: 'gold', shape: 'rect', label: 'paypal', height: 42, tagline: false },
+      onClick: function(data, actions){
+        if (!readCart().length) return actions.reject();
+        var hint = document.getElementById('cart-email-hint');
+        if (!validCartEmail()) { hint.hidden = false; return actions.reject(); }
+        hint.hidden = true;
+        try { localStorage.setItem('stl_email', cartEmailVal()); } catch(e){}
+        return actions.resolve();
+      },
+      createOrder: function(data, actions){
+        var cart = readCart(), c = readCoupon();
+        var sub = subtotal(), tot = total(), disc = Math.round((sub - tot) * 100) / 100;
+        return actions.order.create({
+          purchase_units: [{
+            description: ('DnD Miniatures STL — ' + cart.length + ' item' + (cart.length > 1 ? 's' : '')).slice(0, 127),
+            custom_id: ('CART|' + (c && c.code ? c.code : '-')).slice(0, 127),
+            amount: {
+              value: tot.toFixed(2), currency_code: 'USD',
+              breakdown: {
+                item_total: { value: sub.toFixed(2), currency_code: 'USD' },
+                discount: { value: disc.toFixed(2), currency_code: 'USD' }
+              }
+            },
+            items: cart.map(function(i){
+              return { name: String(i.title).slice(0, 127), sku: String(i.slug).slice(0, 127), quantity: '1',
+                unit_amount: { value: (parseFloat(i.price)||0).toFixed(2), currency_code: 'USD' } };
+            })
+          }]
+        });
+      },
+      onApprove: function(data, actions){
+        return actions.order.capture().then(function(details){
+          try {
+            var pEmail = cartEmailVal() || (details && details.payer && details.payer.email_address);
+            if (pEmail && window.omnisend && typeof omnisend.identifyContact === 'function') omnisend.identifyContact({ email: pEmail });
+          } catch(e){}
+          if (typeof gtag === 'function') gtag('event', 'purchase', {
+            transaction_id: (details && details.id) || '', value: total(), currency: 'USD', affiliation: 'PayPal Direct',
+            items: readCart().map(function(i){ return { item_id: i.slug, item_name: i.title, price: parseFloat(i.price)||0, quantity: 1 }; })
+          });
+          document.getElementById('cart-foot').hidden = true;
+          var ok = document.getElementById('cart-success');
+          ok.hidden = false;
+          return fetch('/api/deliver', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orderID: data.orderID, email: cartEmailVal() || undefined }) })
+            .then(function(r){ return r.json(); })
+            .then(function(res){
+              if (res && res.ok && res.links) {
+                document.getElementById('cart-links').innerHTML = res.links.map(function(l){
+                  return '<a class="cart-dl" href="' + l.url + '" target="_blank" rel="noopener">&#11015; ' + l.name + ' (.STL)</a>';
+                }).join('');
+                if (res.emailSent && res.buyerEmail) document.getElementById('cart-success-note').innerHTML = 'Links below — also emailed to <b>' + res.buyerEmail + '</b>. Save them now.';
+              } else {
+                document.getElementById('cart-success-note').textContent = 'Payment OK but links could not load. Email us with your PayPal order ID ' + data.orderID + ' and we will send them right away.';
+              }
+              localStorage.removeItem(CART_KEY); localStorage.removeItem(COUPON_KEY);
+            }).catch(function(){
+              document.getElementById('cart-success-note').textContent = 'Payment OK but links could not load. Email us with your PayPal order ID ' + data.orderID + '.';
+            });
+        });
+      },
+      onError: function(err){ console.error('PayPal cart error', err); }
+    }).render('#cart-paypal');
+  }
+
+  document.addEventListener('click', function(e){
+    var up = e.target.closest && e.target.closest('[data-upgrade]');
+    if (up) { applyUpgrade(up.getAttribute('data-upgrade')); return; }
+    var rm = e.target.closest && e.target.closest('[data-rm]');
+    if (rm) { removeFromCart(rm.getAttribute('data-rm')); return; }
+    var add = e.target.closest && e.target.closest('[data-add-cart]');
+    if (add) {
+      addToCart({ slug: add.getAttribute('data-slug'), title: add.getAttribute('data-title'),
+        price: add.getAttribute('data-price'), img: add.getAttribute('data-img') });
+      if (typeof gtag === 'function') gtag('event', 'add_to_cart', { currency: 'USD', value: parseFloat(add.getAttribute('data-price'))||0,
+        items: [{ item_id: add.getAttribute('data-slug'), item_name: add.getAttribute('data-title'), price: parseFloat(add.getAttribute('data-price'))||0, quantity: 1 }] });
+    }
+  });
+  document.getElementById('cart-fab').addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+  document.getElementById('cart-toast-close').addEventListener('click', hideToast);
+  document.getElementById('cart-toast-view').addEventListener('click', function(){ hideToast(); openCart(); });
+  document.getElementById('cart-toast-checkout').addEventListener('click', function(){ hideToast(); openCart(); });
+
+  document.getElementById('coupon-apply').addEventListener('click', function(){
+    var code = (document.getElementById('coupon-input').value || '').trim().toUpperCase();
+    var msg = document.getElementById('coupon-msg');
+    if (!code) { localStorage.removeItem(COUPON_KEY); msg.textContent = ''; renderCart(); return; }
+    msg.className = 'cart-coupon__msg'; msg.textContent = 'Checking…';
+    fetch('/api/coupon', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: code }) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if (res && res.valid) {
+          try { localStorage.setItem(COUPON_KEY, JSON.stringify({ code: code, percent: res.percent })); } catch(e){}
+          msg.className = 'cart-coupon__msg cart-coupon__msg--ok'; msg.textContent = res.percent + '% discount applied!';
+        } else {
+          localStorage.removeItem(COUPON_KEY);
+          msg.className = 'cart-coupon__msg cart-coupon__msg--bad'; msg.textContent = 'That code is not valid.';
+        }
+        renderCart();
+      })
+      .catch(function(){ msg.className = 'cart-coupon__msg cart-coupon__msg--bad'; msg.textContent = 'Could not check the code — try again.'; });
+  });
+
+  /* ===== D20 discount popup ===== */
+  var diceFab = document.getElementById('dice-fab');
+  function d20Done(){ try { return !!localStorage.getItem(D20_DONE); } catch(e){ return false; } }
+  function syncDiceState(){
+    if (!d20Done()) return;
+    var res = null;
+    try { res = JSON.parse(localStorage.getItem('d20_result')); } catch(e){}
+    if (!res || !res.roll) return;
+    document.getElementById('dice-d20').textContent = res.roll;
+    document.getElementById('dice-step1').hidden = true;
+    var out = document.getElementById('dice-result');
+    out.hidden = false;
+    document.getElementById('dice-result-title').textContent = 'You rolled a ' + res.roll + ' — ' + res.roll + '% off!';
+    document.getElementById('dice-result-text').innerHTML = 'Your discount code was sent to <b>' + (res.email || 'your email') + '</b>. Check spam if you cannot find it — then paste the code in the cart at checkout.';
+  }
+  function openDice(){ syncDiceState(); document.getElementById('dice-overlay').hidden = false; lockScroll(); }
+  function closeDice(){ document.getElementById('dice-overlay').hidden = true; lockScroll(); }
+  document.getElementById('dice-close').addEventListener('click', closeDice);
+  document.getElementById('dice-overlay').addEventListener('click', function(e){ if (e.target === this) closeDice(); });
+  diceFab.addEventListener('click', openDice);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeCart(); closeDice(); hideToast(); } });
+  if (!d20Done()) {
+    var shown = false;
+    try { shown = !!localStorage.getItem(D20_SHOWN); } catch(e){}
+    if (!shown) setTimeout(function(){ try { localStorage.setItem(D20_SHOWN, '1'); } catch(e){} openDice(); }, 6000);
+  }
+
+  document.getElementById('dice-roll').addEventListener('click', function(){
+    var btn = this, err = document.getElementById('dice-err');
+    var email = (document.getElementById('dice-email').value || '').trim().toLowerCase();
+    err.textContent = '';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Please enter a valid email — your code is sent there.'; return; }
+    btn.disabled = true; btn.textContent = 'Rolling…';
+    var die = document.getElementById('dice-d20');
+    var wrap = document.getElementById('dice-d20-wrap');
+    wrap.classList.add('dice-d20--rolling');
+    var spin = setInterval(function(){ die.textContent = 1 + Math.floor(Math.random() * 20); }, 90);
+    fetch('/api/dice', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        setTimeout(function(){
+          clearInterval(spin); wrap.classList.remove('dice-d20--rolling');
+          if (!res || !res.ok) {
+            btn.disabled = false; btn.textContent = 'Roll for my discount';
+            err.textContent = (res && res.error === 'bad_email') ? 'That email looks wrong — check it and try again.' : 'Something failed — try again in a minute.';
+            return;
+          }
+          die.textContent = res.roll;
+          wrap.classList.add('dice-d20--land');
+          setTimeout(function(){ wrap.classList.remove('dice-d20--land'); }, 500);
+          document.getElementById('dice-step1').hidden = true;
+          var out = document.getElementById('dice-result');
+          out.hidden = false;
+          document.getElementById('dice-result-title').textContent = 'You rolled a ' + res.roll + ' — ' + res.roll + '% off!';
+          document.getElementById('dice-result-text').innerHTML = res.emailSent
+            ? 'Your discount code is on its way to <b>' + email + '</b>. Check your inbox (and spam) — then paste the code in the cart at checkout.'
+            : 'You won ' + res.roll + '% off, but we could not send the email. Write to us and mention this roll — we will send your code.';
+          try { localStorage.setItem(D20_DONE, '1'); localStorage.setItem('d20_result', JSON.stringify({ roll: res.roll, email: email })); } catch(e){}
+          try { if (window.omnisend && typeof omnisend.identifyContact === 'function') omnisend.identifyContact({ email: email }); } catch(e){}
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', { currency: 'USD', value: res.roll });
+        }, 1600);
+      })
+      .catch(function(){
+        clearInterval(spin); wrap.classList.remove('dice-d20--rolling');
+        btn.disabled = false; btn.textContent = 'Roll for my discount';
+        err.textContent = 'Network error — try again.';
+      });
+  });
+
+  try { var savedEmail = localStorage.getItem('stl_email'); var ce = document.getElementById('cart-email'); if (savedEmail && ce) ce.value = savedEmail; } catch(e){}
+  renderCart();
+  imgFade();
+})();
+</script>
+
+<div class="mobilenav" id="mobilenav" hidden>
+  <button class="mobilenav__close" id="mobilenav-close" aria-label="Close menu">&times;</button>
+  <nav class="mobilenav__links" id="mobilenav-links"></nav>
+</div>
+<button class="totop" id="totop" hidden aria-label="Back to top">&#8593;</button>
+<script>
+(function(){
+  var burger = document.getElementById('nav-burger');
+  var panel = document.getElementById('mobilenav');
+  if (burger && panel) {
+    var links = document.querySelectorAll('.nav a');
+    var html = '';
+    for (var i = 0; i < links.length; i++) html += '<a href="' + links[i].getAttribute('href') + '">' + links[i].textContent + '</a>';
+    document.getElementById('mobilenav-links').innerHTML = html;
+    burger.addEventListener('click', function(){ panel.hidden = false; document.documentElement.style.overflow = 'hidden'; });
+    panel.addEventListener('click', function(e){
+      if (e.target.closest('a') || e.target.id === 'mobilenav-close' || e.target === panel) { panel.hidden = true; document.documentElement.style.overflow = ''; }
+    });
+  }
+  var totop = document.getElementById('totop');
+  var buybar = document.getElementById('buybar');
+  addEventListener('scroll', function(){
+    if (totop) totop.hidden = scrollY < 700;
+    if (buybar) buybar.hidden = scrollY < 480;
+  }, { passive: true });
+  if (totop) totop.addEventListener('click', function(){ scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script>
+</body>
+</html>
