@@ -71,6 +71,7 @@ img { display: block; max-width: 100%; height: auto; }
 .header__cta:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 6px 18px var(--accent-glow); }
 @media (max-width: 800px) {
   .nav__item:not(.header__cta), .nav__dropdown { display: none; }
+  .header__cta { display: none; }
 }
 body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .03; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
 ::selection { background: var(--gold); color: #14100a; }
@@ -132,8 +133,9 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .custom-banner a { color: var(--accent); font-weight: 700; white-space: nowrap; }
 
 [hidden] { display: none !important; }
-.cart-fab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 90; background: var(--accent); color: #fff; border: 0; cursor: pointer; width: 56px; height: 56px; border-radius: 50%; font-size: 24px; box-shadow: 0 6px 20px rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; }
-.cart-fab__count { position: absolute; top: -4px; right: -4px; background: var(--gold); color: #000; font-size: 12px; font-weight: 800; min-width: 20px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 0 5px; }
+.cart-btn { position: relative; background: none; border: 1px solid rgba(128,134,150,.4); color: inherit; border-radius: 8px; width: 40px; height: 40px; font-size: 17px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color .15s; }
+.cart-btn:hover { border-color: var(--gold); }
+.cart-fab__count { position: absolute; top: -7px; right: -7px; background: var(--gold); color: #000; font-size: 11px; font-weight: 800; min-width: 19px; height: 19px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 0 5px; box-shadow: 0 2px 6px rgba(0,0,0,.35); }
 .cart-overlay { position: fixed; inset: 0; background: rgba(4,5,9,.68); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); z-index: 190; }
 .cart-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); background: var(--bg-card); border-left: 1px solid var(--border); z-index: 191; display: flex; flex-direction: column; animation: cartSlideIn .25s ease; }
 @keyframes cartSlideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
@@ -208,17 +210,22 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .d20-face { fill: rgba(255,255,255,.12); stroke: rgba(0,0,0,.35); stroke-width: 1.5; stroke-linejoin: round; }
 .d20-edges line { stroke: rgba(0,0,0,.35); stroke-width: 1.5; stroke-linecap: round; }
 .dice-d20__num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-top: 12px; font-size: 30px; font-weight: 900; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,.55); }
-.dice-d20--rolling { animation: diceTumble .9s linear infinite; }
-@keyframes diceTumble {
-  0%   { transform: rotate3d(1,1,0,0deg) translateY(0) scale(1); }
-  18%  { transform: rotate3d(1,2,1,130deg) translateY(-30px) scale(.9); }
-  38%  { transform: rotate3d(2,1,1,290deg) translateY(4px) scale(1.06); }
-  58%  { transform: rotate3d(1,3,2,430deg) translateY(-18px) scale(.94); }
-  78%  { transform: rotate3d(3,1,1,590deg) translateY(2px) scale(1.03); }
-  100% { transform: rotate3d(1,1,0,720deg) translateY(0) scale(1); }
+.dice-d20--rolling { animation: diceRoll .85s cubic-bezier(.35,.6,.45,1) infinite; }
+.dice-d20--rolling svg { filter: blur(.6px); }
+.dice-d20--rolling .dice-d20__num { opacity: 0; }
+@keyframes diceRoll {
+  0%   { transform: rotate(0deg) translateY(0) scale(1); }
+  16%  { transform: rotate(118deg) translateY(-30px) scale(.94); }
+  32%  { transform: rotate(252deg) translateY(0) scale(1.05); }
+  48%  { transform: rotate(378deg) translateY(-18px) scale(.96); }
+  64%  { transform: rotate(506deg) translateY(0) scale(1.04); }
+  82%  { transform: rotate(628deg) translateY(-7px) scale(.98); }
+  100% { transform: rotate(720deg) translateY(0) scale(1); }
 }
-.dice-d20--land { animation: diceLand .45s cubic-bezier(.2,2.4,.4,1); }
-@keyframes diceLand { 0% { transform: scale(1.35) rotate(16deg); } 55% { transform: scale(.9) rotate(-6deg); } 100% { transform: scale(1) rotate(0deg); } }
+.dice-d20--land { animation: diceLand .5s cubic-bezier(.2,1.9,.4,1); }
+@keyframes diceLand { 0% { transform: translateY(-16px) scale(1.18); } 55% { transform: translateY(0) scale(.94); } 100% { transform: translateY(0) scale(1); } }
+.dice-d20--land .dice-d20__num { animation: numPop .45s ease; }
+@keyframes numPop { 0% { transform: scale(1.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 .dice-form { display: flex; flex-direction: column; gap: 10px; }
 .dice-form input { padding: 13px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; font-family: inherit; }
 .dice-form input:focus { outline: none; border-color: var(--gold); }
@@ -282,7 +289,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 .buybar__note { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
 .buybar__btn { background: linear-gradient(180deg, var(--accent-hi), var(--accent-lo)); color: #fff; padding: 13px 30px; border-radius: 8px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .8px; border: 1px solid rgba(0,0,0,.35); }
 @media (max-width: 800px) {
-  .cart-fab, .dice-fab { bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important; }
+  .dice-fab { bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important; }
   .totop { display: none; }
 }
 .info h1 { font-family: 'Cinzel', serif; font-size: clamp(17px, 2.2vw, 24px); line-height: 1.3; letter-spacing: .6px; margin-bottom: 14px; color: var(--parchment); }
@@ -372,7 +379,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
       <a class="nav__item" href="https://www.dndanimeminiatures.com/" target="_blank" rel="noopener" title="Our anime miniatures site — One Piece STL collection">Anime Minis ↗</a>
     </nav>
     <button class="nav-burger" id="nav-burger" aria-label="Open menu">&#9776;</button>
-    <a class="header__cta" href="#buy">Buy Now ↓</a>
+    <button class="cart-btn" id="cart-fab" aria-label="Open cart">&#128722;<span class="cart-fab__count" id="cart-count" hidden>0</span></button>
   </div>
 </header>
 
@@ -778,7 +785,6 @@ omnisend.push(["track", "viewed product", {
 </script>
 <script>window.CART_RECS=[{"slug":"four-armed-aberration","title":"Four-Armed Monster","price":4,"img":"/images/four-armed-aberration-1.png"},{"slug":"forest-slime","title":"Forest Slime","price":4,"img":"/images/forest-slime-1.png"},{"slug":"baphomet-strength-ro","title":"Baphomet Demon Lord","price":4,"img":"/images/baphomet-strength-ro-1.png"},{"slug":"minotaur-shaman","title":"Minotaur Mage","price":4,"img":"/images/minotaur-shaman-1.png"},{"slug":"haunted-house-diorama","title":"Haunted House","price":4,"img":"/images/haunted-house-diorama-1.png"},{"slug":"minotaur-dual-axe","title":"Minotaur Dual Axe","price":4,"img":"/images/minotaur-dual-axe-1.png"},{"slug":"mercenary-veteran","title":"Mercenary Veteran","price":4,"img":"/images/mercenary-veteran-1.png"},{"slug":"mercenary-captain","title":"Mercenary Captain","price":4,"img":"/images/mercenary-captain-1.png"}];window.CART_BUNDLES={"road-bandits-pack-6":{"title":"Road Bandits Pack 6","price":20,"img":"/images/road-bandits-pack-6-1.png","members":["bandit-captain","bandit-crossbowman","bandit-sorcerer","bandit-brute","bandit-rogue","bandit-swordsman"],"memberPrices":{"bandit-captain":4,"bandit-crossbowman":4,"bandit-sorcerer":4,"bandit-brute":4,"bandit-rogue":4,"bandit-swordsman":4}},"mercenary-warband-pack-6":{"title":"Mercenary Warband Pack 6","price":30,"img":"/images/mercenary-warband-pack-6-1.png","members":["mercenary-captain","mercenary-sword-shield","mercenary-spearman","mercenary-sword-axe","mercenary-veteran","mercenary-twin-blades"],"memberPrices":{"mercenary-captain":4,"mercenary-sword-shield":4,"mercenary-spearman":4,"mercenary-sword-axe":4,"mercenary-veteran":4,"mercenary-twin-blades":4}},"orc-warband-pack-6-ro":{"title":"Orc Warband Bundle 6","price":20,"img":"/images/orc-warband-pack-6-ro-1.png","members":["orc-baby-ro","orc-hero-ro","orc-lady-ro","orc-lord-ro","orc-archer-ro","orc-axe-warrior-ro"],"memberPrices":{"orc-baby-ro":4,"orc-hero-ro":4,"orc-lady-ro":4,"orc-lord-ro":4,"orc-archer-ro":4,"orc-axe-warrior-ro":4}},"minotaur-warband-pack-6":{"title":"Minotaur Warband Bundle 6","price":20,"img":"/images/minotaur-warband-pack-6-1.png","members":["minotaur-dual-axe","minotaur-greataxe","minotaur-spear","minotaur-shaman","minotaur-morning-star","minotaur-trident"],"memberPrices":{"minotaur-dual-axe":4,"minotaur-greataxe":4,"minotaur-spear":4,"minotaur-shaman":4,"minotaur-morning-star":4,"minotaur-trident":4}}};</script>
 
-<button class="cart-fab" id="cart-fab" aria-label="Open cart" hidden>&#128722;<span class="cart-fab__count" id="cart-count" hidden>0</span></button>
 <button class="dice-fab" id="dice-fab" aria-label="Roll the D20 for a discount"><span>&#127922; Win up to 20% off</span></button>
 <div class="cart-overlay" id="cart-overlay" hidden></div>
 <aside class="cart-drawer" id="cart-drawer" hidden aria-label="Shopping cart">
