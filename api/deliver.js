@@ -125,6 +125,7 @@ module.exports = async function handler(req, res) {
           body: JSON.stringify({
             from: process.env.RESEND_FROM || DEFAULT_FROM,
             to: [buyerEmail],
+            bcc: [OWNER],
             reply_to: CONTACT,
             subject: 'Your ' + product.title.split(' STL')[0] + ' STL — download links',
             html: html,
