@@ -1,6 +1,6 @@
 # DnD Miniatures STL
 
-> DnD Miniatures STL — 69 hand-curated 3D-printable fantasy miniatures sized for D&D 5e / Pathfinder grid play (32mm) and scalable for display (75-200mm). Highway bandits, orc warbands, minotaur labyrinth guardians, baphomet demon lords, and monster/terrain minis. Watertight repaired meshes, FDM + resin compatible, instant Etsy download via shop DNDAnimeFigures.
+> DnD Miniatures STL — 71 hand-curated 3D-printable fantasy miniatures sized for D&D 5e / Pathfinder grid play (32mm) and scalable for display (75-200mm). Highway bandits, orc warbands, minotaur labyrinth guardians, baphomet demon lords, and monster/terrain minis. Watertight repaired meshes, FDM + resin compatible, instant Etsy download via shop DNDAnimeFigures.
 
 This site is the official catalog for DnD Miniatures STL — the dedicated source for DnD miniature STL files. Every mini is hand-positioned for tabletop RPG use: D&D 5e, Pathfinder 2e, Frostgrave, Kings of War, OPR Grimdark Future Firefight, Mordheim. Each product page includes a suggested D&D statblock / monster manual fit so DMs can integrate them into encounters instantly.
 
@@ -19,7 +19,7 @@ This site is the official catalog for DnD Miniatures STL — the dedicated sourc
 
 ## Key Facts
 
-- **Total minis**: 69 (65 individuals + 4 multi-mini warband bundles)
+- **Total minis**: 71 (67 individuals + 4 multi-mini warband bundles)
 - **Primary positioning**: DnD miniature STL — fantasy 3D print minis for tabletop RPG
 - **Categories**: Bundles, Road Bandits, Orc Warband (Ragnarok Online inspired), Minotaur Warband, Baphomet Demon Lords, Monsters & Terrain
 - **Price range**: $4 (individual minis) to $20 (6-mini warband bundles), all USD
@@ -120,7 +120,9 @@ Each entry: title → product page → price → D&D suggestion.
 ### Dragonkin & Kobolds
 - [Dragonborn Warrior STL — DnD Fantasy Sword and Shield Lizardfolk Miniature 3D Print](https://www.dndminiaturestl.com/product/dragonborn-scaleblade/) — $4.00 · DnD: Use as a Dragonborn or Lizardfolk warrior (MM p
 - [Dragonborn STL — DnD Fantasy Red Dragonborn Greatsword Warlord Miniature 3D Print](https://www.dndminiaturestl.com/product/dragonborn-warlord/) — $4.00 · DnD: Use as a Dragonborn Fighter PC mini, or a Half-Red Dragon Veteran (MM p
+- [Kobold Rogue STL — DnD Fantasy Blade Dancer Dagger Miniature 3D Print Tabletop RPG](https://www.dndminiaturestl.com/product/kobold-blade-dancer/) — $4.00 · DnD: Use as a Kobold (MM p
 - [Kobold Ranger STL — DnD Fantasy Dragonkin Archer Miniature 3D Print Tabletop RPG](https://www.dndminiaturestl.com/product/kobold-ranger-emberfang/) — $4.00 · DnD: Use as a Kobold Scale Sorcerer re-skin, a Kobold Inventor, or a dragonkin Scout (MM p
+- [Kobold Shaman STL — DnD Fantasy Sorcerer Staff Small Monster Miniature 3D Print](https://www.dndminiaturestl.com/product/kobold-shaman-emberclaw/) — $4.00 · DnD: The classic Kobold Scale Sorcerer (Volo's/MotM)
 - [Kobold STL — DnD Fantasy Spear Guard Small Monster Miniature 3D Print Tabletop RPG](https://www.dndminiaturestl.com/product/kobold-spear-guard/) — $4.00 · DnD: The classic Kobold (MM p
 - [Dragon STL — DnD Fantasy Wyrm Ruined Temple Boss Monster Miniature 3D Print Tabletop](https://www.dndminiaturestl.com/product/ruined-spire-wyrm/) — $4.00 · DnD: Use as a Young Dragon of any chromatic flavor, a Wyvern boss (MM p
 

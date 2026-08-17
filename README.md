@@ -1,15 +1,15 @@
-# DnD Miniatures STL — Landing Page + 69 Product Pages
+# DnD Miniatures STL — Landing Page + 71 Product Pages
 
-Static SEO + AI-search-optimized site promoting 69 DnD/fantasy STL listings on Etsy.
+Static SEO + AI-search-optimized site promoting 71 DnD/fantasy STL listings on Etsy.
 
 ## Output structure
 
 ```
 landing-dnd/
 ├── index.html                # main landing (5 category sections + bundles)
-├── product/<slug>/index.html # 69 product pages
+├── product/<slug>/index.html # 71 product pages
 ├── images/                   # all product images + brand assets
-├── sitemap.xml               # 70 URLs with image annotations
+├── sitemap.xml               # 72 URLs with image annotations
 ├── robots.txt                # liberal AI crawler allowlist
 ├── llms.txt                  # AI-engine readable catalog
 ├── humans.txt

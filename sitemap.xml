@@ -2,43 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.dndminiaturestl.com/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/bandit-stl/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/mercenary-stl/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/orc-stl/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/minotaur-stl/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/baphomet-stl/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/monster-stl/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/knight-stl/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/pirate-stl/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/barbarian-stl/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/hero-stl/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/kobold-stl/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dndminiaturestl.com/chibi-stl/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -146,7 +182,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/amethyst-archmage/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -560,7 +596,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/bard-violet-muse/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -596,7 +632,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/bloodmaul-warlord/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -626,7 +662,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/blue-slime/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -662,7 +698,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/brave-wayfarer-chibi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -692,7 +728,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/bronze-spirit-monk/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -722,7 +758,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/chameleon-agent/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -752,7 +788,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/cleric-flamekeeper/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -764,7 +800,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/crimson-flame-knight/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -794,7 +830,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/crystal-druid/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -824,7 +860,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/desert-spear-warrior/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -854,7 +890,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/dragonborn-scaleblade/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -884,7 +920,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/dragonborn-warlord/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -914,7 +950,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/elf-archer-emerald/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -980,7 +1016,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/forest-warden-archer/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -1100,7 +1136,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/golden-fist-monk/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -1202,7 +1238,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/heavy-knight-tower-shield/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -1261,8 +1297,38 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.dndminiaturestl.com/product/kobold-blade-dancer/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-blade-dancer-1.webp</image:loc>
+      <image:title>Kobold Rogue STL — DnD Fantasy Blade Dancer Dagger Miniature 3D Print Tabletop RPG</image:title>
+      <image:caption>A crimson-scaled kobold slinking forward with a curved dagger held low — wrapped bandages, leather satchel, and a hunter&#39;s crouch. The warren&#39;s quiet answer to locked doors and unguarded backs.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-blade-dancer-2.webp</image:loc>
+      <image:title>Kobold Rogue STL — DnD Fantasy Blade Dancer Dagger Miniature 3D Print Tabletop RPG</image:title>
+      <image:caption>A crimson-scaled kobold slinking forward with a curved dagger held low — wrapped bandages, leather satchel, and a hunter&#39;s crouch. The warren&#39;s quiet answer to locked doors and unguarded backs.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-blade-dancer-3.webp</image:loc>
+      <image:title>Kobold Rogue STL — DnD Fantasy Blade Dancer Dagger Miniature 3D Print Tabletop RPG</image:title>
+      <image:caption>A crimson-scaled kobold slinking forward with a curved dagger held low — wrapped bandages, leather satchel, and a hunter&#39;s crouch. The warren&#39;s quiet answer to locked doors and unguarded backs.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-blade-dancer-4.webp</image:loc>
+      <image:title>Kobold Rogue STL — DnD Fantasy Blade Dancer Dagger Miniature 3D Print Tabletop RPG</image:title>
+      <image:caption>A crimson-scaled kobold slinking forward with a curved dagger held low — wrapped bandages, leather satchel, and a hunter&#39;s crouch. The warren&#39;s quiet answer to locked doors and unguarded backs.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.dndminiaturestl.com/product/kobold-ranger-emberfang/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -1291,8 +1357,38 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.dndminiaturestl.com/product/kobold-shaman-emberclaw/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-shaman-emberclaw-1.webp</image:loc>
+      <image:title>Kobold Shaman STL — DnD Fantasy Sorcerer Staff Small Monster Miniature 3D Print</image:title>
+      <image:caption>A wild-eyed kobold shaman clutching a gnarled charm-hung staff, free claw raised mid-hex — tattered robes, bone trinkets, and the unearned confidence of the warren&#39;s only spellcaster.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-shaman-emberclaw-2.webp</image:loc>
+      <image:title>Kobold Shaman STL — DnD Fantasy Sorcerer Staff Small Monster Miniature 3D Print</image:title>
+      <image:caption>A wild-eyed kobold shaman clutching a gnarled charm-hung staff, free claw raised mid-hex — tattered robes, bone trinkets, and the unearned confidence of the warren&#39;s only spellcaster.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-shaman-emberclaw-3.webp</image:loc>
+      <image:title>Kobold Shaman STL — DnD Fantasy Sorcerer Staff Small Monster Miniature 3D Print</image:title>
+      <image:caption>A wild-eyed kobold shaman clutching a gnarled charm-hung staff, free claw raised mid-hex — tattered robes, bone trinkets, and the unearned confidence of the warren&#39;s only spellcaster.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dndminiaturestl.com/images/kobold-shaman-emberclaw-4.webp</image:loc>
+      <image:title>Kobold Shaman STL — DnD Fantasy Sorcerer Staff Small Monster Miniature 3D Print</image:title>
+      <image:caption>A wild-eyed kobold shaman clutching a gnarled charm-hung staff, free claw raised mid-hex — tattered robes, bone trinkets, and the unearned confidence of the warren&#39;s only spellcaster.</image:caption>
+      <image:license>https://www.etsy.com/shop/DNDAnimeFigures</image:license>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.dndminiaturestl.com/product/kobold-spear-guard/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -1322,7 +1418,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/lion-guardian-knight/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -1958,7 +2054,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/oathbound-knight/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2282,7 +2378,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pirate-captain-corsair/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2312,7 +2408,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pirate-captain-flintlock/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2342,7 +2438,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pirate-captain-hammerbeard/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2396,7 +2492,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pirate-captain-toast/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2426,7 +2522,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pirate-deckhand-barrel/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2456,7 +2552,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pirate-hammer-corsair/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2486,7 +2582,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/pixel-adventurer-chibi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2522,7 +2618,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/radiant-guardian-paladin/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2606,7 +2702,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/ruined-spire-wyrm/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2642,7 +2738,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/shadowblade-rogue/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2672,7 +2768,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/skullborne-barbarian/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -2702,7 +2798,7 @@
   </url>
   <url>
     <loc>https://www.dndminiaturestl.com/product/stormmarked-berserker/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
