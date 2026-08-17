@@ -1318,6 +1318,7 @@ omnisend.push(["track", "viewed product", {
   var thumbs = document.querySelectorAll('.gallery__thumb');
   for (var i = 0; i < thumbs.length; i++) thumbs[i].addEventListener('click', function(){
     mainImg.src = this.getAttribute('data-img');
+    mainImg.removeAttribute('srcset'); // srcset would override the new src and keep the old image
     mainImg.classList.add('img-in');
     for (var j = 0; j < thumbs.length; j++) thumbs[j].classList.remove('is-active');
     this.classList.add('is-active');
