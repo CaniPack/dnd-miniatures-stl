@@ -2227,7 +2227,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
 <section class="story">
   <div class="story__inner">
     <h2>Why DnD Miniatures STL?</h2>
-    <p>Every miniature is hand-curated, repaired in Blender (watertight, decimated, oriented), and shipped with a print-report JSON so you know exactly where thin walls or overhangs are before you slice. No AI slop, no broken meshes — just clean STL files that print right the first time.</p>
+    <p>Every miniature is hand-curated, repaired in Blender (watertight, decimated, oriented), and shipped with a print-report JSON so you know exactly where thin walls or overhangs are before you slice. No broken meshes — just clean STL files that print right the first time.</p>
     <p>The catalog is built around warband packs: a full gang of highway bandits, a 6-orc Ragnarok Online inspired horde, a labyrinth-guard minotaur warband, plus boss-tier baphomets, monsters and terrain. Each mini comes with a D&amp;D class / monster manual suggestion baked into the description so DMs can drop them into encounters in seconds.</p>
     <p>Have a request? Message us on <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener nofollow" style="color:var(--accent)">Etsy</a> — past requests shaped the bandit and orc packs. New warbands roll out roughly every two weeks.</p>
   </div>
@@ -2761,7 +2761,7 @@ omnisend.push(["track", "$pageViewed"]);
         return actions.order.create({
           purchase_units: [{
             description: ('DnD Miniatures STL — ' + cart.length + ' item' + (cart.length > 1 ? 's' : '')).slice(0, 127),
-            custom_id: ('CART|' + (c && c.code ? c.code : '-')).slice(0, 127),
+            custom_id: ('CART|' + (c && c.code ? c.code : '-') + '|' + cart.map(function(i){ return i.slug; }).join(',')).slice(0, 127),
             amount: {
               value: tot.toFixed(2), currency_code: 'USD',
               breakdown: {
@@ -2789,7 +2789,7 @@ omnisend.push(["track", "$pageViewed"]);
           document.getElementById('cart-foot').hidden = true;
           var ok = document.getElementById('cart-success');
           ok.hidden = false;
-          return fetch('/api/deliver', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orderID: data.orderID, email: cartEmailVal() || undefined }) })
+          return fetch('/api/deliver', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orderID: data.orderID, email: cartEmailVal() || undefined, slugs: readCart().map(function(i){ return i.slug; }) }) })
             .then(function(r){ return r.json(); })
             .then(function(res){
               if (res && res.ok && res.links) {

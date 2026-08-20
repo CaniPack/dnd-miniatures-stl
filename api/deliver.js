@@ -34,6 +34,25 @@ async function paypalToken(base, id, secret) {
   return j.access_token || null;
 }
 
+// Best-effort delivery-failure log (Redis list dnd:deliver-errors, newest first).
+// Every buyer who pays but gets no links/email lands here — check it whenever a
+// "did not receive item" complaint or PayPal dispute shows up.
+async function logDeliverError(stage, data) {
+  try {
+    const rUrl = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+    const rTok = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+    if (!rUrl || !rTok) return;
+    await fetch(rUrl + '/pipeline', {
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + rTok, 'Content-Type': 'application/json' },
+      body: JSON.stringify([
+        ['LPUSH', 'dnd:deliver-errors', JSON.stringify(Object.assign({ t: Date.now(), stage: stage }, data || {}))],
+        ['LTRIM', 'dnd:deliver-errors', 0, 499],
+      ]),
+    });
+  } catch (e) { /* ignore */ }
+}
+
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') { res.status(405).json({ error: 'method_not_allowed' }); return; }
@@ -44,7 +63,7 @@ module.exports = async function handler(req, res) {
 
     const id = process.env.PAYPAL_CLIENT_ID;
     const secret = process.env.PAYPAL_SECRET;
-    if (!id || !secret) { res.status(500).json({ error: 'not_configured' }); return; }
+    if (!id || !secret) { await logDeliverError('not_configured', { order: orderID }); res.status(500).json({ error: 'not_configured' }); return; }
 
     const bases = process.env.PAYPAL_API_BASE
       ? [process.env.PAYPAL_API_BASE]
@@ -58,20 +77,32 @@ module.exports = async function handler(req, res) {
       });
       if (r.ok) { order = await r.json(); break; }
     }
-    if (!order) { res.status(404).json({ error: 'order_not_found' }); return; }
-    if (order.status !== 'COMPLETED') { res.status(402).json({ error: 'not_completed' }); return; }
+    if (!order) { await logDeliverError('order_not_found', { order: orderID }); res.status(404).json({ error: 'order_not_found' }); return; }
+    if (order.status !== 'COMPLETED') { await logDeliverError('not_completed', { order: orderID, status: order.status }); res.status(402).json({ error: 'not_completed' }); return; }
 
     const unit = (order.purchase_units || [])[0] || {};
     const slug = unit.custom_id;
 
     let product = null;
     if (slug && slug.indexOf('CART') === 0) {
-      const coupon = (slug.split('|')[1] || '').trim();
-      const cartItems = unit.items || [];
-      const slugsInCart = [];
-      for (const it of cartItems) {
-        const s = String(it.sku || '').trim();
-        if (CATALOG[s] && slugsInCart.indexOf(s) === -1) slugsInCart.push(s);
+      const parts = slug.split('|');
+      const coupon = (parts[1] || '').trim();
+      // Slug sources, most to least trusted. PayPal drops purchase_units[].items from
+      // GET /v2/checkout/orders after capture on some order types, so items alone is not
+      // enough — fall back to the slug list baked into custom_id at order creation, then
+      // to the slugs the client POSTed. All sources are validated against CATALOG and the
+      // captured amount must still cover the resolved cart, so none of them can over-deliver.
+      const slugSources = [];
+      slugSources.push((unit.items || []).map(it => String(it.sku || '').trim()));
+      slugSources.push(String(parts.slice(2).join('|') || '').split(',').map(s => s.trim()));
+      slugSources.push(Array.isArray(body.slugs) ? body.slugs.slice(0, 40).map(s => String(s || '').trim()) : []);
+      // custom_id is capped at 127 chars so its slug list can arrive truncated — keep the
+      // source that resolves the most catalog slugs instead of the first non-empty one.
+      let slugsInCart = [];
+      for (const source of slugSources) {
+        const valid = [];
+        for (const s of source) if (CATALOG[s] && valid.indexOf(s) === -1) valid.push(s);
+        if (valid.length > slugsInCart.length) slugsInCart = valid;
       }
       if (slugsInCart.length) {
         const cartSubtotal = slugsInCart.reduce((t, s) => t + CATALOG[s].price, 0);
@@ -89,11 +120,11 @@ module.exports = async function handler(req, res) {
       product = slug && CATALOG[slug];
     }
 
-    if (!product) { res.status(404).json({ error: 'unknown_product' }); return; }
+    if (!product) { await logDeliverError('unknown_product', { order: orderID, custom_id: slug || null, items: (unit.items || []).map(i => i.sku), bodySlugs: Array.isArray(body.slugs) ? body.slugs : null }); res.status(404).json({ error: 'unknown_product' }); return; }
 
     const cap = (((unit.payments || {}).captures) || [])[0] || {};
     const paid = parseFloat(((cap.amount || {}).value) || ((unit.amount || {}).value) || '0');
-    if (!(paid + 0.001 >= product.price)) { res.status(402).json({ error: 'amount_mismatch' }); return; }
+    if (!(paid + 0.001 >= product.price)) { await logDeliverError('amount_mismatch', { order: orderID, custom_id: slug || null, paid: paid, required: product.price }); res.status(402).json({ error: 'amount_mismatch' }); return; }
 
     const prefEmail = (typeof body.email === 'string' && body.email.trim().length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(body.email.trim()))
       ? body.email.trim().toLowerCase() : null;
@@ -132,8 +163,17 @@ module.exports = async function handler(req, res) {
           }),
         });
         emailSent = mr.ok;
-      } catch (e) { emailSent = false; }
+        if (!mr.ok) {
+          let detail = '';
+          try { detail = (await mr.text()).slice(0, 300); } catch (e2) { /* ignore */ }
+          await logDeliverError('resend_failed', { order: orderID, to: buyerEmail, status: mr.status, detail: detail });
+        }
+      } catch (e) {
+        emailSent = false;
+        await logDeliverError('resend_exception', { order: orderID, to: buyerEmail, message: String(e && e.message || e).slice(0, 200) });
+      }
     }
+    if (!key) await logDeliverError('resend_key_missing', { order: orderID, to: buyerEmail });
 
     // Log sale to Redis for /oculto metrics — best-effort, deduped by order ID
     const rUrl = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
@@ -206,6 +246,7 @@ module.exports = async function handler(req, res) {
 
     res.status(200).json({ ok: true, links: product.links, emailSent: emailSent, buyerEmail: buyerEmail });
   } catch (e) {
+    try { await logDeliverError('exception', { message: String(e && e.message || e).slice(0, 300) }); } catch (e2) { /* ignore */ }
     res.status(500).json({ error: 'delivery_failed' });
   }
 };
