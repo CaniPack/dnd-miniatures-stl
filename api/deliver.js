@@ -146,7 +146,7 @@ module.exports = async function handler(req, res) {
         + '<p style="font-size:13px;color:#666">License: personal use + selling physical prints is OK. Redistributing the digital files is not.</p>'
         + '<p style="font-size:13px;color:#666">Questions or print help: just reply to this email.</p>'
         + '<div style="background:#f7f4ec;border:1px solid #e0d8c4;border-radius:10px;padding:14px 16px;margin-top:20px">'
-        + '<p style="margin:0;font-size:13px;color:#555"><b>Printed it? We would love to see.</b> Reply with a line or two about the print (a photo is even better) — real reviews from real adventurers go on the site and help a small shop a lot.</p>'
+        + '<p style="margin:0;font-size:13px;color:#555"><b>Printed it? We would love to see.</b> Reply with a photo of your print and a line or two — real reviews from real adventurers go on the site, and as a thank-you we send you a <b>10% off code</b> for your next order.</p>'
         + '</div>'
         + '</div>';
       try {
