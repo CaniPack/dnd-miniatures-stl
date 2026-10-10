@@ -1,0 +1,33 @@
+name: Add Meta Pixel tag to all pages
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/add-meta-pixel.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Insert script tag before </head> (skips /oculto)
+        run: |
+          set -e
+          test -f meta-pixel.js
+          n=0
+          while IFS= read -r -d '' f; do
+            if ! grep -q '/meta-pixel.js' "$f"; then
+              sed -i 's#</head>#<script src="/meta-pixel.js"></script>\n</head>#' "$f"
+              n=$((n+1))
+            fi
+          done < <(find . -name '*.html' -not -path './.git/*' -not -path './oculto/*' -print0)
+          echo "Patched $n pages"
+      - name: Commit and push
+        run: |
+          git config user.name "CaniPack"
+          git config user.email "seba.fyd@gmail.com"
+          git add -A -- '*.html'
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git commit -m "Load Meta Pixel (meta-pixel.js) on every page"
+          git push
