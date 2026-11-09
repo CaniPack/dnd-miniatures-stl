@@ -19,13 +19,13 @@
 <meta name="p:domain_verify" content="REPLACE_WITH_PINTEREST_TOKEN">
 <meta property="og:type" content="website">
 <meta property="og:title" content="DnD Miniatures STL · Premium 3D Printable Fantasy Minis | DnD Miniatures STL">
-<meta property="og:description" content="DnD Miniatures STL — premium 3D printable miniatures for D&amp;D, Pathfinder and tabletop RPG. 36 hand-curated fantasy minis: highway bandits, mercenary warbands, orc warbands, minotaur labyrinth guardians, baphomet demon lords, monsters and terrain. Watertight meshes, 32mm tabletop scale, FDM + resin compatible, instant download.">
+<meta property="og:description" content="DnD Miniatures STL — premium 3D printable miniatures for D&amp;D, Pathfinder and tabletop RPG. 71 hand-curated fantasy minis: highway bandits, mercenary warbands, orc warbands, minotaur labyrinth guardians, baphomet demon lords, monsters and terrain. Watertight meshes, 32mm tabletop scale, FDM + resin compatible, instant download.">
 <meta property="og:url" content="https://www.dndminiaturestl.com/">
 <meta property="og:image" content="https://www.dndminiaturestl.com/images/road-bandits-pack-6-1-og.jpg?v=14ns3tb">
 <meta property="og:site_name" content="DnD Miniatures STL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DnD Miniatures STL · Premium 3D Printable Fantasy Minis for Tabletop">
-<meta name="twitter:description" content="DnD Miniatures STL — premium 3D printable miniatures for D&amp;D, Pathfinder and tabletop RPG. 36 hand-curated fantasy minis: highway bandits, mercenary warbands, orc warbands, minotaur labyrinth guardians, baphomet demon lords, monsters and terrain. Watertight meshes, 32mm tabletop scale, FDM + resin compatible, instant download.">
+<meta name="twitter:description" content="DnD Miniatures STL — premium 3D printable miniatures for D&amp;D, Pathfinder and tabletop RPG. 71 hand-curated fantasy minis: highway bandits, mercenary warbands, orc warbands, minotaur labyrinth guardians, baphomet demon lords, monsters and terrain. Watertight meshes, 32mm tabletop scale, FDM + resin compatible, instant download.">
 <meta name="twitter:image" content="https://www.dndminiaturestl.com/images/road-bandits-pack-6-1-og.jpg?v=14ns3tb">
 
 <script type="application/ld+json">
@@ -383,7 +383,7 @@ html { scrollbar-color: #2a3040 #0b0d13; }
   <div class="hero__bg" style="background-image:url('images/baphomet-strength-ro-1.webp?v=9sal19')" aria-hidden="true"></div>
   <div class="hero__inner">
     <h1><span>DnD</span> Miniatures <span>STL</span><br>Premium 3D Printable Fantasy Minis</h1>
-    <p>DnD Miniatures STL — premium 3D printable miniatures for D&amp;D, Pathfinder and tabletop RPG. 36 hand-curated fantasy minis: highway bandits, mercenary warbands, orc warbands, minotaur labyrinth guardians, baphomet demon lords, monsters and terrain. Watertight meshes, 32mm tabletop scale, FDM + resin compatible, instant download.</p>
+    <p>DnD Miniatures STL — premium 3D printable miniatures for D&amp;D, Pathfinder and tabletop RPG. 71 hand-curated fantasy minis: highway bandits, mercenary warbands, orc warbands, minotaur labyrinth guardians, baphomet demon lords, monsters and terrain. Watertight meshes, 32mm tabletop scale, FDM + resin compatible, instant download.</p>
     <div class="hero__stats">
       <div><div class="stat__num">71</div><div class="stat__label">Fantasy STL Minis</div></div>
       <div><div class="stat__num">$4+</div><div class="stat__label">Instant Download</div></div>
@@ -2503,7 +2503,7 @@ omnisend.push(["track", "$pageViewed"]);
         } catch (e) { /* ignore */ }
       });
     },
-    onError: function(err){ console.error('PayPal error', err); }
+    onError: function(err){ console.error('PayPal error', err); try { if (typeof gtag === 'function') gtag('event', 'payment_error', { error_detail: String((err && err.message) || err).slice(0, 90) }); } catch(e){} var h = document.getElementById('paypal-button-container'); if (!h) return; var m = document.getElementById('paypal-button-container-err'); if (!m) { m = document.createElement('div'); m.id = 'paypal-button-container-err'; m.setAttribute('role', 'alert'); m.style.cssText = 'margin:10px 0;padding:12px 14px;border:1px solid #e0b04a;border-radius:8px;background:rgba(224,176,74,.10);color:#f3e6c4;font-size:14px;line-height:1.5'; h.parentNode.insertBefore(m, h.nextSibling); } m.innerHTML = 'Checkout is temporarily unavailable. You can get this mini right now on our <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" style="color:#e0b04a;text-decoration:underline">Etsy shop</a>, or email <b>info@dndminiaturestl.com</b> and we will sort it out.'; }
   }).render('#custom-paypal');
 })();
 </script>
@@ -2813,7 +2813,7 @@ omnisend.push(["track", "$pageViewed"]);
             });
         });
       },
-      onError: function(err){ console.error('PayPal cart error', err); }
+      onError: function(err){ console.error('PayPal error', err); try { if (typeof gtag === 'function') gtag('event', 'payment_error', { error_detail: String((err && err.message) || err).slice(0, 90) }); } catch(e){} var h = document.getElementById('cart-paypal'); if (!h) return; var m = document.getElementById('cart-paypal-err'); if (!m) { m = document.createElement('div'); m.id = 'cart-paypal-err'; m.setAttribute('role', 'alert'); m.style.cssText = 'margin:10px 0;padding:12px 14px;border:1px solid #e0b04a;border-radius:8px;background:rgba(224,176,74,.10);color:#f3e6c4;font-size:14px;line-height:1.5'; h.parentNode.insertBefore(m, h.nextSibling); } m.innerHTML = 'Checkout is temporarily unavailable. You can get this mini right now on our <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" style="color:#e0b04a;text-decoration:underline">Etsy shop</a>, or email <b>info@dndminiaturestl.com</b> and we will sort it out.'; }
     }).render('#cart-paypal');
   }
 

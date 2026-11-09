@@ -857,7 +857,7 @@ omnisend.push(["track", "$pageViewed"]);
             });
         });
       },
-      onError: function(err){ console.error('PayPal cart error', err); }
+      onError: function(err){ console.error('PayPal error', err); try { if (typeof gtag === 'function') gtag('event', 'payment_error', { error_detail: String((err && err.message) || err).slice(0, 90) }); } catch(e){} var h = document.getElementById('cart-paypal'); if (!h) return; var m = document.getElementById('cart-paypal-err'); if (!m) { m = document.createElement('div'); m.id = 'cart-paypal-err'; m.setAttribute('role', 'alert'); m.style.cssText = 'margin:10px 0;padding:12px 14px;border:1px solid #e0b04a;border-radius:8px;background:rgba(224,176,74,.10);color:#f3e6c4;font-size:14px;line-height:1.5'; h.parentNode.insertBefore(m, h.nextSibling); } m.innerHTML = 'Checkout is temporarily unavailable. You can get this mini right now on our <a href="https://www.etsy.com/shop/DNDAnimeFigures" target="_blank" rel="noopener" style="color:#e0b04a;text-decoration:underline">Etsy shop</a>, or email <b>info@dndminiaturestl.com</b> and we will sort it out.'; }
     }).render('#cart-paypal');
   }
 
